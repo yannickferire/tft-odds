@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 const Footer = () => {
   return (
+    <>
     <footer className="bg-earlynight py-4 rounded">
       <div className="flex flex-col sm:flex-row px-4 justify-between gap-4 sm:gap-16 md:gap-32">
         <p className="order-2 sm:order-1 flex-1 text-xs text-crema leading-5 opacity-40 mt-4 sm:mt-0">TFT Odds isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</p>
@@ -40,6 +42,20 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    <Script id="axeptio">
+      {`window.axeptioSettings = {
+        clientId: "6410ae10abd07c5b67cf880f",
+        cookiesVersion: "tft odds-en",
+      };
+      (function (d, s) {
+        var t = d.getElementsByTagName(s)[0],
+          e = d.createElement(s);
+        e.async = true;
+        e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
+      })(document, "script");`}
+    </Script>
+    </>
   )
 }
 

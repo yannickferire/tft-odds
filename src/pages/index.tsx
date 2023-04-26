@@ -4,8 +4,6 @@ import Head from "next/head";
 import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
 import { baseCost, baseLevel } from '../constants/constants';
-import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
 import LevelSelector from "@/components/champions/levelSelector";
 import ResetButton from "@/components/champions/resetButton";
 import RollingOdds from "@/components/champions/rollingOdds";
