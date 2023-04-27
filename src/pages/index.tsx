@@ -15,14 +15,12 @@ const Home: NextPage = () => {
   const [traits, setTraits] = useState<any[]>([]);
   const [selectedCost, setSelectedCost] = useState<string>(baseCost + " cost");
   const [selectedLevel, setSelectedLevel] = useState<number>(baseLevel);
-  const [championsLoaded, setChampionsLoaded] = useState(false);
 
   const { isLoading, error, data } = useQuery('champions', () =>
     fetchChampions(), 
     {
       onSuccess: (data) => {
         setChamps(data.champions);
-        setChampionsLoaded(true);
         setTraits(data.traits);
       }
     }
@@ -59,7 +57,7 @@ const Home: NextPage = () => {
           setChamps={setChamps}
           selectedCost={selectedCost} 
           setSelectedCost={setSelectedCost}
-          championsLoaded={championsLoaded}
+          isLoading={isLoading}
         />
         </aside>
         <ChampionsOdds selectedLevel={selectedLevel} champs={champs} setChamps={setChamps} traits={traits} />

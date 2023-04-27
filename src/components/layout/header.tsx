@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="flex flex-col items-center text-center sm:flex-row mb-8 sm:items-end">
-      <div className="flex items-end">
+      <div className="flex items-end mb-6 sm:mb-0">
         <Link href="/">
           <Image src="/tft-odds-logo.svg" alt="TFT Odds" width={160} height={43} />
         </Link>

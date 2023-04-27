@@ -9,10 +9,10 @@ interface IChampionsSelector {
   setChamps: (champions: any[]) => void;
   selectedCost: string;
   setSelectedCost: (cost: string) => void;
-  championsLoaded: boolean;
+  isLoading: boolean
 }
 
-const ChampionsSelector: React.FC<IChampionsSelector> = ({ champs, setChamps, selectedCost, setSelectedCost, championsLoaded }) => {
+const ChampionsSelector: React.FC<IChampionsSelector> = ({ champs, setChamps, selectedCost, setSelectedCost, isLoading }) => {
   const [positionOfSelection, setPositionOfSelection] = useState(1);
 
   const handleChampionSelection = (index: number) => {
@@ -55,7 +55,7 @@ const ChampionsSelector: React.FC<IChampionsSelector> = ({ champs, setChamps, se
           ))
         }
       </div>
-      {championsLoaded === true ? (
+      {isLoading === false ? (
         <ul className="grid grid-cols-5 items-center gap-4 md:grid-cols-4 md:gap-2 lg:gap-4 lg:grid-cols-5 p-4 bg-midday">
           {champs.map((champion, index) => (
             <li 
