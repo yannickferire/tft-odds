@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { possibleLevels } from "@/constants/loaded-dice";
 import { rollingChancesByLevel } from "@/constants/game";
 import ResultHeader from "./resultHeader";
@@ -53,7 +54,7 @@ const DiceOdds: React.FC<IDiceOdds> = ({ champs, setChamps, traits }) => {
   const sortedChamps = champsWithSelectedTraits.sort(compareChampsByChance);
   return (
     <>
-      <ResultHeader numberOfChampsPossible={champsWithSelectedTraits.length} />
+      <ResultHeader />
       <ul>
         {sortedChamps.map((champion, index) => (
           <li key={index} className="flex hover:bg-gradient-to-r from-midnight to-earlynight py-3">
@@ -61,8 +62,9 @@ const DiceOdds: React.FC<IDiceOdds> = ({ champs, setChamps, traits }) => {
               className="w-20 md:w-40  flex items-center gap-1 md:gap-2 cursor-pointer"
               onClick={() => handleChampionSelection(champion.name)}
               >
-              <img 
-                className={`w-[50px] aspect-square border-2 border-${champion.cost}cost rounded relative`}
+              <Image 
+                className={`aspect-square border-2 border-${champion.cost}cost rounded relative`}
+                width="50" height="50"
                 src={champion.image} 
                 alt={champion.name}
                 title={champion.name} />
@@ -74,7 +76,7 @@ const DiceOdds: React.FC<IDiceOdds> = ({ champs, setChamps, traits }) => {
                     const path = trait === 'Threat' ? 'triangle pt-0 px-[6px] w-6 h-5' : 'hex w-5 h-6';
                     return (
                       <li className={`${path} flex items-center justify-center p-[3px] text-xs bg-midday ${selectedChampTraits.includes(trait)?'opacity-100':'opacity-50'}`} key={index}>
-                        <img src={traitImage} alt={trait} title={trait} />
+                        <Image width="14" height="14" src={traitImage} alt={trait} title={trait} />
                       </li>
                     )
                   })}

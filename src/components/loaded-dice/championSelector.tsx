@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import { totalNumberOfChampions } from "@/constants/champions";
 import GoldIcon from '@/components/icons/goldIcon';
 
@@ -105,8 +106,9 @@ const ChampionSelector: React.FC<IChampionSelector> = ({ champs, setChamps, isLo
               title={champion.name}
             >
               <div className="w-full h-full relative block rounded overflow-hidden">
-                <img 
-                className={`w-20 -left-7 -top-1 max-w-none absolute z-10`}
+                <Image 
+                className={`-left-7 -top-1 max-w-none absolute z-10`}
+                width="80" height="80"
                 src={champion.image} 
                 alt={champion.name} />
               </div>

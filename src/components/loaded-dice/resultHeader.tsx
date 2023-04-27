@@ -1,10 +1,8 @@
 import { possibleLevels } from "@/constants/loaded-dice"
 
-interface IResultHeader {
-  numberOfChampsPossible: number
-}
+interface IResultHeader {}
 
-const ResultHeader: React.FC<IResultHeader> = ({ numberOfChampsPossible }) => {
+const ResultHeader: React.FC<IResultHeader> = () => {
   return (
     <div className="flex">
       <span className="w-20 md:w-40 text-xs opacity-30 text-center">Dice used on</span>
