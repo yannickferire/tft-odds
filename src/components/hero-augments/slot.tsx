@@ -1,4 +1,4 @@
-import { possibleCost } from '../../constants/cost';
+import { possibleCost } from '@/constants/cost';
 
 interface ISlot {
   index: number;

@@ -1,4 +1,4 @@
-import { numberOfHeroAugments, numberOfRerolls, numberOfSlots } from "../../../constants/hero-augments";
+import { numberOfHeroAugments, numberOfRerolls, numberOfSlots } from "@/constants/hero-augments";
 import ResultHeader from "../resultHeader";
 import ChampionProfile from "./championProfile";
 import ChampionAugments from "./championAugments";
@@ -205,7 +205,7 @@ const Champions: React.FC<IChampions> = ({ champs, traits, activeTraits, slotsCo
         {costWithRollsRemaining.length > 0 && filteredChamps.length > 0 &&
           <div className="relative mt-6 mb-16 max-w-lg mx-auto opacity-30">
             <hr />
-            <span className="max-w-[280px] w-full absolute -top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs bg-midnight px-6 text-center">After you've seen all the above augments, <br/>it will be totally randomized with the rest</span>
+            <span className="max-w-[280px] w-full absolute -top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs bg-midnight px-6 text-center">After you&apos;ve seen all the above augments, <br/>it will be totally randomized with the rest</span>
           </div>
         }
         {costWithRollsRemaining.map(({ cost, rollsRemaining }) => (

@@ -1,4 +1,4 @@
-import { baseStage, baseSlots } from "../../constants/constants";
+import { baseStage, baseSlots } from "@/constants/constants";
 
 interface IResetButton {
   stageSelected: number;

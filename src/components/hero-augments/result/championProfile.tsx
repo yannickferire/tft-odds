@@ -1,5 +1,6 @@
-import GoldIcon from "../../icons/goldIcon";
-import { bestItems } from '../../../data/bestItems';
+import Image from 'next/image';
+import GoldIcon from "@/components/icons/goldIcon";
+import { bestItems } from '@/data/bestItems';
 
 interface IChampionProfile {
   champion: any;
@@ -11,8 +12,9 @@ const ChampionProfile: React.FC<IChampionProfile> = ({ champion, traits, selecte
   return (
     <div className="col-span-3 sm:col-span-2 flex flex-col md:flex md:flex-row">
       <div className="relative mb-1 md:mr-4">
-      <img 
-      className={`mb-1 w-full md:max-w-[96px] aspect-square border-4 border-${champion.cost}cost rounded group-hover:grayscale group-hover:opacity-25 transition duration-500`}
+      <Image 
+      className={`mb-1 aspect-square border-4 border-${champion.cost}cost rounded group-hover:grayscale group-hover:opacity-25 transition duration-500`}
+      width="96" height="96"
       src={champion.image} 
       alt={champion.name} />
       <p className={`absolute text-crema text-xs sm:text-sm px-2 pb-0.5 text-center rounded bottom-1 bg-${champion.cost}cost group-hover:grayscale group-hover:opacity-25 transition duration-500`}> <GoldIcon color="crema" size={2.5} /> {champion.cost}</p>
@@ -25,7 +27,7 @@ const ChampionProfile: React.FC<IChampionProfile> = ({ champion, traits, selecte
             const path = trait === 'Threat' ? 'triangle pt-0 px-[6px] w-6 h-5' : 'hex w-5 h-6';
             return (
               <li className={`${path} flex items-center justify-center p-[3px] text-xs bg-midday ${selectedTraits.includes(trait)?'opacity-100':'opacity-50'}`} key={index}>
-                <img src={traitImage} alt={trait} title={trait} />
+                <Image src={traitImage} width="14" height="14" alt={trait} title={trait} />
               </li>
             )
           })}
@@ -34,7 +36,7 @@ const ChampionProfile: React.FC<IChampionProfile> = ({ champion, traits, selecte
           <ul className={`border-2 border-midnight mt-3 flex mx-auto w-full max-w-[80px] md:w-16 lg:w-20 z-10 overflow-hidden rounded`}>
             {bestItems[champion.name].map((item, index) => (
               <li className={`flex-1 ${index == 1?'border-l-2 border-r-2 border-midnight':null}`} key={index}>
-                <img src={`/images/items/${item.replace(/['\s]/g, '')}.png`} alt={item} title={item} />
+                <Image src={`/images/items/${item.replace(/['\s]/g, '')}.png`} width="24" height="24" alt={item} title={item} />
               </li>
             ))}
           </ul>

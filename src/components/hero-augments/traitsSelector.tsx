@@ -1,14 +1,15 @@
-import { numberOfSlots, numberOfTraits } from '../../constants/hero-augments';
+import Image from 'next/image';
+import { numberOfSlots, numberOfTraits } from '@/constants/hero-augments';
 
 interface ITraitsSelector {
   traits: any[];
   setTraits: (traits: any[]) => void;
-  traitsLoaded: boolean;
+  isLoading: boolean;
   activeTraits: number;
   stageSelected: number;
 }
 
-const TraitsSelector: React.FC<ITraitsSelector> = ({ traits, setTraits, traitsLoaded, activeTraits, stageSelected }) => {
+const TraitsSelector: React.FC<ITraitsSelector> = ({ traits, setTraits, isLoading, activeTraits, stageSelected }) => {
   const handleTraitSelection = (index: number) => {
     setTraits(
       traits.map((trait, i) => {
@@ -31,7 +32,7 @@ const TraitsSelector: React.FC<ITraitsSelector> = ({ traits, setTraits, traitsLo
   return (
     <div className="flex flex-col rounded w-100 overflow-hidden">
       <h2 className="rounded-t px-4 py-3 bg-earlynight"><span className={`${(stageSelected == 2)?'opacity-10 pointer-events-none':'opacity-100'} transition duration-500`}>Select your actives traits <small className="block sm:inline-block opacity-50">({activeTraits} trait{activeTraits > 1?'s':null} selected: {slotsTailored} slot{slotsTailored > 1?'s':null} tailored, {slotsRandom} slot{slotsRandom > 1 ?'s':null} random)</small></span></h2>
-      {traitsLoaded === true ? (
+      {isLoading === false ? (
       <ul className="relative grid grid-cols-8 md:grid-cols-10 gap-y-3 lg:gap-y-2 gap-x-2 lg:gap-x-1 bg-midday py-3 px-4 rounded-b">
         {traits.map((trait, index) => {
           const path = trait.name === 'Threat' ? 'triangle pt-0 px-[6px] w-7 h-6' : 'hex w-6 h-7';
@@ -43,7 +44,7 @@ const TraitsSelector: React.FC<ITraitsSelector> = ({ traits, setTraits, traitsLo
           >
             <div className={`h-full lg:py-1 lg:px-1.5 relative flex items-center rounded overflow-hidden cursor-pointer transition-all duration-500 ${trait.selected === true ? "opacity-100": "opacity-50"} hover:opacity-100`}>
               <figure className={`${path} flex items-center justify-center p-1 text-xs bg-midnight`}>
-                <img src={trait.image} alt={trait.name} />
+                <Image src={trait.image} width="16" height="16" alt={trait.name} />
               </figure>
               <h3 className={`hidden lg:inline transition-all duration-500 text-xs ml-2 ${trait.selected === true ? "underline underline-offset-4":null}`}>{trait.name}</h3>
             </div>
