@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { currentSet, setStage } from '@/constants/set';
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <header className="flex flex-col items-center text-center sm:flex-row mb-8 sm:items-end">
       <div className="flex items-end">
@@ -21,8 +24,20 @@ const Header = () => {
           <li>
             <Link 
               href="/" 
-              className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema"
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/' ? 'text-morning border-morning' : ''}`}
             >Champions</Link>
+          </li>
+          <li>
+            <Link 
+              href="/hero-augments" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/hero-augments' ? 'text-morning border-morning' : ''}`}
+            >Hero Augments</Link>
+          </li>
+          <li>
+            <Link 
+              href="/loaded-dice" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/loaded-dice' ? 'text-morning border-morning' : ''}`}
+            >Loaded Dice</Link>
           </li>
         </ul>
       </div>

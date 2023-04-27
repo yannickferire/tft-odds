@@ -16,18 +16,18 @@ const Footer = () => {
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Champions</Link>
             </li>
-            {/* <li>
-              <NavLink 
-                to={`/hero-augments`}
+            <li>
+              <Link 
+                href={`/hero-augments`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Hero Augments</NavLink>
+              >Hero Augments</Link>
             </li>
             <li>
-              <NavLink 
-                to={`/loaded-dice`}
+              <Link 
+                href={`/loaded-dice`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Loaded Dice</NavLink>
-            </li> */}
+              >Loaded Dice</Link>
+            </li>
             <li>
               <a className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a>
             </li>
