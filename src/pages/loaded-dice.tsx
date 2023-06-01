@@ -2,6 +2,7 @@ import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useQuery } from 'react-query';
+import { currentSet, setStage } from '@/constants/set';
 import { fetchChampions } from '@/utils/fetchChampions';
 import ChampionSelector from '@/components/loaded-dice/championSelector';
 import SelectedChampion from "@/components/loaded-dice/selectedChampion";
@@ -32,17 +33,17 @@ const LoadedDice: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Loaded Dice cheatsheet – TFT odds Set 8.5</title>
+        <title>Loaded Dice cheatsheet – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/loaded-dice" />
         <meta name="description" content="Maximize your chances of getting the champion you want with the Loaded Dice cheatsheet. Based on detailed statistics, this tool provides you with the optimal strategy to manipulate the odds. Good luck!" />
-        <meta property="og:title" content="Loaded Dice cheatsheet – TFT odds Set 8.5" />
+        <meta property="og:title" content="Loaded Dice cheatsheet – TFT odds Set 9" />
 		    <meta property="og:description" content="Maximize your chances of getting the champion you want with the Loaded Dice cheatsheet. Based on detailed statistics, this tool provides you with the optimal strategy to manipulate the odds. Good luck!" />
         <meta property="og:image" content="/share.jpg" />
         <meta property="og:url" content="https://tftodds.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Loaded Dice cheatsheet – TFT odds Set 8.5" />
+        <meta name="twitter:title" content="Loaded Dice cheatsheet – TFT odds Set 9" />
         <meta name="twitter:description" content="Maximize your chances of getting the champion you want with the Loaded Dice cheatsheet. Based on detailed statistics, this tool provides you with the optimal strategy to manipulate the odds. Good luck!" />
         <meta name="twitter:image" content="/share.jpg" />
       </Head>
