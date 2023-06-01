@@ -24,19 +24,19 @@ const Header = () => {
           <li>
             <Link 
               href="/" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/' ? 'text-morning border-morning' : ''}`}
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
           </li>
           <li>
             <Link 
               href="/hero-augments" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/hero-augments' ? 'text-morning border-morning' : ''}`}
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/hero-augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Hero Augments</Link>
           </li>
           <li>
             <Link 
               href="/loaded-dice" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema ${router.pathname === '/loaded-dice' ? 'text-morning border-morning' : ''}`}
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Loaded Dice</Link>
           </li>
         </ul>
