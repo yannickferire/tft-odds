@@ -67,7 +67,7 @@ const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, 
             <span className={`group-hover:scale-100 group-hover:opacity-100 transition duration-500 scale-75 origin-center opacity-0 absolute -mt-1 ml-1 text-6xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 text-${champion.cost}cost`}>+</span>
           <p className={`absolute text-crema text-sm px-2 pb-0.5 text-center rounded bottom-0 bg-${champion.cost}cost group-hover:grayscale group-hover:opacity-25 transition duration-500`}> <GoldIcon color="crema" size={2.5} /> {champion.cost}</p>
         </div>
-        <h3 className="animate-fromtop animate-delay-1 w-20 lg:w-24 mt-2 mb-2 text-center font-medium leading-4">{champion.name}</h3>
+        <h3 className="animate-fromtop animate-delay-1 w-20 lg:w-24 mt-2 mb-2 text-center font-semibold leading-4">{champion.name}</h3>
         <ul className="animate-fromtop animate-delay-2 w-20 lg:w-24 flex justify-center items-center gap-1">
           {champion.traits.map((trait, index) => {
             const traitImage = traits.find(traitObj => traitObj.name === trait).image;
@@ -81,10 +81,10 @@ const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, 
           })}
         </ul>
         {bestItems[champion.name] &&
-          <ul className={`animate-fromtop animate-delay-3 border-2 border-midnight mt-2 lg:mt-4 flex w-20 mx-auto justify-center z-10 overflow-hidden rounded`}>
+          <ul className={`animate-fromtop animate-delay-3 border border-midnight mt-2 lg:mt-4 flex w-20 mx-auto justify-center z-10 overflow-hidden rounded`}>
             {bestItems[champion.name].map((item, index) => (
               <li className={`flex-1 ${index == 1?'border-l-2 border-r-2 border-midnight':null}`} key={index}>
-                <Image src={`/images/items/${item.replace(/['\s]/g, '')}.png`} alt={item} title={item} width="24" height="24" />
+                <Image src={`/images/items/${item.replace(/['\s]/g, '')}.png`} alt={item} title={item} width="25" height="25" />
               </li>
             ))}
           </ul>

@@ -59,15 +59,15 @@ const DiceOdds: React.FC<IDiceOdds> = ({ champs, setChamps, traits }) => {
         {sortedChamps.map((champion, index) => (
           <li key={index} className="flex hover:bg-gradient-to-r from-midnight to-earlynight py-3">
             <header 
-              className="w-20 md:w-40  flex items-center gap-1 md:gap-2 cursor-pointer"
+              className="w-20 md:w-40 flex items-center gap-1 md:gap-2 cursor-pointer relative"
               onClick={() => handleChampionSelection(champion.name)}
               >
-              <Image 
-                className={`aspect-square border-2 border-${champion.cost}cost rounded relative`}
-                width="50" height="50"
-                src={champion.image} 
-                alt={champion.name}
-                title={champion.name} />
+              <div className={`border-2 border-${champion.cost}cost w-12 h-12 relative block rounded overflow-hidden`}>
+                <Image 
+                  className={`w-20 -left-7 -top-1 max-w-none absolute z-10`}
+                  src={champion.image} 
+                  alt={champion.name} width="53" height="53" />
+              </div>
               <div className="hidden md:block">
                 <h3 className="text-sm text-center mb-1 leading-tight opacity-30">{champion.name}</h3>
                 <ul className="w-full max-w-[96px] md:w-20 lg:w-24 justify-center mx-auto flex items-center gap-1">

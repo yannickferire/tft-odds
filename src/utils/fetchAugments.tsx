@@ -12,7 +12,7 @@ export async function fetchAugments() {
     // if champion is from Stage 2, then modifie url to get the correct image
     image: champion.icon.includes("Stage2")
       ? `${championImageURL}/${champion.apiName.toLowerCase()}_mobile.tft_set${currentSet}_stage2.png`
-      : `${championImageURL}/${champion.apiName.toLowerCase()}_square.tft_set${currentSet}.png`
+      : `${championImageURL}/${champion.apiName.toLowerCase()}_mobile.tft_set${currentSet}.png`
   }));
 
   const dataArray: any[] = Object.values(data);
