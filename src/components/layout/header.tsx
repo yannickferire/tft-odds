@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { currentSet, setStage } from '@/constants/set';
+import { stateSet, currentSet, setStage } from '@/constants/set';
 
 const Header = () => {
   const router = useRouter();
@@ -14,8 +14,8 @@ const Header = () => {
           <Image src="/tft-odds-logo.svg" alt="TFT Odds" width={160} height={43} />
         </Link>
         <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
-          <span className="opacity-40">
-            Set {currentSet}{setStage === 2 ? '.5': null}
+          <span className="opacity-40 flex">
+            Set {currentSet}{setStage === 2 ? '.5': null}{stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : null}
           </span>
         </p>
       </div>
@@ -32,6 +32,12 @@ const Header = () => {
               href="/loaded-dice" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Loaded Dice</Link>
+          </li>
+          <li className="relative">
+          <span className="opacity-40">Tome of Traits</span>
+            <span className="bg-earlynight px-2 py-1 whitespace-nowrap absolute -top-[26px] left-1/2 -translate-x-1/2 rounded text-[10px]">
+              <span className="opacity-40">Coming Soon</span>
+            </span>
           </li>
         </ul>
       </div>
