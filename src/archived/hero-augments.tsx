@@ -39,14 +39,14 @@
 //         <meta name="description" content="Discover how you can have the best chance to hit the champion augment your team needs! Find out the probability to hit every hero augments. Optimize your gameplay and climb the ranks with ease." />
 //         <meta property="og:title" content="Hero Augments probabilities – TFT odds" />
 // 		    <meta property="og:description" content="Discover how you can have the best chance to hit the champion augment your team needs! Find out the probability to hit every hero augments. Optimize your gameplay and climb the ranks with ease." />
-//         <meta property="og:image" content="/share.jpg" />
+//         <meta property="og:image" content="https://tftodds.com/share.jpg" />
 //         <meta property="og:url" content="https://tftodds.com/hero-augments" />
 //         <meta property="og:type" content="website" />
 //         <meta name="twitter:card" content="summary_large_image" />
 // 		    <meta name="twitter:site" content="@tftodds" />
 //         <meta name="twitter:title" content="Hero Augments probabilities – TFT odds" />
 //         <meta name="twitter:description" content="Discover how you can have the best chance to hit the champion augment your team needs! Find out the probability to hit every hero augments. Optimize your gameplay and climb the ranks with ease." />
-//         <meta name="twitter:image" content="/share.jpg" />
+//         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
 //       </Head>
 //       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Hero augments</strong> statistics and probabilities<span className="hidden"> – Best strategies to win!</span></h1>
 //       <section className="flex items-start flex-col flex-1">
