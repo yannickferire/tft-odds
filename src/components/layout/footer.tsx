@@ -18,12 +18,6 @@ const Footer = () => {
             </li>
             <li>
               <Link 
-                href={`/hero-augments`}
-                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Hero Augments</Link>
-            </li>
-            <li>
-              <Link 
                 href={`/loaded-dice`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Loaded Dice</Link>

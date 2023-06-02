@@ -107,10 +107,9 @@ const ChampionSelector: React.FC<IChampionSelector> = ({ champs, setChamps, isLo
             >
               <div className="w-full h-full relative block rounded overflow-hidden">
                 <Image 
-                className={`-left-7 -top-1 max-w-none absolute z-10`}
-                width="80" height="80"
-                src={champion.image} 
-                alt={champion.name} />
+                  className={`w-20 -left-7 -top-1 max-w-none absolute z-10`}
+                  src={champion.image} 
+                  alt={champion.name} width="53" height="53" />
               </div>
             </li>
           ))}

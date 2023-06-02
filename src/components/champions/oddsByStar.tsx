@@ -49,7 +49,7 @@ const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool
   return (
     <div className="flex flex-col text-center flex-1">
       <span className="mb-4">
-        <span className={`animate-fromtop animate-delay-${star*2} rounded bg-${starColors[star-1]} align-center justify-center w-16 inline-block pb-1`}>
+        <span className={`animate-fromtop animate-delay-${star*2} rounded bg-${starColors[star-1]} align-center justify-center px-2 inline-block pb-1`}>
           {starArray.map((index) => (
               <StarIcon key={index} size={4} color={starColors[star-1]} />
           ))}
@@ -64,13 +64,13 @@ const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool
             <>
               <span>{ rollsNeeded(copiesNeeded) } <RollIcon color="midnight" /><span className="hidden sm:inline"> = <GoldIcon color="midnight" /> { goldsNeeded(rollsNeeded(copiesNeeded)) }</span></span>
               <span>{ copiesNeeded } <CopyIcon color="midnight" /><span className="hidden sm:inline"> = <GoldIcon color="midnight" /> {champion.cost * copiesNeeded }</span></span>
-              <span className="mt-2 text-xl md:text-2xl font-medium"><GoldIcon size={4} color="midnight" /> {goldsNeeded(rollsNeeded(copiesNeeded)) + champion.cost * copiesNeeded}</span>
+              <span className="mt-2 text-xl md:text-2xl font-semibold"><GoldIcon size={4} color="midnight" /> {goldsNeeded(rollsNeeded(copiesNeeded)) + champion.cost * copiesNeeded}</span>
             </>
           ):(
             <>
               <span>∞ <RollIcon color="midnight" /> = <GoldIcon color="midnight" /> ∞</span>
               <span>{ copiesNeeded } <CopyIcon color="midnight" /> = <GoldIcon color="midnight" /> {champion.cost * copiesNeeded }</span>
-              <span className="mt-2 text-xl md:text-2xl font-medium"><GoldIcon size={4} color="midnight" /> ∞</span>
+              <span className="mt-2 text-xl md:text-2xl font-semibold"><GoldIcon size={4} color="midnight" /> ∞</span>
             </>
           )}
           
