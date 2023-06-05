@@ -1,6 +1,6 @@
 export const bestItems: { [champion: string]: any[] } = {
   "Aatrox": ["Bloodthirster", "Titans Resolve", "Warmogs Armor"], 
-  "Ahri": ["Blue buff", "Jeweled Gauntlet", "Hextech Gunblade"],
+  "Ahri": ["Blue Buff", "Jeweled Gauntlet", "Hextech Gunblade"],
   "Akshan": ["Last Whisper", "Infinity Edge", "Guardbreaker"],
   "Aphelios": ["Last Whisper", "Guinsoos Rageblade", "Giant Slayer"],
   "Ashe": ["Zeke's Herald", "Guinsoos Rageblade", "Spear of Shojin"],
