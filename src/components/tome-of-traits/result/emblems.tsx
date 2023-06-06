@@ -48,7 +48,7 @@ const Champions: React.FC<IEmblems> = ({ traits, selectedTraits, validTraits, em
               {emblem.item ? (
                 <>
                   <p className="text-xs flex items-center">
-                    <Image className="mr-1 -mt-px" src={`/images/icons/${items[emblem.item].type.replace(/['\s.]/g, '')}.svg`} width={12} height={12} alt="" /> 
+                    <Image className="mr-1 -mt-px" src={`/images/icons/${items[emblem.item].type.toLowerCase().replace(/['\s.]/g, '')}.svg`} width={12} height={12} alt="" /> 
                     <span className="opacity-50">+{items[emblem.item].stat} {items[emblem.item].type}</span>
                   </p>
                 </>
