@@ -50,7 +50,7 @@ const TomeOfTraits: NextPage = () => {
         <meta name="twitter:description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay and climb the ranks with ease." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Tome of traits</strong> statistics and probabilities<span className="hidden"> – Best strategies to win!</span></h1>
+      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Tome of traits</strong> probabilities<span className="hidden"> – Best strategies to win!</span></h1>
       <section className="flex items-start flex-col flex-1">
         <aside className="flex flex-col w-full mb-6">
           <TraitsSelector traits={traits} setTraits={setTraits} isLoading={isLoading} selectedTraits={selectedTraits} emblemsRandom={emblemsRandom} emblemsTailored={emblemsTailored} />
