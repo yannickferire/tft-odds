@@ -23,6 +23,12 @@ const Footer = () => {
               >Loaded Dice</Link>
             </li>
             <li>
+              <Link 
+                href={`/tome-of-traits`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Tome of traits</Link>
+            </li>
+            <li>
               <a className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a>
             </li>
           </ul>

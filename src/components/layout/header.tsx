@@ -33,11 +33,11 @@ const Header = () => {
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Loaded Dice</Link>
           </li>
-          <li className="relative">
-          <span className="opacity-40">Tome of Traits</span>
-            <span className="bg-earlynight px-2 py-1 whitespace-nowrap absolute -top-[26px] left-1/2 -translate-x-1/2 rounded text-[10px]">
-              <span className="opacity-40">Coming Soon</span>
-            </span>
+          <li>
+            <Link 
+              href="/tome-of-traits" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/tome-of-traits' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Tome of Traits</Link>
           </li>
         </ul>
       </div>

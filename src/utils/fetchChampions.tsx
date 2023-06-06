@@ -5,8 +5,6 @@ export async function fetchChampions() {
   const data = await response.json();
 
   // champions
-  // const dataChampions = data.sets[currentSet].champions;
-  // const filteredChampions = dataChampions.filter((champion: any) => champion.traits.length > 0);
   const dataChampions = data.sets[currentSet].champions;
   const filteredChampions = dataChampions.filter((champion: any, index: number, array: any[]) => {
     const hasTraits =  champion.traits.length > 0;
@@ -39,8 +37,12 @@ export async function fetchChampions() {
       return a.name.localeCompare(b.name); // tri par ordre alphabétique pour les autres noms de traits
     }
   });
+
+  //emblems
+  const items = data.items;
+  const emblems = items.filter((item: any) => item.apiName.includes("TFT9") && item.apiName.includes("Item") && item.apiName.includes("Emblem"));
   
-  const enhancedData = { champions: withImageChampions, traits: sortedTraits };
+  const enhancedData = { champions: withImageChampions, traits: sortedTraits, emblems };
 
   return enhancedData;
 }
