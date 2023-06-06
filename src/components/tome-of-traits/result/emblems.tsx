@@ -40,7 +40,7 @@ const Champions: React.FC<IEmblems> = ({ traits, selectedTraits, validTraits, em
               <h2 className="font-semibold">{emblem.name}</h2>
               {emblem.item && (
                 <div className="opacity-50 -mt-0.5 ml-3 flex gap-1 items-center group-hover:opacity-100 transition-all duration-500">
-                  <Image src={`/images/items/spatula.png`} alt="Spatula" width={20} height={20} /> <span className="opacity-50 text-xs">+</span> 
+                  <Image src={`/images/items/Spatula.png`} alt="Spatula" width={20} height={20} /> <span className="opacity-50 text-xs">+</span> 
                   <Image src={`/images/items/${emblem.item.replace(/['\s.]/g, '')}.png`} alt={emblem.item} width={20} height={20} />
                 </div>
               )}
