@@ -41,7 +41,7 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading }) => {
     <article className="pb-4 ml-4">
       <h3 className="opacity-50 mb-3 text-sm">Best units to use</h3>
       {isLoading === false ? (
-        <ul className="flex gap-2">
+        <ul className="flex flex-wrap gap-2 gap-y-4">
         {sortedBestUnits.map((champion, index) => (
           <li 
             key={index} 
@@ -62,7 +62,7 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading }) => {
         ))}
         </ul>
       ) : (
-        <ul className="flex gap-2">
+        <ul className="flex flex-wrap gap-2 gap-y-4">
           {skeletonNumberOfBestUnits.map((index) => (
             <li 
               key={index} 
