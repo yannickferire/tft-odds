@@ -7,6 +7,7 @@ import { currentSet, setStage } from '@/constants/set';
 import { validEmblems } from "@/constants/tome-of-traits";
 import TraitsSelector from "@/components/tome-of-traits/traitsSelector";
 import Emblems from "@/components/tome-of-traits/result/emblems";
+import BestUnits from "@/components/tome-of-traits/bestUnits";
 
 const TomeOfTraits: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
@@ -33,6 +34,34 @@ const TomeOfTraits: NextPage = () => {
   if (selectedTraits >= 12) { emblemsTailored = 4; }
   const emblemsRandom = emblems - emblemsTailored;
 
+  const bestUnits = champs.filter((champion) => {
+    const invalidTraits = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait));
+    const hasValidTrait = invalidTraits.length === 0;
+    const invalidTraitCount = invalidTraits.length;
+    return !hasValidTrait;
+  }).map((champion) => {
+    const invalidTraitCount = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait)).length;
+    let tier = "b";
+    if (invalidTraitCount === 2) { tier = "s"; }
+    if (invalidTraitCount === 1 && champion.cost <= 3) { tier = "a"; }
+    
+    return {
+      ...champion,
+      invalidTraitCount: invalidTraitCount,
+      tier: tier
+    };
+  });
+
+  const sortedBestUnits = bestUnits.sort((a, b) => {
+    if (a.tier === "s" && b.tier !== "s") return -1;
+    if (a.tier !== "s" && b.tier === "s") return 1;
+    if (a.tier < b.tier) return -1;
+    if (a.tier > b.tier) return 1;
+    if (a.cost < b.cost) return -1;
+    if (a.cost > b.cost) return 1;
+    return 0;
+  });
+
   return (
     <>
       <Head>
@@ -52,9 +81,10 @@ const TomeOfTraits: NextPage = () => {
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Tome of traits</strong> probabilities<span className="hidden"> – Best strategies to win!</span></h1>
       <section className="flex items-start flex-col flex-1">
-        <aside className="flex flex-col w-full mb-6">
+        <aside className="flex flex-col w-full mb-4">
           <TraitsSelector traits={traits} setTraits={setTraits} isLoading={isLoading} selectedTraits={selectedTraits} emblemsRandom={emblemsRandom} emblemsTailored={emblemsTailored} />
         </aside>
+        <BestUnits champs={champs} />
         <main className="mt-4 mb-16 w-full">
           <Emblems traits={traits} selectedTraits={selectedTraits} validTraits={validTraits} emblemsRandom={emblemsRandom} emblemsTailored={emblemsTailored} />
         </main>
