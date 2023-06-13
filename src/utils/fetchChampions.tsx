@@ -39,10 +39,10 @@ export async function fetchChampions() {
   });
 
   //emblems
-  const items = data.items;
-  const emblems = items.filter((item: any) => item.apiName.includes("TFT9") && item.apiName.includes("Item") && item.apiName.includes("Emblem"));
+  // const items = data.items;
+  // const emblems = items.filter((item: any) => item.apiName.includes("TFT9") && item.apiName.includes("Item") && item.apiName.includes("Emblem"));
   
-  const enhancedData = { champions: withImageChampions, traits: sortedTraits, emblems };
+  const enhancedData = { champions: withImageChampions, traits: sortedTraits };
 
   return enhancedData;
 }

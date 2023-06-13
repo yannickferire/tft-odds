@@ -15,7 +15,8 @@ const Header = () => {
         </Link>
         <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
           <span className="opacity-40 flex">
-            Set {currentSet}{setStage === 2 ? '.5': null}{stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : null}
+            Set {currentSet}{setStage === 2 ? '.5': null}
+            {/* {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : null} */}
           </span>
         </p>
       </div>
@@ -36,8 +37,41 @@ const Header = () => {
           <li>
             <Link 
               href="/tome-of-traits" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/tome-of-traits' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+              className={`relative z-20 text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/tome-of-traits' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Tome of Traits</Link>
+          </li>
+          <li className="hidden sm:inline-block relative group">
+            <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema">Data <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span></p>
+            <div className="hidden group-hover:inline-block absolute right-0 top-0 pt-8 cursor-pointer z-10">
+              <ul className="text-left w-32 bg-midday rounded-sm">
+                <li>
+                  <Link 
+                    href="/data/augments" 
+                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Augments</Link>
+                </li>
+                <li>
+                  <p 
+                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-default opacity-50`}
+                  >Piltover <span className="ml-1 bg-midnight px-2 rounded text-sm">soon</span></p>
+                </li>
+                <li>
+                  <p 
+                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-default opacity-50`}
+                  >Portals <span className="ml-1 bg-midnight px-2 rounded text-sm">soon</span></p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="sm:hidden flex-1 mt-2">
+        <ul className="flex justify-end gap-4 md:gap-6">
+          <li>
+            <Link 
+              href="/data/augments" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Augments</Link>
           </li>
         </ul>
       </div>

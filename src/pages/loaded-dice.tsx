@@ -39,7 +39,7 @@ const LoadedDice: NextPage = () => {
         <meta property="og:title" content="Loaded Dice cheatsheet – TFT odds Set 9" />
 		    <meta property="og:description" content="Maximize your chances of getting the champion you want with the Loaded Dice cheatsheet. Based on detailed statistics, this tool provides you with the optimal strategy to manipulate the odds. Good luck!" />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com" />
+        <meta property="og:url" content="https://tftodds.com/loaded-dice" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
