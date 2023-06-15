@@ -142,7 +142,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><strong className="text-morning">6 Piltovers</strong> rewards</h2>
+      <h2 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><strong className="text-morning">6 Piltovers</strong> extra rewards</h2>
       <Table className="mb-24">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
