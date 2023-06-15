@@ -29,13 +29,21 @@ const Footer = () => {
               >Tome of traits</Link>
             </li>
             <li>
+              <a className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a>
+            </li>
+          </ul>
+          <ul className="flex-1 text-left text-xs text-crema leading-5">
+            <li>
               <Link 
                 href={`/data/augments`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Distribution</Link>
             </li>
             <li>
-              <a className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a>
+              <Link 
+                href={`/data/augments`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Piltover Rewards</Link>
             </li>
           </ul>
           <p className="flex-1 text-center sm:text-right text-xs text-crema leading-5">

@@ -51,9 +51,10 @@ const Header = () => {
                   >Augments</Link>
                 </li>
                 <li>
-                  <p 
-                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-default opacity-50`}
-                  >Piltover <span className="ml-1 bg-midnight px-2 rounded text-sm">soon</span></p>
+                  <Link 
+                    href="/data/piltover" 
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/piltover' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Piltover</Link>
                 </li>
                 <li>
                   <p 
