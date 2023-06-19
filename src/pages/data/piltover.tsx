@@ -130,7 +130,7 @@ const Piltover: NextPage = () => {
               return (
                 <TableRow key={uniqueKey} className="border">
                   {index === 0 && (
-                    <TableCell rowSpan={rowSpan} className={`py-1 font-semibold border border-crema border-opacity-20`}>
+                    <TableCell rowSpan={rowSpan} className={`py-1 font-semibold border border-crema border-opacity-20 bg-midnight`}>
                       {key}
                     </TableCell>
                   )}
