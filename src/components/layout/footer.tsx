@@ -41,9 +41,21 @@ const Footer = () => {
             </li>
             <li>
               <Link 
-                href={`/data/augments`}
+                href={`/data/augments-rewards`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Augments Rewards</Link>
+            </li>
+            <li>
+              <Link 
+                href={`/data/piltover`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Piltover Rewards</Link>
+            </li>
+            <li>
+              <Link 
+                href={`/data/portals`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Portals Data</Link>
             </li>
           </ul>
           <p className="flex-1 text-center sm:text-right text-xs text-crema leading-5">

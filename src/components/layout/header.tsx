@@ -43,23 +43,30 @@ const Header = () => {
           <li className="hidden sm:inline-block relative group">
             <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight hover:border-crema">Data <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span></p>
             <div className="hidden group-hover:inline-block absolute right-0 top-0 pt-8 cursor-pointer z-10">
-              <ul className="text-left w-32 bg-midday rounded-sm">
+              <ul className="text-left w-44 bg-midday rounded-sm">
                 <li>
                   <Link 
                     href="/data/augments" 
                     className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Augments</Link>
+                  >Augments Distribution</Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/data/augments-rewards" 
+                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-rewards' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Augments Rewards</Link>
                 </li>
                 <li>
                   <Link 
                     href="/data/piltover" 
                     className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/piltover' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Piltover</Link>
+                  >Piltover Rewards</Link>
                 </li>
                 <li>
-                  <p 
-                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-default opacity-50`}
-                  >Portals <span className="ml-1 bg-midnight px-2 rounded text-sm">soon</span></p>
+                  <Link 
+                    href="/data/portals" 
+                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Portals Rewards</Link>
                 </li>
               </ul>
             </div>
