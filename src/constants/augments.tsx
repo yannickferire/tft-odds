@@ -161,3 +161,12 @@ export const spoilsOfWarPrismaticGold = {
   "2 Gold": 20,
   "3 Gold": 10
 }
+
+export const marchOfProgress = {
+  "Level 4": "2-1",
+  "Level 5": "2-2",
+  "Level 6": "2-7",
+  "Level 7": "3-6",
+  "Level 8": "5-2",
+  "Level 9": "6-6",
+}

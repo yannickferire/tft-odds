@@ -46,15 +46,15 @@ const Header = () => {
               <ul className="text-left w-44 bg-midday rounded-sm">
                 <li>
                   <Link 
-                    href="/data/augments" 
-                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                    href="/data/augments-distribution" 
+                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Distribution</Link>
                 </li>
                 <li>
                   <Link 
-                    href="/data/augments-rewards" 
-                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-rewards' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Augments Rewards</Link>
+                    href="/data/augments-tables" 
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Augments Tables</Link>
                 </li>
                 <li>
                   <Link 
@@ -77,15 +77,15 @@ const Header = () => {
         <ul className="flex justify-end gap-4 md:gap-6">
           <li>
             <Link 
-              href="/data/augments" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+              href="/data/augments-distribution" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Augments Distribution</Link>
           </li>
           <li>
             <Link 
-              href="/data/augments-rewards" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments-rewards' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Augments Rewards</Link>
+              href="/data/augments-tables" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Augments Tables</Link>
           </li>
         </ul>
       </div>
