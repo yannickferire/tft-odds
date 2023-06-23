@@ -45,9 +45,9 @@ const DataAugments: NextPage = () => {
         <TableBody>
           {augmentsDistributionDetailed.map((scenario, id) => (
             <TableRow key={id} className="border-0">
-              <TableCell className={`py-1 bg-${scenario[1].toLowerCase()} font-semibold text-midnight border-2 border-crema border-opacity-20`}>{scenario[1]}</TableCell>
-              <TableCell className={`py-1 bg-${scenario[2].toLowerCase()} font-semibold text-midnight border-2 border-crema border-opacity-20`}>{scenario[2]}</TableCell>
-              <TableCell className={`py-1 bg-${scenario[3].toLowerCase()} font-semibold text-midnight border-2 border-crema border-opacity-20`}>{scenario[3]}</TableCell>
+              <TableCell className={`py-1 bg-${scenario[1].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[1]}</TableCell>
+              <TableCell className={`py-1 bg-${scenario[2].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[2]}</TableCell>
+              <TableCell className={`py-1 bg-${scenario[3].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[3]}</TableCell>
               <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{scenario["percent"]}%</TableCell>
             </TableRow>
           ))}
@@ -65,7 +65,7 @@ const DataAugments: NextPage = () => {
         <TableBody>
           {augmentsDistribution.map((scenario, id) => (
             <TableRow key={id} className="border-0">
-              <TableCell className={`py-1 bg-${scenario["tier"].toLowerCase()} font-semibold text-midnight border-2 border-crema border-opacity-20`}>{scenario["tier"]}</TableCell>
+              <TableCell className={`py-1 bg-${scenario["tier"].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario["tier"]}</TableCell>
               <TableCell className="py-1 font-semibold text-lg text-center border border-crema border-opacity-20">{scenario[1]}%</TableCell>
               <TableCell className="py-1 font-semibold text-lg text-center border border-crema border-opacity-20">{scenario[2]}%</TableCell>
               <TableCell className="py-1 font-semibold text-lg text-center border-b border-r border-crema border-opacity-20">{scenario[3]}%</TableCell>

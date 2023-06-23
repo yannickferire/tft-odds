@@ -79,7 +79,29 @@ const Header = () => {
             <Link 
               href="/data/augments" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Augments</Link>
+            >Augments Distribution</Link>
+          </li>
+          <li>
+            <Link 
+              href="/data/augments-rewards" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments-rewards' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Augments Rewards</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="sm:hidden flex-1 mt-2">
+        <ul className="flex justify-end gap-4 md:gap-6">
+          <li>
+            <Link 
+              href="/data/piltover" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/piltover' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Piltover Rewards</Link>
+          </li>
+          <li>
+            <Link 
+              href="/data/portals" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Portals Rewards</Link>
           </li>
         </ul>
       </div>

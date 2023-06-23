@@ -36,7 +36,7 @@ const Piltover: NextPage = () => {
       <Table className="mb-16">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead className="text-left">Rewards</TableHead>
+            <TableHead className="text-left"><span className="mr-2 bg-prismatic text-midnight/[.8] px-1 rounded-sm">Prismatic</span> The Golden Egg rewards</TableHead>
             <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
           </TableRow>
         </TableHeader>
@@ -59,7 +59,7 @@ const Piltover: NextPage = () => {
           <Table>
             <TableHeader>
               <TableRow className="!border-b !border-crema !border-opacity-20">
-                <TableHead className="text-left">Silver Spoiler of War Rewards – 20% to drop loot</TableHead>
+                <TableHead className="text-left"><span className="mr-2 bg-silver text-midnight/[.8] px-1 rounded-sm">Silver</span> Spoils of War rewards – 20% to drop loot</TableHead>
                 <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
               </TableRow>
             </TableHeader>
@@ -103,7 +103,7 @@ const Piltover: NextPage = () => {
           <Table>
             <TableHeader>
               <TableRow className="!border-b !border-crema !border-opacity-20">
-                <TableHead className="text-left">Gold Spoiler of War Rewards – 30% to drop loot</TableHead>
+                <TableHead className="text-left"><span className="mr-2 bg-gold text-midnight/[.8] px-1 rounded-sm">Gold</span> Spoils of War rewards – 30% to drop loot</TableHead>
                 <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
               </TableRow>
             </TableHeader>
@@ -147,7 +147,7 @@ const Piltover: NextPage = () => {
           <Table>
             <TableHeader>
               <TableRow className="!border-b !border-crema !border-opacity-20">
-                <TableHead className="text-left">Prismatic Spoiler of War Rewards – 40% to drop loot</TableHead>
+                <TableHead className="text-left"><span className="mr-2 bg-prismatic text-midnight/[.8] px-1 rounded-sm">Prismatic</span> Spoils of War rewards – 40% to drop loot</TableHead>
                 <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
               </TableRow>
             </TableHeader>
