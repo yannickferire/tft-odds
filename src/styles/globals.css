@@ -73,6 +73,7 @@ svg { vertical-align: baseline; }
   pointer-events: none;
   z-index: 20;
 }
+.select.expand-black::before { background-image: url(/images/icons/expand.svg); }
 select {
   -webkit-appearance: none;
   -moz-appearance: none;

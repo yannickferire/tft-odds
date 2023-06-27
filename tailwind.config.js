@@ -38,6 +38,9 @@ module.exports = {
 		"w-2.5",
 		"w-3",
 		"w-4",
+		"focus:ring-silver/[.30]",
+		"focus:ring-gold/[.30]",
+		"focus:ring-prismatic/[.30]",
 	],
 	theme: {
 		screens: {

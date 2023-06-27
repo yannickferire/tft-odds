@@ -32,11 +32,11 @@ const Footer = () => {
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Tome of traits</Link>
             </li>
-            <li className="flex">
-              <p 
-                className="leading-[30px] sm:leading-normal inline-block opacity-20 tracking-wider"
-              >Augments</p>
-              <span className="opacity-50 px-1 bg-midnight ml-1 rounded-sm">Soon</span>
+            <li>
+              <Link 
+                href={`/augments-tier`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Augments Tier</Link>
             </li>
           </ul>
           <ul className="flex-1 text-left text-xs text-crema leading-5">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </svg> @tftodds</a>
             </li>
             <li>
-              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="18" height="18" src="/images/ranks/platinum.svg" alt="Rank: Platinum" /> tftodds com</a>
+              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/diamond.webp" alt="Rank: Diamond" /> tftodds com</a>
             </li>
             <li>
               <a href="mailto:hello@tftodds.com" className="leading-[30px] sm:leading-normal block opacity-40 hover:opacity-100 tracking-wider font-bold">hello@tftodds.com</a>
