@@ -35,12 +35,21 @@ const Slot: React.FC<ISlot> = ({ index, slotsTier, setSlotsTier }) => {
         disabled={slotsTier[index - 2] === ""}
         className={`w-full ${slotsTier[index-1] == '' ? 'bg-midday' : 'text-midnight/[.8] focus:ring-'+slotsTier[index-1].toLowerCase()+'/[.30] expand-black bg-'+slotsTier[index-1].toLowerCase()} font-semibold text-crema pl-4 pr-9 z-10 relative rounded focus:outline-none focus:ring  transition-all duration-500`}>
         <option defaultValue="" disabled={slotsTier[index - 1] !== ""}>Augment {index}</option>
-        {disabledOptions.map((augment, index) => (
-          <option value={augment} key={index} disabled>{augment}</option>
-        ))}
-        {enabledOptions.map((augment, index) => (
-          <option value={augment} key={index}>{augment}</option>
-        ))}
+        {index === 3 && (
+          <>
+            {disabledOptions.map((augment, index) => (
+              <option value={augment} key={index} disabled>{augment}</option>
+            ))}
+            {enabledOptions.map((augment, index) => (
+              <option value={augment} key={index}>{augment}</option>
+            ))}
+          </>
+        )}
+        {index !== 3 && (
+          availablePossibilities.map((augment, index) => (
+            <option value={augment} key={index}>{augment}</option>
+          ))
+        )}
       </select>
     </div>
   )
