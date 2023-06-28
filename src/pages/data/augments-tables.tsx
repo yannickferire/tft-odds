@@ -53,7 +53,7 @@ const Piltover: NextPage = () => {
         </TableBody>
       </Table>
       <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">March of Progress</strong></h2>
-      <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 10 XP now, and bonus XP equal to your level at the start of every player combat round. You can no longer use gold to level up.</p>
+      <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 3 XP now, and bonus XP equal to your level at the start of every player combat round. You can no longer use gold to level up.</p>
       <Table className="mb-16">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
@@ -73,8 +73,8 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Spoils of War</strong></h2>
-      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy unit, there&apos;s a 20|30|40% chance to drop amazing loot.</p>
+      <h2 id="spoils-of-war" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Spoils of War</strong></h2>
+      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy unit, there&apos;s a 20|33|40% chance to drop amazing loot.</p>
       <div className="flex mb-6 gap-6">
         <div className="flex-1">
           <Table>
