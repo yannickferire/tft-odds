@@ -74,7 +74,7 @@ const Piltover: NextPage = () => {
         </TableBody>
       </Table>
       <h2 id="spoils-of-war" className="text-3xl pt-8 mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Spoils of War</strong></h2>
-      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy unit, there&apos;s a 20|33|40% chance to drop amazing loot.</p>
+      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy unit, there&apos;s a 20|30|40% chance to drop amazing loot.</p>
       <div className="flex mb-6 gap-6">
         <div className="flex-1">
           <Table>
