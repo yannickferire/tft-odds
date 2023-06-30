@@ -12,9 +12,10 @@ import {
 
 interface IResultPossibilities {
   slotsTier: string[];
+  setSlotsTier: (tier: string[]) => void;
 }
 
-const ResultPossibilities: React.FC<IResultPossibilities> = ({ slotsTier }) => {
+const ResultPossibilities: React.FC<IResultPossibilities> = ({ slotsTier, setSlotsTier }) => {
   let positionOfAugment = "First";
   const firstEmptySlot = slotsTier.findIndex((tier) => tier === '');
   switch (firstEmptySlot) {
@@ -64,6 +65,12 @@ const ResultPossibilities: React.FC<IResultPossibilities> = ({ slotsTier }) => {
     );
   });
 
+  const handleTierSelect = (tier: string) => {
+    const newSlotsTier = [...slotsTier];
+    newSlotsTier[firstEmptySlot] = tier;
+    setSlotsTier(newSlotsTier);
+  }
+
   return (
     <>
       {filteredScenario && slotsTier.every((tier) => tier !== '') ? (
@@ -88,7 +95,7 @@ const ResultPossibilities: React.FC<IResultPossibilities> = ({ slotsTier }) => {
         <TableBody>
           {combinedPercentages.map((scenario: any, id: number) => (
             <TableRow key={id} className="border-0">
-              <TableCell className={`py-3 bg-${scenario["key"].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario["key"]}</TableCell>
+              <TableCell onClick={() => handleTierSelect(scenario["key"])} className={`cursor-pointer py-3 bg-${scenario["key"].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario["key"]}</TableCell>
               <TableCell className="py-3 w-1/3 md:w-1/2 font-semibold text-xl text-center border border-crema border-opacity-20">{scenario["percent"].toFixed(2)}%</TableCell>
             </TableRow>
           ))}

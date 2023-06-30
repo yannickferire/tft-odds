@@ -47,7 +47,7 @@ const HeroAugments: NextPage = () => {
           </div>
         </aside>
         <main className="mt-4 mb-24 w-full">
-          <ResultPossibilities slotsTier={slotsTier} />
+          <ResultPossibilities slotsTier={slotsTier} setSlotsTier={setSlotsTier} />
         </main>
       </section>
     </>
