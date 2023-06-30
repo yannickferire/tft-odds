@@ -34,26 +34,42 @@ const Piltover: NextPage = () => {
       <Table className="mb-16">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead>Energy</TableHead>
+            <TableHead className="text-left">Energy</TableHead>
+            <TableHead>Value</TableHead>
             <TableHead>Rewards</TableHead>
             <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {Object.entries(piltoverRewards).flatMap(([key, value]) => {
-            const rowCount: number = Object.keys(value).length; // number of lines for the current row
+          {Object.entries(piltoverRewards).flatMap(([key, reward]) => {
+            const rewardEntries = Object.entries(reward).filter(([entryKey]) => entryKey !== "generic");
+            const rowCount: number = Object.keys(rewardEntries).length; // number of lines for the current row
             const rowSpan: any = rowCount === 1 ? undefined : rowCount; // rowspan attribute
-            return Object.entries(value).map(([energy, reward], index) => {
+            return rewardEntries.map(([entryKey, entryValue], index) => {
               const uniqueKey = `${key}-${index + 1}`;
               return (
-                <TableRow key={uniqueKey} className="border">
+                <TableRow key={uniqueKey} className={`border ${index === 0 && reward.generic !== "1 Gold" ? "border-t-midday border-t-2": null}`}>
                   {index === 0 && (
                     <TableCell rowSpan={rowSpan} className={`py-1 font-semibold border border-crema border-opacity-20 bg-midnight`}>
-                      {key}
+                      {key.split(';').length > 1 && (
+                        <>
+                          <span className="block leading-tight">{key.split(';')[0]}</span>
+                          <span className="text-sm block font-normal opacity-40">{key.split(';')[1]}</span>
+                        </>
+                      )}
                     </TableCell>
                   )}
-                  <TableCell className={`py-2 border border-crema border-opacity-20`}>{formatConsumables(reward.value)}</TableCell>
-                  <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward.percent}%</TableCell>
+                  {index === 0 && (
+                    <TableCell rowSpan={rowSpan} className={`py-1 text-center font-semibold border border-crema border-opacity-20 bg-midnight`}>
+                      {formatConsumables(reward.generic)}
+                    </TableCell>
+                  )}
+                  {typeof entryValue === "object" && (
+                    <>
+                      <TableCell className={`py-2 border border-crema border-opacity-20`}>{formatConsumables(entryValue.value)}</TableCell>
+                      <TableCell className={`py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20`}>{entryValue.percent}%</TableCell>
+                    </>
+                  )}
                 </TableRow>
               );
             });

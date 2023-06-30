@@ -32,7 +32,7 @@ const Header = () => {
           <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
             <span className="opacity-40 flex">
               Set {currentSet}{setStage === 2 ? '.5': null}
-              {/* {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : null} */}
+              {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : <small className="ml-1 opacity-50">– Patch 13.13b</small>}
             </span>
           </p>
         </div>
