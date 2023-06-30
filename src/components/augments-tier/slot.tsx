@@ -1,4 +1,4 @@
-import { augmentsDistribution, augmentsDistributionDetailed } from "@/constants/augments";
+import { augmentsDistributionDetailed } from "@/constants/augments";
 
 interface ISlot {
   index: number;
@@ -14,42 +14,41 @@ const Slot: React.FC<ISlot> = ({ index, slotsTier, setSlotsTier }) => {
     setSlotsTier(updatedSlotsTier);
   }
 
-  const availablePossibilities = ["Silver", "Gold", "Prismatic"];
-  const filteredAugments = augmentsDistributionDetailed.filter((augment: any) => {
-    for (let i = 0; i < firstEmptySlot; i++) {
-      if (augment[i + 1] !== slotsTier[i]) {
-        return false;
-      }
+  const otherSlotsTier = slotsTier.reduce((acc: any, value, i) => {
+    if (i+1 !== index) {
+      acc[i+1] = value;
     }
-    return true;
+    return acc;
+  }, {});
+  const filteredAugments = augmentsDistributionDetailed.filter((augment: any) => {
+    return Object.entries(otherSlotsTier).every(([tier, value]) => {
+      return value === '' || value === '*' || augment[tier] === value;
+    });
   });
-  const currentPossibilities = filteredAugments.map((augment: any) => augment[firstEmptySlot + 1]);
+  const currentPossibilities = filteredAugments.map((augment: any) => augment[index]);
+  const availablePossibilities = ["Silver", "Gold", "Prismatic"];
   const disabledOptions = availablePossibilities.filter(option => !currentPossibilities.includes(option));
   const enabledOptions = availablePossibilities.filter(option => currentPossibilities.includes(option));
 
+  let tierSelected = slotsTier[index-1];
+  if (tierSelected == '*') {
+    tierSelected = 'Prismatic';
+  }
+
   return (
-    <div className={`select relative flex-1 ${slotsTier[index-2] == '' ? 'opacity-50': 'hover-effect cursor-pointer'} ${slotsTier[index-1] == '' ? "expand" : "expand-black"} bg-midday text-earlynight rounded leading-10 transition-all duration-300 ease-in-out`}>
+    <div className={`select relative flex-1 ${slotsTier[index-2] == '' ? 'opacity-50': 'hover-effect cursor-pointer'} ${tierSelected == '' ? "expand" : "expand-black"} bg-midday text-earlynight rounded leading-10 transition-all duration-300 ease-in-out`}>
       <select 
-        value={slotsTier[index-1]} 
+        value={tierSelected} 
         onChange={handleTierChange} 
-        disabled={slotsTier[index - 2] === ""}
-        className={`w-full ${slotsTier[index-1] == '' ? 'bg-midday' : 'text-midnight/[.8] focus:ring-'+slotsTier[index-1].toLowerCase()+'/[.30] expand-black bg-'+slotsTier[index-1].toLowerCase()} font-semibold text-crema pl-4 pr-9 z-10 relative rounded focus:outline-none focus:ring  transition-all duration-500`}>
+        disabled={slotsTier[index - 2] === "" || slotsTier[index - 1] == "*"}
+        className={`w-full ${tierSelected == '' ? 'bg-midday' : 'text-midnight/[.8] focus:ring-'+tierSelected.toLowerCase()+'/[.30] expand-black bg-'+tierSelected.toLowerCase()} font-semibold text-crema pl-4 pr-9 z-10 relative rounded focus:outline-none focus:ring  transition-all duration-500`}>
         <option defaultValue="" disabled={slotsTier[index - 1] !== ""}>Augment {index}</option>
-        {index === 3 && (
-          <>
-            {disabledOptions.map((augment, index) => (
-              <option value={augment} key={index} disabled>{augment}</option>
-            ))}
-            {enabledOptions.map((augment, index) => (
-              <option value={augment} key={index}>{augment}</option>
-            ))}
-          </>
-        )}
-        {index !== 3 && (
-          availablePossibilities.map((augment, index) => (
+          {disabledOptions.map((augment, index) => (
+            <option value={augment} key={index} disabled>{augment}</option>
+          ))}
+          {enabledOptions.map((augment, index) => (
             <option value={augment} key={index}>{augment}</option>
-          ))
-        )}
+          ))}
       </select>
     </div>
   )

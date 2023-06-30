@@ -1,15 +1,18 @@
 interface IResetButton {
   slotsTier: string[];
   setSlotsTier: (tier: string[]) => void;
+  university: boolean;
+  setUniversity: (university: boolean) => void;
 }
 
-const ResetButton: React.FC<IResetButton> = ({ slotsTier, setSlotsTier }) => {
+const ResetButton: React.FC<IResetButton> = ({ slotsTier, setSlotsTier, university, setUniversity }) => {
   let resetEnabled = false;
   if (JSON.stringify(slotsTier) !== JSON.stringify(['', '', ''])) {
     resetEnabled = true;
   }
   const handleReset = () => {
     setSlotsTier(['', '', '']);
+    setUniversity(false);
   }
   return (
     <button 

@@ -2,13 +2,15 @@ import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { augmentsDistribution, augmentsDistributionDetailed } from "@/constants/augments";
+import { augmentsDistribution } from "@/constants/augments";
 import Slot from "@/components/augments-tier/slot";
 import ResetButton from "@/components/augments-tier/resetButton";
 import ResultPossibilities from "@/components/augments-tier/resultPossibilities";
+import UniversityToggle from "@/components/augments-tier/universityToggle";
 
 const HeroAugments: NextPage = () => {
   const [slotsTier, setSlotsTier] = useState(["", "", ""]);
+  const [university, setUniversity] = useState(false);
 
   const numberOfSlots = augmentsDistribution.length;
   const slotsArray = Array.from({ length: numberOfSlots }, (_, index) => index + 1);
@@ -34,7 +36,7 @@ const HeroAugments: NextPage = () => {
       <section className="flex items-start flex-col flex-1">
         <aside className="flex flex-col w-full mb-6">
           <h2 className="mb-2">Select your augments tier</h2>
-          <div className="flex justify-between gap-4 md:gap-6 mb-4 md:mb-6 flex-wrap md:flex-nowrap">
+          <div className="flex justify-between gap-4 md:gap-6 mb-2 md:mb-4 flex-wrap md:flex-nowrap">
             <div className="min-w-full md:min-w-0 order-3 md:order-2 flex flex-1 justify-between gap-4 md:gap-6">
               {slotsArray.map((slot) => (
                 <Slot
@@ -43,8 +45,9 @@ const HeroAugments: NextPage = () => {
                 />
               ))}
             </div>
-            <ResetButton slotsTier={slotsTier} setSlotsTier={setSlotsTier} />
+            <ResetButton slotsTier={slotsTier} setSlotsTier={setSlotsTier} university={university} setUniversity={setUniversity} />
           </div>
+          <UniversityToggle slotsTier={slotsTier} setSlotsTier={setSlotsTier} university={university} setUniversity={setUniversity} />
         </aside>
         <main className="mt-4 mb-24 w-full">
           <ResultPossibilities slotsTier={slotsTier} setSlotsTier={setSlotsTier} />
