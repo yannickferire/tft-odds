@@ -7,29 +7,41 @@
   <url>
     <loc>https://tftodds.com/</loc>
     <lastmod>2023-04-09T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/" />
   </url>
   <url>
     <loc>https://tftodds.com/loaded-dice</loc>
     <lastmod>2023-04-09T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/loaded-dice" />
   </url>
   <url>
     <loc>https://tftodds.com/tome-of-traits</loc>
     <lastmod>2023-06-20T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/tome-of-traits" />
   </url>
   <url>
-    <loc>https://tftodds.com/data/augments</loc>
+    <loc>https://tftodds.com/augments</loc>
     <lastmod>2023-06-20T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/augments" />
+  </url>
+  <url>
+    <loc>https://tftodds.com/data/augments-distribution</loc>
+    <lastmod>2023-06-20T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/data/augments-distribution" />
   </url>
   <url>
     <loc>https://tftodds.com/data/augments-rewards</loc>
     <lastmod>2023-06-23T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/data/augments-rewards" />
   </url>
   <url>
     <loc>https://tftodds.com/data/piltover</loc>
     <lastmod>2023-06-20T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/data/piltover" />
   </url>
   <url>
     <loc>https://tftodds.com/data/portals</loc>
     <lastmod>2023-06-23T02:06:03+00:00</lastmod>
+    <link rel="canonical" href="https://tftodds.com/data/portals" />
   </url>
 </urlset>
