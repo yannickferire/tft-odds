@@ -4,13 +4,14 @@ import { validEmblems } from '@/constants/tome-of-traits';
 interface IBestUnits {
   champs: any[];
   isLoading: boolean;
+  traits: any[];
+  setTraits: (traits: any[]) => void;
 }
 
-const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading }) => {
+const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading, traits, setTraits }) => {
   const bestUnits = champs.filter((champion) => {
     const invalidTraits = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait));
     const hasValidTrait = invalidTraits.length === 0;
-    const invalidTraitCount = invalidTraits.length;
     return !hasValidTrait;
   }).map((champion) => {
     const invalidTraitCount = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait)).length;
@@ -37,6 +38,18 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading }) => {
 
   const skeletonNumberOfBestUnits = Array.from({ length: 12 }, (_, index) => index + 1);
 
+  const handleChampionTraitSelection = (championTraits: any) => {
+    setTraits(
+      traits.map((trait: any) => {
+        if (championTraits.includes(trait.name)) {
+          return { ...trait, selected: true };
+        } else {
+          return { ...trait }
+        }
+      })
+    )
+  }
+
   return (
     <article className="pb-4 ml-4">
       <h3 className="opacity-50 mb-3 text-sm">Best units to use</h3>
@@ -45,10 +58,11 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading }) => {
         {sortedBestUnits.map((champion, index) => (
           <li 
             key={index} 
-            className="relative"
+            className={`w-12 h-12 relative hover-effect cursor-pointer border-2 border-${champion.cost}cost rounded champion aspect-square text-${champion.cost}cost`}
             title={champion.name}
+            onClick={() => handleChampionTraitSelection(champion.traits)}
           >
-            <div className={`border-2 border-${champion.cost}cost w-12 h-12 relative block rounded overflow-hidden`}>
+            <div className={`w-full h-full relative block rounded overflow-hidden`}>
             <Image 
               className={`w-20 -left-7 -top-1 max-w-none absolute z-10`}
               src={champion.image} 

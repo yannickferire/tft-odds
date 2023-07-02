@@ -84,7 +84,7 @@ const TomeOfTraits: NextPage = () => {
         <aside className="flex flex-col w-full mb-4">
           <TraitsSelector traits={traits} setTraits={setTraits} isLoading={isLoading} selectedTraits={selectedTraits} emblemsRandom={emblemsRandom} emblemsTailored={emblemsTailored} />
         </aside>
-        <BestUnits champs={champs} isLoading={isLoading} />
+        <BestUnits champs={champs} isLoading={isLoading} traits={traits} setTraits={setTraits} />
         <main className="mt-4 mb-16 w-full">
           <Emblems traits={traits} selectedTraits={selectedTraits} validTraits={validTraits} emblemsRandom={emblemsRandom} emblemsTailored={emblemsTailored} />
         </main>
