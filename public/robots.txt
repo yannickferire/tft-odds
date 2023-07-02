@@ -1,0 +1,2 @@
+User-agent: \*
+Sitemap: https://tftodds.com/sitemap.xml
