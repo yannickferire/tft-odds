@@ -18,12 +18,12 @@ const DataAugments: NextPage = () => {
     <>
       <Head>
         <title>Augments odds – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
-        <link rel="canonical" href="https://tftodds.com/data/augments" />
+        <link rel="canonical" href="https://tftodds.com/data/augments-distribution" />
         <meta name="description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a prismatic one? Find out now! Good luck and may your Augments lead you to victory!" />
         <meta property="og:title" content="Augments odds – TFT odds Set 9" />
 		    <meta property="og:description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a prismatic one? Find out now! Good luck and may your Augments lead you to victory!" />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/data/augments" />
+        <meta property="og:url" content="https://tftodds.com/data/augments-distribution" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
