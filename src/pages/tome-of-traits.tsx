@@ -67,16 +67,16 @@ const TomeOfTraits: NextPage = () => {
       <Head>
         <title>Tome of traits probabilities – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/tome-of-traits" />
-        <meta name="description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay and climb the ranks with ease." />
+        <meta name="description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay to climb." />
         <meta property="og:title" content="Tome of traits – TFT odds" />
-		    <meta property="og:description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay and climb the ranks with ease." />
+		    <meta property="og:description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay to climb." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/tome-of-traits" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
         <meta name="twitter:title" content="Tome of traits – TFT odds" />
-        <meta name="twitter:description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay and climb the ranks with ease." />
+        <meta name="twitter:description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay to climb." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Tome of traits</strong> probabilities<span className="hidden"> – Best strategies to win!</span></h1>

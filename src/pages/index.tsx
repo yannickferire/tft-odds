@@ -32,16 +32,16 @@ const Home: NextPage = () => {
       <Head>
         <title>Teamfight Tactics Odds – TFT Set {currentSet}{setStage === 2 ? '.5': null} probabilities tools</title>
         <link rel="canonical" href="https://tftodds.com" />
-        <meta name="description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Get ahead of the game and dominate your opponents. Check it out now!" />
+        <meta name="description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:title" content="Teamfight Tactics Odds – TFT Set 9 probabilities tools" />
-		    <meta property="og:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Get ahead of the game and dominate your opponents. Check it out now!" />
+		    <meta property="og:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
         <meta name="twitter:title" content="Teamfight Tactics Odds – TFT Set 9 probabilities tools" />
-        <meta name="twitter:description" content="Know your chances of hitting your champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Get ahead of the game and dominate your opponents. Check it out now!" />
+        <meta name="twitter:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Champions</strong> rolling odds<span className="hidden"> – See how much gold you need for every units!</span></h1>
