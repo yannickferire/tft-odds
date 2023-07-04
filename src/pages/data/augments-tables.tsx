@@ -35,7 +35,7 @@ const Piltover: NextPage = () => {
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Augments data</strong> tables</h1>
       <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/TheGoldenEgg.avif" alt="The Golden Egg" width="50" height="50" /> <strong className="text-morning">The Golden Egg</strong></h2>
       <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">Gain a massive golden egg that hatches in 11 turns. Victorious player combats accelerate the hatch timer by an additional turn.</p>
-      <Table className="mb-16">
+      <Table className="mb-8">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left"><span className="mr-2 bg-prismatic text-midnight/[.8] px-1 rounded-sm">Prismatic</span> The Golden Egg rewards</TableHead>
@@ -54,7 +54,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 id="pandoras-bench" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/PandorasBench.avif" alt="Pandora's Bench" width="50" height="50" /> <strong className="text-morning">Pandora&apos;s Bench</strong></h2>
+      <h2 id="pandoras-bench" className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/PandorasBench.avif" alt="Pandora's Bench" width="50" height="50" /> <strong className="text-morning">Pandora&apos;s Bench</strong></h2>
       <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 2 gold. At the start of every round, champions on the 3 rightmost bench slots transform into random champions of the same cost.</p>
       <Table className="mb-8">
         <TableHeader>
