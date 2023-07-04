@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+import Image from "next/image";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
 import { goldenEgg, spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold, marchOfProgress } from "@/constants/augments";
@@ -32,7 +33,7 @@ const Piltover: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Augments data</strong> tables</h1>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">The Golden Egg</strong></h2>
+      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/TheGoldenEgg.avif" alt="The Golden Egg" width="50" height="50" /> <strong className="text-morning">The Golden Egg</strong></h2>
       <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">Gain a massive golden egg that hatches in 11 turns. Victorious player combats accelerate the hatch timer by an additional turn.</p>
       <Table className="mb-16">
         <TableHeader>
@@ -53,7 +54,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Pandora&apos;s Bench</strong></h2>
+      <h2 id="pandoras-bench" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/PandorasBench.avif" alt="Pandora's Bench" width="50" height="50" /> <strong className="text-morning">Pandora&apos;s Bench</strong></h2>
       <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 2 gold. At the start of every round, champions on the 3 rightmost bench slots transform into random champions of the same cost.</p>
       <Table className="mb-8">
         <TableHeader>
@@ -78,7 +79,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">March of Progress</strong></h2>
+      <h2 id="march-of-progress" className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/MarchofProgress.avif" alt="March of Progress" width="50" height="50" /> <strong className="text-morning">March of Progress</strong></h2>
       <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 3 XP now, and bonus XP equal to your level at the start of every player combat round. You can no longer use gold to level up.</p>
       <Table className="mb-8">
         <TableHeader>
@@ -99,7 +100,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 id="spoils-of-war" className="text-3xl pt-8 mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Spoils of War</strong></h2>
+      <h2 id="spoils-of-war" className="text-3xl pt-8 mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/SpoilsofWar.avif" alt="Spoils of War" width="50" height="50" /> <strong className="text-morning">Spoils of War</strong></h2>
       <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy unit, there&apos;s a 20|30|40% chance to drop amazing loot.</p>
       <div className="flex mb-6 gap-6">
         <div className="flex-1">
