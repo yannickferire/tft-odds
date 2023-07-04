@@ -35,14 +35,14 @@ export function formatConsumables(value: any) {
     } else if (part === '<RadiantThiefsGlovesIcon />') {
       return (
         <span key={index}>
-          <ThiefsGlovesIcon size={20} className="inline-block ml-1 -mt-1 mr-1.5 border border-gold box-border" />
+          <ThiefsGlovesIcon size={20} className="inline-block ml-1 -mt-1 mr-1 border border-gold box-border" />
           Radiant Thief&apos;s Gloves
         </span>
       );
     } else if (part === '<ThiefsGlovesIcon />') {
       return (
         <span key={index}>
-          <ThiefsGlovesIcon size={20} className="inline-block ml-1 -mt-1 mr-1.5 border border-midday box-border" />
+          <ThiefsGlovesIcon size={20} className="inline-block ml-1 -mt-1 mr-1 border border-midday box-border" />
           Thief&apos;s Gloves
         </span>
       );

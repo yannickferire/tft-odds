@@ -246,7 +246,7 @@ export const piltoverRewards: Record<string, {generic: string;} & Record<number,
     },
   },
   "105+ Energy;(14 loss)": {
-    "generic": "230 Gold",
+    "generic": "250 Gold",
     1: {
       value: "3x Tactician's Crown + 3x Radiant Items + 2x Removers + 1x Reforger + 50 Gold",
       percent: 35
