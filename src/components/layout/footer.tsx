@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="order-2 sm:order-1 flex-1">
           <p className="text-xs text-crema leading-5 opacity-40 mt-4 sm:mt-0">TFT Odds isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.<br/>
           </p>
-          <a className="block mt-0.5 text-xs leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a>
+          {/* <a className="block mt-0.5 text-xs leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold" href="javascript:openAxeptioCookies()">Cookies</a> */}
         </div>
         <div className="order-1 sm:order-2 flex-1 flex">
           <ul className="flex-1 text-left text-xs text-crema leading-5">
