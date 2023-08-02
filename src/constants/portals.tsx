@@ -1,3 +1,15 @@
+export const hallOfNine = {
+  "1x Item Component (not Spatula)": 14,
+  "1x Spatula": 14,
+  "1x Ornn anvil": 14,
+  "1x Reforger": 13,
+  "2x unit (tier = stage)": 13,
+  "8 Gold x stage": 13,
+  "1x Tome of traits": 13,
+  "1x Tactician's Crown": 3,
+  "1x Boot": 3
+}
+
 export const threshEarly = {
   "1x Item Component (not Spatula)": 50,
   "1x remover/reforger + 8 Gold": 16.70,

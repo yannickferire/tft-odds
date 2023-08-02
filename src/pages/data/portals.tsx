@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { threshEarly, threshLate } from "@/constants/portals";
+import { hallOfNine, threshEarly, threshLate } from "@/constants/portals";
 import { formatConsumables } from "@/utils/formatConsumables";
 import {
   Table,
@@ -31,6 +31,27 @@ const Piltover: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Portals data</strong> tables</h1>
+      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">The Hall of Nine</strong> – The Void region</h2>
+      <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
+      <Table className="mb-6">
+        <TableHeader>
+          <TableRow className="!border-b !border-crema !border-opacity-20">
+            <TableHead className="text-left">Rewards</TableHead>
+            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {Object.entries(hallOfNine).map((reward, index) => {
+            const uniqueKey = `hall-of-nine-${index + 1}`;
+            return (
+              <TableRow key={uniqueKey}>
+                <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
+              </TableRow>
+            );  
+          })}
+        </TableBody>
+      </Table>
       <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Thresh&apos;s Sanctum</strong> – Shadow Isles region</h2>
       <p className="text-center mb-4">When ANY unit dies, collect their soul. <br/>Every 40 souls, gain a <strong>loot orb</strong>.</p>
       <Table className="mb-6">
