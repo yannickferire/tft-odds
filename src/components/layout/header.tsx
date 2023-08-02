@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
-import { stateSet, currentSet, setStage } from '@/constants/set';
+import { stateSet, currentSet, setStage, patch } from '@/constants/set';
 
 const Header = () => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const Header = () => {
           <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
             <span className="opacity-40 flex">
               Set {currentSet}{setStage === 2 ? '.5': null}
-              {stateSet === 'pbe' ? <small className="hidden lg:inline ml-1 opacity-50">– PBE</small> : <small className="hidden lg:inline ml-1 opacity-50">– Patch 13.13b</small>}
+              {stateSet === 'pbe' ? <small className="hidden lg:inline ml-1 opacity-50">– PBE</small> : <small className="hidden lg:inline ml-1 opacity-50">– Patch {patch}</small>}
             </span>
           </p>
         </div>
