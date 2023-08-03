@@ -2,7 +2,6 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { currentSet, setStage } from '@/constants/set';
-import { zaunMods } from "@/constants/zaun-mods";
 import {
   Table,
   TableBody,
