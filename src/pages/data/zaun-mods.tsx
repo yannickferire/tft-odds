@@ -32,7 +32,7 @@ const ZaunMods: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Zaun Chem-mods</strong> possibilities</h1>
-      <Table className="mb-40">
+      <Table className="mb-40 min-w-[1000px]">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead>1st Zaun Chem-Mod</TableHead>
