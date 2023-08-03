@@ -98,14 +98,6 @@ const ZaunMods: NextPage = () => {
             </TableCell>
             <TableCell className="text-center py-4 border border-crema border-opacity-20 leading-tight font-semibold">50% <small className="inline-block text-xs opacity-40">25% each</small></TableCell>
             <TableCell className="py-4 border border-crema border-opacity-20">
-              <small className="relative left-1/2 -translate-x-1/2 mb-2 inline-block text-sm bg-midday rounded-sm py-0.5 px-2 opacity-40">offensive</small>
-              <ul className="flex flex-col gap-2">
-                <li><Image className="inline-block mr-2 border border-midnight rounded-sm" src="/images/zaun-mods/robotic-arm.avif" alt="Robotic Arm" width="32" height="32" />Robotic Arm</li>  
-                <li><Image className="inline-block mr-2 border border-midnight rounded-sm" src="/images/zaun-mods/virulent-bioware.avif" alt="Virulent Bioware" width="32" height="32" />Virulent Bioware</li>
-              </ul>
-            </TableCell>  
-            <TableCell className="text-center py-4 border border-crema border-opacity-20 leading-tight font-semibold">100% <small className="inline-block text-xs opacity-40">50% each</small></TableCell>
-            <TableCell className="py-4 border border-crema border-opacity-20">
               <small className="relative left-1/2 -translate-x-1/2 mb-2 inline-block text-sm bg-midday rounded-sm py-0.5 px-2 opacity-40">defensive</small>
               <ul className="flex flex-col gap-2">
                 <li><Image className="inline-block mr-2 border border-midnight rounded-sm" src="/images/zaun-mods/hextech-skeleton.avif" alt="Hextech Skeleton" width="32" height="32" />Hextech Skeleton</li>  
@@ -113,6 +105,14 @@ const ZaunMods: NextPage = () => {
               </ul>
             </TableCell>
             <TableCell className="text-center py-4 border border-crema border-opacity-20 leading-tight font-semibold">100% <small className="inline-block text-xs opacity-40">50% each</small></TableCell> 
+            <TableCell className="py-4 border border-crema border-opacity-20">
+              <small className="relative left-1/2 -translate-x-1/2 mb-2 inline-block text-sm bg-midday rounded-sm py-0.5 px-2 opacity-40">offensive</small>
+              <ul className="flex flex-col gap-2">
+                <li><Image className="inline-block mr-2 border border-midnight rounded-sm" src="/images/zaun-mods/robotic-arm.avif" alt="Robotic Arm" width="32" height="32" />Robotic Arm</li>  
+                <li><Image className="inline-block mr-2 border border-midnight rounded-sm" src="/images/zaun-mods/virulent-bioware.avif" alt="Virulent Bioware" width="32" height="32" />Virulent Bioware</li>
+              </ul>
+            </TableCell>  
+            <TableCell className="text-center py-4 border border-crema border-opacity-20 leading-tight font-semibold">100% <small className="inline-block text-xs opacity-40">50% each</small></TableCell>
           </TableRow>
         </TableBody>
       </Table>
