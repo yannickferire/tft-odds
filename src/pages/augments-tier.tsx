@@ -8,7 +8,7 @@ import ResetButton from "@/components/augments-tier/resetButton";
 import ResultPossibilities from "@/components/augments-tier/resultPossibilities";
 import UniversityToggle from "@/components/augments-tier/universityToggle";
 
-const HeroAugments: NextPage = () => {
+const AugmentsTier: NextPage = () => {
   const [slotsTier, setSlotsTier] = useState(["", "", ""]);
   const [university, setUniversity] = useState(false);
 
@@ -57,4 +57,4 @@ const HeroAugments: NextPage = () => {
   )
 }
 
-export default HeroAugments;
+export default AugmentsTier;

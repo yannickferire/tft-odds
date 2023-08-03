@@ -62,7 +62,13 @@ const Footer = () => {
               <Link 
                 href={`/data/portals`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Portals Data</Link>
+              >Portals Rewards</Link>
+            </li>
+            <li>
+              <Link 
+                href={`/data/zaun-mods`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Zaun Chem-Mods</Link>
             </li>
           </ul>
           <ul className="flex-1 text-center sm:text-right text-xs text-crema leading-5">

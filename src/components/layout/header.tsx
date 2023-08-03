@@ -94,6 +94,12 @@ const Header = () => {
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Portals Rewards</Link>
           </li>
+          <li>
+            <Link 
+              href="/data/zaun-mods" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/zaun-mods' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Zaun Chem-Mods</Link>
+          </li>
         </ul>
       </div>
       <div className="flex-1 hidden md:block self-end">
@@ -150,6 +156,12 @@ const Header = () => {
                     className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Portals Rewards</Link>
                 </li>
+                <li>
+                  <Link 
+                    href="/data/zaun-mods" 
+                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/zaun-mods' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Zaun Chem-Mods</Link>
+                </li>
               </ul>
             </div>
           </li>
@@ -184,6 +196,12 @@ const Header = () => {
               href="/data/portals" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Portals Rewards</Link>
+          </li>
+          <li>
+            <Link 
+              href="/data/zaun-mods" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/zaun-mods' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Zaun Chem-Mods</Link>
           </li>
         </ul>
       </div>
