@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>League Tactics Odds – TFT Set {currentSet}{setStage === 2 ? '.5': null} probabilities tools</title>
+        <title>Teamfight Tactics Odds – TFT Set {currentSet}{setStage === 2 ? '.5': null} probabilities tools</title>
         <link rel="canonical" href="https://tftodds.com" />
         <meta name="description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:title" content="Teamfight Tactics Odds – TFT Set 9 probabilities tools" />
