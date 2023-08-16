@@ -17,12 +17,12 @@ const ZaunMods: NextPage = () => {
     <>
       <Head>
         <title>Zaun Chem-mods possibilities – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
-        <link rel="canonical" href="https://tftodds.com/zaun-mods" />
+        <link rel="canonical" href="https://tftodds.com/data/zaun-mods" />
         <meta name="description" content="Discover the probabilities of obtaining each type of Zaun Chem-mods. Plan your game ahead and know exactly which mod you can expect." />
         <meta property="og:title" content="Zaun Chem-mods possibilities – TFT odds Set 9" />
 		    <meta property="og:description" content="Discover the probabilities of obtaining each type of Zaun Chem-mods. Plan your game ahead and know exactly which mod you can expect." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/zaun-mods" />
+        <meta property="og:url" content="https://tftodds.com/data/zaun-mods" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
