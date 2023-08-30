@@ -30,9 +30,10 @@ const Header = () => {
             <Image src="/tft-odds-logo.svg" alt="TFT Odds" width={160} height={43} />
           </Link>
           <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
-            <span className="opacity-40 flex">
+            <span className="flex">
+              <span className="opacity-40">
               Set {currentSet}{setStage === 2 ? '.5': null}
-              {stateSet === 'pbe' ? <small className="hidden lg:inline ml-1 opacity-50">– PBE</small> : <small className="hidden lg:inline ml-1 opacity-50">– Patch {patch}</small>}
+              {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : <small className="ml-1 opacity-50">– Patch {patch}</small>}</span> <a className="ml-1 opacity-40 hover:opacity-80 transition-all" href="https://pbe.tftodds.com"><span className="top-px relative">→</span> Set 9.5</a>
             </span>
           </p>
         </div>
