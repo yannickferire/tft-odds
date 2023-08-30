@@ -46,7 +46,7 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading, traits, setTraits 
         } else {
           return { ...trait }
         }
-      })
+      }) 
     )
   }
 
