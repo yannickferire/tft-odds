@@ -3,8 +3,8 @@ export const hallOfNine = {
   "1x Spatula": 14,
   "1x Ornn anvil": 14,
   "1x Reforger": 13,
-  "2x unit (tier = stage)": 13,
-  "8 Gold x stage": 13,
+  "2⭐ unit (tier = stage - 1)": 13,
+  "5 Gold x stage": 13,
   "1x Tome of traits": 13,
   "1x Tactician's Crown": 3,
   "1x Boot": 3
