@@ -5,7 +5,8 @@ export async function fetchChampions() {
   const data = await response.json();
 
   // champions
-  const dataChampions = data.sets[currentSet].champions;
+  const dataChampions = data.setData[0].champions;
+  // const dataChampions = data.sets[currentSet].champions;
   const filteredChampions = dataChampions.filter((champion: any, index: number, array: any[]) => {
     const hasTraits =  champion.traits.length > 0;
     const isNotOtherRyze = !(champion.apiName.includes("TFT9_Ryze") && champion.apiName.length > 9);
@@ -18,12 +19,12 @@ export async function fetchChampions() {
     ...champion,
     // if champion is from Stage 2, then modifie url to get the correct image
     image: champion.icon.includes("Stage2")
-      ? `${championImageURL}/${champion.apiName.toLowerCase()}_mobile.tft_set${currentSet}_stage2.png`
-      : `${championImageURL}/${champion.apiName.toLowerCase()}_mobile.tft_set${currentSet}.png`
+      ? `${championImageURL}/tft9_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}_stage2.png`
+      : `${championImageURL}/tft9_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}.png`
   }));
 
   // traits
-  const dataTraits = data.sets[currentSet].traits.map((trait: any) => ({
+  const dataTraits = data.setData[0].traits.map((trait: any) => ({
     ...trait,
     selected: false,
     image: `${gameURL}/${trait.icon.toLowerCase().replace(".tex", ".png")}`

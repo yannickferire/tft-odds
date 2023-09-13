@@ -18,7 +18,7 @@ const LoadedDice: NextPage = () => {
       onSuccess: (data) => {
         const champions = data.champions;
         champions.forEach((champion: any) => {
-          if (champion.name === "Gwen") {
+          if (champion.name === "Silco") {
             champion.selected = true;
           } else {
             champion.selected = false;

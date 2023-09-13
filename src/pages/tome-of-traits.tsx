@@ -37,7 +37,6 @@ const TomeOfTraits: NextPage = () => {
   const bestUnits = champs.filter((champion) => {
     const invalidTraits = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait));
     const hasValidTrait = invalidTraits.length === 0;
-    const invalidTraitCount = invalidTraits.length;
     return !hasValidTrait;
   }).map((champion) => {
     const invalidTraitCount = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait)).length;
