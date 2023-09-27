@@ -29,7 +29,8 @@ export async function fetchChampions() {
     selected: false,
     image: `${gameURL}/${trait.icon.toLowerCase().replace(".tex", ".png")}`
   }));
-  const sortedTraits = dataTraits.sort((a: any, b: any) => {
+  const filteredTraits = dataTraits.filter((trait: any) => trait.name !== "Deadeye" && trait.name !== "Yordle" && trait.name !== "Redeemer" && trait.name !== "Shadow Isles");
+  const sortedTraits = filteredTraits.sort((a: any, b: any) => {
     if (a.name === "Threat") {
       return 1; // "Threat" doit être placé après "b"
     } else if (b.name === "Threat") {
