@@ -46,23 +46,23 @@ export const rollingChancesByLevel: { [level: string]: { [cost: string]: number 
   "level 7": {
     "1 cost": 19,
     "2 cost": 30,
-    "3 cost": 35,
-    "4 cost": 15,
+    "3 cost": 40,
+    "4 cost": 10,
     "5 cost": 1
   },
   "level 8": {
-    "1 cost": 16,
-    "2 cost": 20,
-    "3 cost": 35,
-    "4 cost": 25,
-    "5 cost": 4
+    "1 cost": 18,
+    "2 cost": 25,
+    "3 cost": 36,
+    "4 cost": 18,
+    "5 cost": 3
   },
   "level 9": {
-    "1 cost": 9,
+    "1 cost": 10,
     "2 cost": 15,
-    "3 cost": 30,
-    "4 cost": 30,
-    "5 cost": 16
+    "3 cost": 20,
+    "4 cost": 35,
+    "5 cost": 10
   },
   "level 10": {
     "1 cost": 5,
@@ -78,4 +78,76 @@ export const rollingChancesByLevel: { [level: string]: { [cost: string]: number 
     "4 cost": 50,
     "5 cost": 35
   },
+}
+export const rollingHeadlinersChancesByLevel: { [level: string]: { [cost: string]: number } } = {
+  "level 1": {
+    "1 cost": 100,
+    "2 cost": 0,
+    "3 cost": 0,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 2": {
+    "1 cost": 100,
+    "2 cost": 0,
+    "3 cost": 0,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 3": {
+    "1 cost": 100,
+    "2 cost": 0,
+    "3 cost": 0,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 4": {
+    "1 cost": 80,
+    "2 cost": 20,
+    "3 cost": 0,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 5": {
+    "1 cost": 40,
+    "2 cost": 55,
+    "3 cost": 5,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 6": {
+    "1 cost": 0,
+    "2 cost": 60,
+    "3 cost": 40,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 7": {
+    "1 cost": 40,
+    "2 cost": 58,
+    "3 cost": 2,
+    "4 cost": 0,
+    "5 cost": 0
+  },
+  "level 8": {
+    "1 cost": 0,
+    "2 cost": 0,
+    "3 cost": 70,
+    "4 cost": 30,
+    "5 cost": 0
+  },
+  "level 9": {
+    "1 cost": 0,
+    "2 cost": 0,
+    "3 cost": 90,
+    "4 cost": 10,
+    "5 cost": 0
+  },
+  "level 10": {
+    "1 cost": 0,
+    "2 cost": 0,
+    "3 cost": 0,
+    "4 cost": 50,
+    "5 cost": 50
+  }
 }
