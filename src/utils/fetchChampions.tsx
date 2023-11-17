@@ -5,8 +5,8 @@ export async function fetchChampions() {
   const data = await response.json();
 
   // champions
-  const dataChampions = data.setData[0].champions;
-  // const dataChampions = data.sets[currentSet].champions;
+  // const dataChampions = data.setData[0].champions;
+  const dataChampions = data.sets[currentSet].champions;
   const filteredChampions = dataChampions.filter((champion: any, index: number, array: any[]) => {
     const hasTraits =  champion.traits.length > 0;
     const isNotOtherRyze = !(champion.apiName.includes("TFT9_Ryze") && champion.apiName.length > 9);
@@ -24,7 +24,7 @@ export async function fetchChampions() {
   }));
 
   // traits
-  const dataTraits = data.setData[0].traits.map((trait: any) => ({
+  const dataTraits = data.sets[currentSet].traits.map((trait: any) => ({
     ...trait,
     selected: false,
     image: `${gameURL}/${trait.icon.toLowerCase().replace(".tex", ".png")}`

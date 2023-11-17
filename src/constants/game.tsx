@@ -70,14 +70,7 @@ export const rollingChancesByLevel: { [level: string]: { [cost: string]: number 
     "3 cost": 20,
     "4 cost": 40,
     "5 cost": 25
-  },
-  "level 11": {
-    "1 cost": 1,
-    "2 cost": 2,
-    "3 cost": 12,
-    "4 cost": 50,
-    "5 cost": 35
-  },
+  }
 }
 export const rollingHeadlinersChancesByLevel: { [level: string]: { [cost: string]: number } } = {
   "level 1": {

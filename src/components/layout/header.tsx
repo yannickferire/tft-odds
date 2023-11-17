@@ -55,12 +55,6 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/loaded-dice" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Loaded Dice</Link>
-          </li>
-          <li>
-            <Link 
               href="/tome-of-traits" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/tome-of-traits' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Tome of Traits</Link>
@@ -85,21 +79,9 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/data/piltover" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/piltover' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Piltover Rewards</Link>
-          </li>
-          <li>
-            <Link 
               href="/data/portals" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Portals Rewards</Link>
-          </li>
-          <li>
-            <Link 
-              href="/data/zaun-mods" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/zaun-mods' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Zaun Chem-Mods</Link>
           </li>
         </ul>
       </div>
@@ -110,12 +92,6 @@ const Header = () => {
               href="/" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
-          </li>
-          <li>
-            <Link 
-              href="/loaded-dice" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Loaded Dice</Link>
           </li>
           <li>
             <Link 
@@ -147,21 +123,9 @@ const Header = () => {
                 </li>
                 <li>
                   <Link 
-                    href="/data/piltover" 
-                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/piltover' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Piltover Rewards</Link>
-                </li>
-                <li>
-                  <Link 
                     href="/data/portals" 
                     className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Portals Rewards</Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/data/zaun-mods" 
-                    className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/zaun-mods' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Zaun Chem-Mods</Link>
                 </li>
               </ul>
             </div>
@@ -188,21 +152,9 @@ const Header = () => {
         <ul className="flex justify-end gap-4 md:gap-6">
           <li>
             <Link 
-              href="/data/piltover" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/piltover' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Piltover Rewards</Link>
-          </li>
-          <li>
-            <Link 
               href="/data/portals" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Portals Rewards</Link>
-          </li>
-          <li>
-            <Link 
-              href="/data/zaun-mods" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/zaun-mods' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Zaun Chem-Mods</Link>
           </li>
         </ul>
       </div>

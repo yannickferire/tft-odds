@@ -21,14 +21,14 @@ const AugmentsTier: NextPage = () => {
         <title>Augments tier possibilities – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/augments-tier" />
         <meta name="description" content="Discover the probabilities of obtaining Silver, Gold, or Prismatic augments in your games with our Augments Tier Possibilities tool." />
-        <meta property="og:title" content="Augments tier possibilities – TFT odds Set 9" />
+        <meta property="og:title" content="Augments tier possibilities – TFT odds Set 10" />
 		    <meta property="og:description" content="Discover the probabilities of obtaining Silver, Gold, or Prismatic augments in your games with our Augments Tier Possibilities tool." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/augments-tier" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Augments tier possibilities – TFT odds Set 9" />
+        <meta name="twitter:title" content="Augments tier possibilities – TFT odds Set 10" />
         <meta name="twitter:description" content="Discover the probabilities of obtaining Silver, Gold, or Prismatic augments in your games with our Augments Tier Possibilities tool." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
