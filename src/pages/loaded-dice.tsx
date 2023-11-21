@@ -4,9 +4,9 @@ import Head from "next/head";
 import { useQuery } from 'react-query';
 import { currentSet, setStage } from '@/constants/set';
 import { fetchChampions } from '@/utils/fetchChampions';
-import ChampionSelector from '@/archived/loaded-dice/championSelector';
-import SelectedChampion from "@/archived/loaded-dice/selectedChampion";
-import DiceOdds from "@/archived/loaded-dice/diceOdds";
+import ChampionSelector from '@/components/loaded-dice/championSelector';
+import SelectedChampion from "@/components/loaded-dice/selectedChampion";
+import DiceOdds from "@/components/loaded-dice/diceOdds";
 
 const LoadedDice: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
@@ -18,7 +18,7 @@ const LoadedDice: NextPage = () => {
       onSuccess: (data) => {
         const champions = data.champions;
         champions.forEach((champion: any) => {
-          if (champion.name === "Silco") {
+          if (champion.name === "Ahri") {
             champion.selected = true;
           } else {
             champion.selected = false;

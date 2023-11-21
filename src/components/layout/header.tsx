@@ -61,6 +61,12 @@ const Header = () => {
           </li>
           <li>
             <Link 
+              href="/loaded-dice" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Loaded Dice</Link>
+          </li>
+          <li>
+            <Link 
               href="/augments-tier" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/augments-tier' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Augments Tier</Link>
@@ -104,6 +110,12 @@ const Header = () => {
               href="/tome-of-traits" 
               className={`relative z-20 text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/tome-of-traits' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Tome of Traits</Link>
+          </li>
+          <li>
+            <Link 
+              href="/loaded-dice" 
+              className={`relative z-20 text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/loaded-dice' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Loaded Dice</Link>
           </li>
           <li>
             <Link 
