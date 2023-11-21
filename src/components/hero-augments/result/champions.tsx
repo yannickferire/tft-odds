@@ -1,4 +1,4 @@
-import { numberOfHeroAugments, numberOfRerolls, numberOfSlots } from "@/constants/hero-augments";
+import { numberOfHeroAugments, numberOfRerolls, numberOfSlots } from "@/constants/archived/hero-augments";
 import ResultHeader from "../resultHeader";
 import ChampionProfile from "./championProfile";
 import ChampionAugments from "./championAugments";

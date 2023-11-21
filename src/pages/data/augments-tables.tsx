@@ -54,7 +54,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 id="pandoras-bench" className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/PandorasBench.avif" alt="Pandora's Bench" width="50" height="50" /> <strong className="text-morning">Pandora&apos;s Bench</strong></h2>
+      {/* <h2 id="pandoras-bench" className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/PandorasBench.avif" alt="Pandora's Bench" width="50" height="50" /> <strong className="text-morning">Pandora&apos;s Bench</strong></h2>
       <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 2 gold. At the start of every round, champions on the 3 rightmost bench slots transform into random champions of the same cost.</p>
       <Table className="mb-8">
         <TableHeader>
@@ -78,7 +78,7 @@ const Piltover: NextPage = () => {
             );  
           })}
         </TableBody>
-      </Table>
+      </Table> */}
       <h2 id="march-of-progress" className="pt-8 text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/MarchofProgress.avif" alt="March of Progress" width="50" height="50" /> <strong className="text-morning">March of Progress</strong></h2>
       <p className="text-center mb-4 max-w-lg relative left-1/2 -translate-x-1/2">Gain 3 XP now, and bonus XP equal to your level at the start of every player combat round. You can no longer use gold to level up.</p>
       <Table className="mb-8">

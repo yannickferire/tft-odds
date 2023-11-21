@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { possibleLevels } from "@/constants/loaded-dice";
+import { possibleLevels } from "@/constants/archived/loaded-dice";
 import { rollingChancesByLevel } from "@/constants/game";
 import ResultHeader from "./resultHeader";
 

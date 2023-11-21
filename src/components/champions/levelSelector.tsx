@@ -4,7 +4,7 @@ interface ILevelSelector {
 }
 
 const LevelSelector: React.FC<ILevelSelector> = ({ selectedLevel, setSelectedLevel }) => {
-  const maxLevel = 11;
+  const maxLevel = 10;
   return (
     <div className="inline-block text-xl mb-6">
       <button 

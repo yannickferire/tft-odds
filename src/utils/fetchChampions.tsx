@@ -7,12 +7,16 @@ export async function fetchChampions() {
   // champions
   // const dataChampions = data.setData[0].champions;
   const dataChampions = data.sets[currentSet].champions;
+  const uniqueChampionNames: any = {};
   const filteredChampions = dataChampions.filter((champion: any, index: number, array: any[]) => {
     const hasTraits =  champion.traits.length > 0;
-    const isNotOtherRyze = !(champion.apiName.includes("TFT9_Ryze") && champion.apiName.length > 9);
-    
-    // Retourne true si le champion est Ryze ou s'il est le premier de son nom dans la liste
-    return hasTraits && isNotOtherRyze;
+    const cost = champion.cost;
+
+    if (hasTraits && cost !== 11 && !uniqueChampionNames[champion.name]) {
+      uniqueChampionNames[champion.name] = true;
+      return true;
+    }
+    return false;
   });
   const withSelectionChampions = filteredChampions.map((champion: any) => ({ ...champion, selected: false }));
   const withImageChampions = withSelectionChampions.map((champion: any) => ({

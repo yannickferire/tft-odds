@@ -102,23 +102,23 @@ export const rollingHeadlinersChancesByLevel: { [level: string]: { [cost: string
     "5 cost": 0
   },
   "level 5": {
-    "1 cost": 40,
-    "2 cost": 55,
-    "3 cost": 5,
+    "1 cost": 30,
+    "2 cost": 70,
+    "3 cost": 0,
     "4 cost": 0,
     "5 cost": 0
   },
   "level 6": {
     "1 cost": 0,
-    "2 cost": 60,
-    "3 cost": 40,
+    "2 cost": 75,
+    "3 cost": 25,
     "4 cost": 0,
     "5 cost": 0
   },
   "level 7": {
-    "1 cost": 40,
-    "2 cost": 58,
-    "3 cost": 2,
+    "1 cost": 0,
+    "2 cost": 40,
+    "3 cost": 60,
     "4 cost": 0,
     "5 cost": 0
   },
@@ -140,7 +140,7 @@ export const rollingHeadlinersChancesByLevel: { [level: string]: { [cost: string
     "1 cost": 0,
     "2 cost": 0,
     "3 cost": 0,
-    "4 cost": 50,
-    "5 cost": 50
+    "4 cost": 30,
+    "5 cost": 70
   }
 }

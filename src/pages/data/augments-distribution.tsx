@@ -20,20 +20,20 @@ const DataAugments: NextPage = () => {
         <title>Augments odds – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/data/augments-distribution" />
         <meta name="description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
-        <meta property="og:title" content="Augments odds – TFT odds Set 9" />
+        <meta property="og:title" content="Augments odds – TFT odds Set 10" />
 		    <meta property="og:description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/data/augments-distribution" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Augments odds – TFT odds Set 9" />
+        <meta name="twitter:title" content="Augments odds – TFT odds Set 10" />
         <meta name="twitter:description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Augments distribution</strong> rules</h1>
       <Table className="mb-16">
-        <TableCaption>The portal that makes 1st augment Prismatic will simply overwrite the 1st choice.</TableCaption>
+        <TableCaption>Portals that changes augments tier will simply overwrite normal distribution.</TableCaption>
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead>1st augment</TableHead>

@@ -6,7 +6,7 @@ import { augmentsDistribution } from "@/constants/augments";
 import Slot from "@/components/augments-tier/slot";
 import ResetButton from "@/components/augments-tier/resetButton";
 import ResultPossibilities from "@/components/augments-tier/resultPossibilities";
-import UniversityToggle from "@/components/augments-tier/universityToggle";
+// import UniversityToggle from "@/components/augments-tier/universityToggle";
 
 const AugmentsTier: NextPage = () => {
   const [slotsTier, setSlotsTier] = useState(["", "", ""]);
@@ -47,7 +47,7 @@ const AugmentsTier: NextPage = () => {
             </div>
             <ResetButton slotsTier={slotsTier} setSlotsTier={setSlotsTier} university={university} setUniversity={setUniversity} />
           </div>
-          <UniversityToggle slotsTier={slotsTier} setSlotsTier={setSlotsTier} university={university} setUniversity={setUniversity} />
+          {/* <UniversityToggle slotsTier={slotsTier} setSlotsTier={setSlotsTier} university={university} setUniversity={setUniversity} /> */}
         </aside>
         <main className="mt-4 mb-24 w-full">
           <ResultPossibilities slotsTier={slotsTier} setSlotsTier={setSlotsTier} />

@@ -1,4 +1,4 @@
-import { possibleStages } from '@/constants/hero-augments';
+import { possibleStages } from '@/constants/archived/hero-augments';
 
 interface IStageSelection {
   stageSelected: number;

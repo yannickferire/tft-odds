@@ -1,4 +1,4 @@
-import { possibleLevels } from "@/constants/loaded-dice"
+import { possibleLevels } from "@/constants/archived/loaded-dice"
 
 interface IResultHeader {}
 

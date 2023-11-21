@@ -17,8 +17,14 @@ body {
 
 svg { vertical-align: baseline; }
 
-.bg-prismatic {
-  background: linear-gradient(to right top, rgb(153, 246, 228), rgb(233, 213, 255), rgb(241, 245, 249));
+.bg-prismatic { background: linear-gradient(to right top, rgb(153, 246, 228), rgb(233, 213, 255), rgb(241, 245, 249)); }
+.bg-headliner { 
+  background: rgb(90,250,251);
+  background: linear-gradient(180deg, rgba(90,250,251,1) 0%, rgba(203,255,71,1) 50%, rgba(244,183,209,1) 100%); }
+
+.headliner-on::after { 
+  background: rgb(90,250,251);
+  background: linear-gradient(180deg, rgba(90,250,251,1) 0%, rgba(203,255,71,1) 50%, rgba(244,183,209,1) 100%);
 }
 
 .ticket { top: 12px; }

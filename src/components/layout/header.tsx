@@ -77,12 +77,12 @@ const Header = () => {
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/augments-tables' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Augments Tables</Link>
           </li>
-          <li>
+          {/* <li>
             <Link 
               href="/data/portals" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/portals' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Portals Rewards</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="flex-1 hidden md:block self-end">
@@ -92,6 +92,12 @@ const Header = () => {
               href="/" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
+          </li>
+          <li className="relative">
+            <span className="opacity-40">Headliners</span>
+            <span className="bg-earlynight px-2 py-1 whitespace-nowrap absolute -top-[26px] left-1/2 -translate-x-1/2 rounded text-[10px]">
+              <span className="opacity-40">Coming Soon</span>
+            </span>
           </li>
           <li>
             <Link 
@@ -121,12 +127,12 @@ const Header = () => {
                     className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Tables</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link 
                     href="/data/portals" 
                     className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Portals Rewards</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>
@@ -148,7 +154,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="hidden md:hidden flex-1 mt-2">
+      {/* <div className="hidden md:hidden flex-1 mt-2">
         <ul className="flex justify-end gap-4 md:gap-6">
           <li>
             <Link 
@@ -157,7 +163,7 @@ const Header = () => {
             >Portals Rewards</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </header>
   )
 }

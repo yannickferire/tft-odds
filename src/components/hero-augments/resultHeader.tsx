@@ -1,4 +1,4 @@
-import { numberOfRerolls } from "@/constants/hero-augments";
+import { numberOfRerolls } from "@/constants/archived/hero-augments";
 
 interface IResultHeader {
   championPossibilities: number

@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { piltoverRewards, sixPiltoversRewards } from "@/constants/piltover";
+import { piltoverRewards, sixPiltoversRewards } from "@/constants/archived/piltover";
 import { formatConsumables } from "@/utils/formatConsumables";
 import {
   Table,

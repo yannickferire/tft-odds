@@ -8,9 +8,11 @@ interface IChampionsOdds {
   setChamps: (champions: any[]) => void;
   selectedLevel: number;
   traits: any[];
+  headliner: boolean;
+  setHeadliner: (headliner: boolean) => void;
 }
 
-const ChampionsOdds: React.FC<IChampionsOdds> = ({ champs, setChamps, selectedLevel, traits }) => {
+const ChampionsOdds: React.FC<IChampionsOdds> = ({ champs, setChamps, selectedLevel, traits, headliner, setHeadliner }) => {
   const getPool = () => {
     const newPool: any = [];
     Object.keys(numberOfChampionsByCost).forEach((cost) => {
@@ -29,8 +31,8 @@ const ChampionsOdds: React.FC<IChampionsOdds> = ({ champs, setChamps, selectedLe
         <ul>
         {selectedChampions.map((champion) => {
           return (
-              <li key={champion.name} className="flex flex-wrap border-b border-dashed py-6 content-center last:border-0">
-                <ChampionOdds champs={champs} setChamps={setChamps} champion={champion} selectedLevel={selectedLevel} pool={pool} traits={traits} />
+              <li key={champion.name} className="flex flex-wrap border-b border-dashed border-midday py-6 content-center last:border-0">
+                <ChampionOdds champs={champs} setChamps={setChamps} champion={champion} selectedLevel={selectedLevel} pool={pool} traits={traits} headliner={headliner} setHeadliner={setHeadliner} />
               </li>
         )})}
         </ul>

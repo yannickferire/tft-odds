@@ -21,16 +21,20 @@ interface IOddsByStar {
   opponentsCopies: number
   sameCostCopies: number;
   emoji: string;
+  headliner: boolean;
+  setHeadliner: (headliner: boolean) => void;
 }
 
-const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool, ownedCopies, opponentsCopies, sameCostCopies, emoji }) => {
+const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool, ownedCopies, opponentsCopies, sameCostCopies, emoji, headliner, setHeadliner }) => {
   const [championCopies, setChampionCopies] = useState(numberOfCopiesByCost[champion.cost + " cost"]);
 
   const starColors = ['bronze', 'silver', 'gold'];
   const starArray = Array.from({ length: star }, (_, index) => index + 1);
   const copiesNeeded = numberOfCopiesForTier[star+' star'] - ownedCopies;
+  
+  let slotsPerRoll: number = headliner ? championsPerRoll - 1 : championsPerRoll - 0.25;
 
-  const championOfThisCostPerRoll = (rollingChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']) * championsPerRoll / 100;
+  const championOfThisCostPerRoll = (rollingChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']) * slotsPerRoll / 100;
   const rollsNeeded = (copiesNeeded: number) => {
     let championCostPool = pool[champion.cost + " cost"];
     let numberOfRolls = 0;

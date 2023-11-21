@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { numberOfSlots, numberOfTraits } from '@/constants/hero-augments';
+import { numberOfSlots, numberOfTraits } from '@/constants/archived/hero-augments';
 
 interface ITraitsSelector {
   traits: any[];

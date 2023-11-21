@@ -5,6 +5,7 @@ import OpponentsCopies from './opponentsCopies';
 import OutOfThePool from './outOfThePool';
 import GoldIcon from '@/components/icons/goldIcon';
 import OddsByStar from './oddsByStar';
+import OddsHeadliner from './oddsHeadliner';
 import { numberOfCopiesForTier } from '@/constants/champions';
 import { bestItems } from '@/data/bestItems';
 
@@ -22,9 +23,11 @@ interface IChampionOdds {
   champs: any[];
   setChamps: (champions: any[]) => void;
   traits: any[];
+  headliner: boolean;
+  setHeadliner: (headliner: boolean) => void;
 }
 
-const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, champs, setChamps, traits }) => {
+const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, champs, setChamps, traits, headliner, setHeadliner }) => {
   const [ownedCopies, setOwnedCopies] = useState(0);
   const [opponentsCopies, setOpponentsCopies] = useState(0);
   const [sameCostCopies, setSameCostCopies] = useState(0);
@@ -95,10 +98,13 @@ const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, 
         <OpponentsCopies champion={champion} opponentsCopies={opponentsCopies} setOpponentsCopies={setOpponentsCopies} />
         <OutOfThePool champion={champion} sameCostCopies={sameCostCopies} setSameCostCopies={setSameCostCopies} pool={pool} />
       </div>
-      <div className="animate-fadein animate-delay-1 order-2 lg:order-3 flex flex-auto lg:flex-1">
-        <OddsByStar star={1} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies} opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[0]} />
-        <OddsByStar star={2} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[1]} />
-        <OddsByStar star={3} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[2]} />
+      <div className="animate-fadein animate-delay-1 order-2 lg:order-3 flex-1">
+        <div className="flex flex-auto lg:flex-1">
+          <OddsByStar star={1} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies} opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[0]} headliner={headliner} setHeadliner={setHeadliner} />
+          <OddsByStar star={2} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[1]} headliner={headliner} setHeadliner={setHeadliner} />
+          <OddsByStar star={3} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[2]} headliner={headliner} setHeadliner={setHeadliner} />
+        </div>
+        <OddsHeadliner headliner={headliner} selectedLevel={selectedLevel} champion={champion} />
       </div>
     </>
   )

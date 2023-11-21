@@ -5,13 +5,15 @@ interface IResetButton {
   setSelectedLevel: (level: number) => void;
   champs: any[];
   setChamps: (champions: any[]) => void;
+  headliner: boolean;
+  setHeadliner: (headliner: boolean) => void;
 }
 
-const ResetButton: React.FC<IResetButton> = ({ selectedLevel, setSelectedLevel, champs, setChamps }) => {
+const ResetButton: React.FC<IResetButton> = ({ selectedLevel, setSelectedLevel, champs, setChamps, headliner, setHeadliner }) => {
   const selectedChampions = champs.filter((champion) => champion.selected);
 
   let resetEnabled = false;
-  if (selectedLevel !== baseLevel || selectedChampions.length > 0) {
+  if (selectedLevel !== baseLevel || selectedChampions.length > 0 || headliner === true) {
     resetEnabled = true;
   }
   const handleReset = () => {
@@ -20,7 +22,8 @@ const ResetButton: React.FC<IResetButton> = ({ selectedLevel, setSelectedLevel, 
       champs.map((champion) => {
         return { ...champion, selected: false, position: 0 }
       })
-    )
+    );
+    setHeadliner(false);
   }
   return (
     <button 
