@@ -47,7 +47,7 @@ const Piltover: NextPage = () => {
             const uniqueKey = `golden-egg-${index + 1}`;
             return (
               <TableRow key={uniqueKey}>
-                <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                 <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
               </TableRow>
             );  
@@ -93,7 +93,7 @@ const Piltover: NextPage = () => {
             const uniqueKey = `march-of-progress-${index + 1}`;
             return (
               <TableRow key={uniqueKey}>
-                <TableCell className={`py-1 border border-crema border-opacity-20`}>{reward[0]}</TableCell>
+                <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{reward[0]}</TableCell>
                 <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}</TableCell>
               </TableRow>
             );  
@@ -116,7 +116,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-silver-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
@@ -137,7 +137,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-silver-gold-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
@@ -160,7 +160,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-gold-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
@@ -181,7 +181,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-gold-gold-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
@@ -204,7 +204,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-prismatic-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
@@ -225,7 +225,7 @@ const Piltover: NextPage = () => {
                 const uniqueKey = `spoil-war-prismatic-gold-${index + 1}`;
                 return (
                   <TableRow key={uniqueKey}>
-                    <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                    <TableCell className={`py-1 leading-[3em] border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
                 );  
