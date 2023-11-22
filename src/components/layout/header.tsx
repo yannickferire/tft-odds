@@ -129,6 +129,12 @@ const Header = () => {
               <ul className="text-left w-44 bg-midday rounded-sm">
                 <li>
                   <Link 
+                    href="/data/8-bit" 
+                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/8-bit' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >8-bit</Link>
+                </li>
+                <li>
+                  <Link 
                     href="/data/augments-distribution" 
                     className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Distribution</Link>
@@ -152,6 +158,12 @@ const Header = () => {
       </div>
       <div className="hidden md:hidden flex-1 mt-2">
         <ul className="flex justify-end gap-4 md:gap-6">
+          <li>
+            <Link 
+              href="/data/8-bit" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/8-bit' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >8-bit</Link>
+          </li>
           <li>
             <Link 
               href="/data/augments-distribution" 
