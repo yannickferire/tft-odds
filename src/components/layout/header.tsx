@@ -135,6 +135,12 @@ const Header = () => {
                 </li>
                 <li>
                   <Link 
+                    href="/data/heartsteel" 
+                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/heartsteel' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Heartsteel</Link>
+                </li>
+                <li>
+                  <Link 
                     href="/data/augments-distribution" 
                     className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Distribution</Link>
@@ -163,6 +169,12 @@ const Header = () => {
               href="/data/8-bit" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/8-bit' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >8-bit</Link>
+          </li>
+          <li>
+            <Link 
+              href="/data/heartsteel" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/data/heartsteel' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Heartsteel</Link>
           </li>
           <li>
             <Link 

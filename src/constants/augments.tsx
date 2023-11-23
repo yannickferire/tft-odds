@@ -123,7 +123,7 @@ export const goldenEgg = {
 }
 
 export const spoilsOfWarSilver = {
-  "4 Gold": 35,
+  "4x Gold": 35,
   "1x Item Component": 35,
   "2x Champion (based on player level)": 10,
   "1x Higher tier Champion (based on player level + 1)": 10,
@@ -131,11 +131,11 @@ export const spoilsOfWarSilver = {
   "1x Champion Duplicator (max 1 all game)": 5
 }
 export const spoilsOfWarSilverGold = {
-  "1 Gold": 90,
-  "2 Gold": 10
+  "1x Gold": 90,
+  "2x Gold": 10
 }
 export const spoilsOfWarGold = {
-  "4 Gold": 35,
+  "4x Gold": 35,
   "1x Item Component": 35,
   "2x Champion (based on player level)": 10,
   "1x Higher tier Champion (based on player level + 1)": 10,
@@ -143,12 +143,12 @@ export const spoilsOfWarGold = {
   "1x Champion Duplicator (max 1 all game)": 5
 }
 export const spoilsOfWarGoldGold = {
-  "1 Gold": 75,
-  "2 Gold": 25,
-  "3 Gold": 5
+  "1x Gold": 75,
+  "2x Gold": 25,
+  "3x Gold": 5
 }
 export const spoilsOfWarPrismatic = {
-  "8 Gold": 35,
+  "8x Gold": 35,
   "1x Item Component": 35,
   "2x Champion (based on player level)": 5,
   "1x Higher tier Champion (based on player level + 1)": 10,
@@ -157,9 +157,9 @@ export const spoilsOfWarPrismatic = {
   "1x Tome of Traits (max 1 all game)": 5  
 }
 export const spoilsOfWarPrismaticGold = {
-  "1 Gold": 70,
-  "2 Gold": 20,
-  "3 Gold": 10
+  "1x Gold": 70,
+  "2x Gold": 20,
+  "3x Gold": 10
 }
 
 export const marchOfProgress = {

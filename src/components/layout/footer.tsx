@@ -38,9 +38,15 @@ const Footer = () => {
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Loaded Dice</Link>
             </li>
+            <li>
+              <Link 
+                href={`/augments-tier`}
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Augments Tier</Link>
+            </li>
           </ul>
           <ul className="flex-1 text-left text-xs text-crema leading-5">
-          <li>
+            <li>
               <Link 
                 href={`/data/8-bit`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
@@ -48,9 +54,9 @@ const Footer = () => {
             </li>
             <li>
               <Link 
-                href={`/augments-tier`}
+                href={`/data/heartsteel`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Augments Tier</Link>
+              >Heartsteel</Link>
             </li>
             <li>
               <Link 

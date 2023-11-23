@@ -17,12 +17,12 @@ const HeightBit: NextPage = () => {
     <>
       <Head>
         <title>8-bit tables – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
-        <link rel="canonical" href="https://tftodds.com/augments-tier" />
+        <link rel="canonical" href="https://tftodds.com/data/8-bit" />
         <meta name="description" content="Unlock exclusive rewards in Teamfight Tactics with the 8-bit trait. Keep track of your team's damage dealt and achieve high scores to empower 8-bit champions with bonus Attack Damage." />
         <meta property="og:title" content="8-bit tables – TFT odds Set 10" />
 		    <meta property="og:description" content="Unlock exclusive rewards in Teamfight Tactics with the 8-bit trait. Keep track of your team's damage dealt and achieve high scores to empower 8-bit champions with bonus Attack Damage." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/augments-tier" />
+        <meta property="og:url" content="https://tftodds.com/data/8-bit" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />

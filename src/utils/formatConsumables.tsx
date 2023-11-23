@@ -20,7 +20,27 @@ const Consumables: { [key: string]: string } = {
   "Quicksilver": '/images/items/Quicksilver.png',
   "Hand of Justice": '/images/items/HandofJustice.png',
   "Jewelled Gauntlet": '/images/items/JeweledGauntlet.png',
+  "Rabadon's Deathcap": '/images/items/RabadonsDeathcap.png',
+  "Zeke's Herald": '/images/items/ZekesHerald.png',
+  "Locket of the Iron Solari": '/images/items/LocketoftheIronSolari.png',
+  "Zephyr": '/images/items/Zephyr.png',
+  "Shroud of Stillness": '/images/items/Shroud.png',
+  "Spatula": '/images/items/Spatula.png',
+  "Bramble Vest": '/images/items/BrambleVest.png',
+  "Item Component": '/images/items/ItemComponent.png',
+  "Radiant Item": '/images/items/RadiantItem.png',
+  "Artifact Item" : '/images/items/Artifact.png',
+  // anvils
+  "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
+  "Support Item Anvil": '/images/items/SupportItemAnvil.avif',
+  "Completed Item Anvil": '/images/items/CompletedItemAnvil.avif',
+  // units
+  "2 Cost": '/images/items/2CostUnit.png',
+  "3 Cost": '/images/items/3CostUnit.png',
+  "4 Cost": '/images/items/4CostUnit.png',
+  "5 Cost": '/images/items/5CostUnit.png',
   // others
+  "Tome of Traits": '/images/items/TomeofTraits.avif',
   "Champion Duplicator": '/images/items/duplicator.png',
   "Lesser Champion Duplicator": '/images/items/duplicator-low.webp',
   "Reforger": '/images/items/reforger.webp',
@@ -39,8 +59,10 @@ export function formatConsumables(value: string) {
 
       let radiant = false;
       if (consumableName.includes("Radiant")) { radiant = true; }
+      let cleanedConsumableName = consumableName;
 
-      const cleanedConsumableName = consumableName.replace("Radiant ", "").trim();
+      if (!consumableName.includes("Radiant Item")) { cleanedConsumableName = cleanedConsumableName.replace("Radiant ", ""); }
+      cleanedConsumableName = cleanedConsumableName.trim();
       const imagePath = Consumables[cleanedConsumableName];
 
       return (
