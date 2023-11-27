@@ -87,11 +87,9 @@ const Footer = () => {
             <li className="hidden">
               <a rel="me" href="https://mastodon.social/@tftodds">@tftodds</a>
             </li>
-            {/*
             <li>
-              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/master.webp" alt="Rank: Master" /> tftodds com</a>
+              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/platinum.svg" alt="Rank: Platinum" /> tftodds com</a>
             </li>
-            */}
             <li>
               <a href="mailto:hello@tftodds.com" className="leading-[30px] sm:leading-normal block opacity-40 hover:opacity-100 tracking-wider font-bold">hello@tftodds.com</a>
             </li>
