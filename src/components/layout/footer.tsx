@@ -21,10 +21,10 @@ const Footer = () => {
               >Champions</Link>
             </li>
             <li>
-              <p 
-                className="leading-[30px] sm:leading-normal inline-block opacity-20 tracking-wider"
-              >Headliners</p>
-              <span className="opacity-50 px-1 bg-midnight ml-1 rounded-sm">Soon</span>
+            <Link 
+                href="/headliners"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Headliners</Link>
             </li>
             <li>
               <Link 

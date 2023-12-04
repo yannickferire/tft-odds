@@ -100,10 +100,10 @@ const Header = () => {
             >Champions</Link>
           </li>
           <li className="relative">
-            <span className="opacity-40">Headliners</span>
-            <span className="bg-earlynight px-2 py-1 whitespace-nowrap absolute -top-[26px] left-1/2 -translate-x-1/2 rounded text-[10px]">
-              <span className="opacity-40">Coming Soon</span>
-            </span>
+            <Link 
+                href="/headliners" 
+                className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/headliners' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+              >Headliners</Link>
           </li>
           <li>
             <Link 
