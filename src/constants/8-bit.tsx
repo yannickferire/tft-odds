@@ -20,5 +20,5 @@ export const thresholds = {
   "8": 125000,
   "9": 170000,
   "10": 225000,
-  "11 – Final score ✌️": 456789,
+  "11 – Final score ✌️": 346678,
 }
