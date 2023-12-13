@@ -139,8 +139,8 @@ export const rollingHeadlinersChancesByLevel: { [level: string]: { [cost: string
   "level 9": {
     "1 cost": 0,
     "2 cost": 0,
-    "3 cost": 90,
-    "4 cost": 10,
+    "3 cost": 98,
+    "4 cost": 2,
     "5 cost": 0
   },
   "level 10": {
