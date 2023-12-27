@@ -8,7 +8,13 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 import Layout from '@/components/layout/_layout';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // default: true
+    },
+  },
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
