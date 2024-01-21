@@ -70,12 +70,12 @@ const Footer = () => {
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Tables</Link>
             </li>
-            {/* <li>
+            <li>
               <Link 
                 href={`/data/portals`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Portals Rewards</Link>
-            </li> */}
+            </li>
           </ul>
           <ul className="flex-1 text-center sm:text-right text-xs text-crema leading-5">
             <li>
@@ -88,7 +88,7 @@ const Footer = () => {
               <a rel="me" href="https://mastodon.social/@tftodds">@tftodds</a>
             </li>
             <li>
-              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/diamond.svg" alt="Rank: Diamond" /> tftodds com</a>
+              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/master.webp" alt="Rank: Master" /> tftodds com</a>
             </li>
             <li>
               <a href="mailto:hello@tftodds.com" className="leading-[30px] sm:leading-normal block opacity-40 hover:opacity-100 tracking-wider font-bold">hello@tftodds.com</a>

@@ -12,7 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const Piltover: NextPage = () => {
+const Portals: NextPage = () => {
   return (
     <>
       <Head>
@@ -31,9 +31,9 @@ const Piltover: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Portals data</strong> tables</h1>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">The Hall of Nine</strong> – The Void region</h2>
+      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
-      <Table className="mb-6">
+      <Table className="mb-24">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left">Rewards</TableHead>
@@ -52,7 +52,7 @@ const Piltover: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Thresh&apos;s Sanctum</strong> – Shadow Isles region</h2>
+      {/* <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Thresh&apos;s Sanctum</strong> – Shadow Isles region</h2>
       <p className="text-center mb-4">When ANY unit dies, collect their soul. <br/>Every 40 souls, gain a <strong>loot orb</strong>.</p>
       <Table className="mb-6">
         <TableHeader>
@@ -91,9 +91,9 @@ const Piltover: NextPage = () => {
             );  
           })}
         </TableBody>
-      </Table>
+      </Table> */}
     </>
   )
 }
 
-export default Piltover;
+export default Portals;

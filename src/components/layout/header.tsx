@@ -136,13 +136,13 @@ const Header = () => {
                 <li>
                   <Link 
                     href="/data/heartsteel" 
-                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/heartsteel' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/heartsteel' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Heartsteel</Link>
                 </li>
                 <li>
                   <Link 
                     href="/data/augments-distribution" 
-                    className={`block pt-2 h-10 px-2 rounded-t-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Distribution</Link>
                 </li>
                 <li>
@@ -151,12 +151,12 @@ const Header = () => {
                     className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Tables</Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link 
                     href="/data/portals" 
                     className={`block pt-2 h-10 px-2 rounded-b-sm text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/data/portals' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Portals Rewards</Link>
-                </li> */}
+                </li>
               </ul>
             </div>
           </li>
@@ -190,7 +190,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      {/* <div className="hidden md:hidden flex-1 mt-2">
+      <div className="hidden md:hidden flex-1 mt-2">
         <ul className="flex justify-end gap-4 md:gap-6">
           <li>
             <Link 
@@ -199,7 +199,7 @@ const Header = () => {
             >Portals Rewards</Link>
           </li>
         </ul>
-      </div> */}
+      </div>
     </header>
   )
 }
