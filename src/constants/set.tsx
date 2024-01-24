@@ -2,7 +2,7 @@
 export const stateSet: string = "latest";
 export const currentSet: number = 10;
 export const setStage: number = 1;
-export const patch: string = "14.1";
+export const patch: string = "14.2";
 export const apiURL = `https://raw.communitydragon.org/${stateSet}`;
 export const fetchChampionsURL = apiURL + "/cdragon/tft/en_us.json";
 export const championImageURL = apiURL + "/game/assets/ux/tft/championsplashes";
