@@ -35,14 +35,14 @@ const Home: NextPage = () => {
         <title>Teamfight Tactics Odds – TFT Set {currentSet}{setStage === 2 ? '.5': null} probabilities tools</title>
         <link rel="canonical" href="https://tftodds.com" />
         <meta name="description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
-        <meta property="og:title" content="Teamfight Tactics Odds – TFT Set 10 probabilities tools" />
+        <meta property="og:title" content="Teamfight Tactics Odds – TFT Set 11 probabilities tools" />
 		    <meta property="og:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Teamfight Tactics Odds – TFT Set 10 probabilities tools" />
+        <meta name="twitter:title" content="Teamfight Tactics Odds – TFT Set 11 probabilities tools" />
         <meta name="twitter:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
@@ -51,7 +51,6 @@ const Home: NextPage = () => {
         <aside className="flex flex-col w-full md:w-2/6 xl:w-96 mb-6">
           <h2 className="hidden">Select your level and a champion</h2>
           <div className="flex justify-between">
-            <HeadlinerToggle headliner={headliner} setHeadliner={setHeadliner} />
             <LevelSelector selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} /> 
             <ResetButton selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} champs={champs} setChamps={setChamps} headliner={headliner} setHeadliner={setHeadliner} />
           </div>

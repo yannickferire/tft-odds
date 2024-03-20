@@ -12,7 +12,7 @@ export async function fetchChampions() {
     const hasTraits =  champion.traits.length > 0;
     const cost = champion.cost;
 
-    if (hasTraits && cost !== 11 && !uniqueChampionNames[champion.name]) {
+    if (hasTraits && cost !== 11 && !uniqueChampionNames[champion.name] && champion.name !== "Xayah & Rakan") {
       uniqueChampionNames[champion.name] = true;
       return true;
     }
@@ -23,8 +23,8 @@ export async function fetchChampions() {
     ...champion,
     // if champion is from Stage 2, then modifie url to get the correct image
     image: champion.icon.includes("Stage2")
-      ? `${championImageURL}/tft10_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}_stage2.png`
-      : `${championImageURL}/tft10_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}.png`
+      ? `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}_stage2.png`
+      : `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}.png`
   }));
 
   // traits

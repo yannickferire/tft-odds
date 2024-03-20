@@ -104,7 +104,6 @@ const ChampionOdds: React.FC<IChampionOdds> = ({ champion, selectedLevel, pool, 
           <OddsByStar star={2} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[1]} headliner={headliner} setHeadliner={setHeadliner} />
           <OddsByStar star={3} champion={champion} selectedLevel={selectedLevel} pool={pool} ownedCopies={ownedCopies}opponentsCopies={opponentsCopies} sameCostCopies={sameCostCopies} emoji={randomizedEmojis[2]} headliner={headliner} setHeadliner={setHeadliner} />
         </div>
-        <OddsHeadliner headliner={headliner} selectedLevel={selectedLevel} champion={champion} />
       </div>
     </>
   )
