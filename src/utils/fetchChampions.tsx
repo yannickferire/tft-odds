@@ -24,7 +24,7 @@ export async function fetchChampions() {
     // if champion is from Stage 2, then modifie url to get the correct image
     image: champion.icon.includes("Stage2")
       ? `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}_stage2.png`
-      : `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}.png`
+      : `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.png`
   }));
 
   // traits
