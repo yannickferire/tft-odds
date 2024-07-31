@@ -15,13 +15,15 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading, traits, setTraits 
     return !hasValidTrait;
   }).map((champion) => {
     const invalidTraitCount = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait)).length;
+    const validTraitCount = champion.traits.filter((trait: string) => validEmblems.some(emblem => emblem.name === trait)).length;
     let tier = "b";
-    if (invalidTraitCount === 2) { tier = "s"; }
-    if (invalidTraitCount === 1 && champion.cost <= 3) { tier = "a"; }
+    if (invalidTraitCount === 2 || (invalidTraitCount === 1 && validTraitCount === 0)) { tier = "s"; }
+    else if (invalidTraitCount === 1 && champion.cost <= 3) { tier = "a"; }
     
     return {
       ...champion,
       invalidTraitCount: invalidTraitCount,
+      validTraitCount: validTraitCount,
       tier: tier
     };
   });
@@ -36,7 +38,7 @@ const BestUnits: React.FC<IBestUnits> = ({ champs, isLoading, traits, setTraits 
     return 0;
   });
 
-  const skeletonNumberOfBestUnits = Array.from({ length: 12 }, (_, index) => index + 1);
+  const skeletonNumberOfBestUnits = Array.from({ length: 8 }, (_, index) => index + 1);
 
   const handleChampionTraitSelection = (championTraits: any) => {
     setTraits(

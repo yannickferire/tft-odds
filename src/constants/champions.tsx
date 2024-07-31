@@ -1,9 +1,9 @@
 export const numberOfChampionsByCost: { [cost: string]: number } = {
-  "1 cost": 13,
+  "1 cost": 14,
   "2 cost": 13,
   "3 cost": 13,
   "4 cost": 12,
-  "5 cost": 9
+  "5 cost": 8
 }
 export const totalNumberOfChampions = Object.values(numberOfChampionsByCost)
   .reduce((accumulator, currentValue) => accumulator + currentValue)

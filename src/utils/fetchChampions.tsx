@@ -19,13 +19,17 @@ export async function fetchChampions() {
     return false;
   });
   const withSelectionChampions = filteredChampions.map((champion: any) => ({ ...champion, selected: false }));
-  const withImageChampions = withSelectionChampions.map((champion: any) => ({
-    ...champion,
-    // if champion is from Stage 2, then modifie url to get the correct image
-    image: champion.icon.includes("Stage2")
-      ? `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.tft_set${currentSet}_stage2.png`
-      : `${championImageURL}/tft${currentSet}_${champion.name.toLowerCase().replace(/[' ]/g, '')}_mobile.png`
-  }));
+  const withImageChampions = withSelectionChampions.map((champion: any) => {
+    // exceptions for Blitzcrank and Norra
+    const championUrl = champion.name === "Blitzcrank" ? "blitzcrank_small" : champion.name === "Norra & Yuumi" ? "norra" : champion.name;
+    return {
+      ...champion,
+      championUrl,
+      image: 
+        champion.name === "Blitzcrank" ? `${championImageURL}/tft${currentSet}_blitzcrank_small.tft_set12.png` :
+        `${championImageURL}/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}_teamplanner_splash.png`
+    };
+  });
 
   // traits
   const dataTraits = data.sets[currentSet].traits.map((trait: any) => ({

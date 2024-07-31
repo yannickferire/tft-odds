@@ -34,33 +34,6 @@ const TomeOfTraits: NextPage = () => {
   if (selectedTraits >= 12) { emblemsTailored = 4; }
   const emblemsRandom = emblems - emblemsTailored;
 
-  const bestUnits = champs.filter((champion) => {
-    const invalidTraits = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait));
-    const hasValidTrait = invalidTraits.length === 0;
-    return !hasValidTrait;
-  }).map((champion) => {
-    const invalidTraitCount = champion.traits.filter((trait: string) => !validEmblems.some(emblem => emblem.name === trait)).length;
-    let tier = "b";
-    if (invalidTraitCount === 2) { tier = "s"; }
-    if (invalidTraitCount === 1 && champion.cost <= 3) { tier = "a"; }
-    
-    return {
-      ...champion,
-      invalidTraitCount: invalidTraitCount,
-      tier: tier
-    };
-  });
-
-  const sortedBestUnits = bestUnits.sort((a, b) => {
-    if (a.tier === "s" && b.tier !== "s") return -1;
-    if (a.tier !== "s" && b.tier === "s") return 1;
-    if (a.tier < b.tier) return -1;
-    if (a.tier > b.tier) return 1;
-    if (a.cost < b.cost) return -1;
-    if (a.cost > b.cost) return 1;
-    return 0;
-  });
-
   return (
     <>
       <Head>
