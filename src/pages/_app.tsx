@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-adsense-account" content="ca-pub-5955862670449423" />
+        <meta name="ezoic-site-verification" content="g1Z9B6z7ZdSh1I2ytsxu67eOj6djdK" />
       </Head>
       <div className="w-full xl:container px-5 pt-6 sm:pt-10 pb-6 sm:pb-8 flex flex-col min-h-screen">
         <Layout>
