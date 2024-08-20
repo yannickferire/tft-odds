@@ -75,7 +75,7 @@ const Footer = () => {
             <li>
               <a href="mailto:hello@tftodds.com" className="leading-[30px] sm:leading-normal block opacity-40 hover:opacity-100 tracking-wider font-bold">hello@tftodds.com</a>
             </li>
-            <li><p className="inline opacity-40">© 2023 TFT Odds</p></li>
+            <li><p className="inline opacity-40">© 2024 TFT Odds</p></li>
           </ul>
         </div>
       </div>
