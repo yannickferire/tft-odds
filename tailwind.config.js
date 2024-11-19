@@ -1,3 +1,7 @@
+const {
+	default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -38,6 +42,7 @@ module.exports = {
 		"w-2.5",
 		"w-3",
 		"w-4",
+		"opacity-20",
 		"focus:ring-silver/[.30]",
 		"focus:ring-gold/[.30]",
 		"focus:ring-prismatic/[.30]",
@@ -52,26 +57,53 @@ module.exports = {
 		container: {
 			center: true,
 		},
-		colors: {
-			midnight: "#041C32",
-			earlynight: "#04293A",
-			midday: "#064663",
-			morning: "#ECB365",
-			crema: "#ffffd2",
-			bronze: "#9f561b",
-			silver: "#b5cbde",
-			gold: "#f9be0a",
-			"1cost": "#9f9a89",
-			"2cost": "#39b65a",
-			"3cost": "#2875be",
-			"4cost": "#aa09a4",
-			"5cost": "#d78e00",
-			support: "#39b65a",
-			carry: "#8b52e9",
-			s: "rgb(255, 127, 127)",
-			a: "rgb(255, 223, 127)",
-			b: "rgb(127, 255, 127)",
+		extend: {
+			colors: {
+				midnight: "#041C32",
+				earlynight: "#04293A",
+				midday: "#064663",
+				morning: "#ECB365",
+				crema: "#ffffd2",
+				bronze: "#9f561b",
+				silver: "#b5cbde",
+				gold: "#f9be0a",
+				"1cost": "#9f9a89",
+				"2cost": "#39b65a",
+				"3cost": "#2875be",
+				"4cost": "#aa09a4",
+				"5cost": "#d78e00",
+				support: "#39b65a",
+				carry: "#8b52e9",
+				s: "rgb(255, 127, 127)",
+				a: "rgb(255, 223, 127)",
+				b: "rgb(127, 255, 127)",
+			},
+			animation: {
+				aurora: "aurora 60s linear infinite",
+			},
+			keyframes: {
+				aurora: {
+					from: {
+						backgroundPosition: "50% 50%, 50% 50%",
+					},
+					to: {
+						backgroundPosition: "350% 50%, 350% 50%",
+					},
+				},
+			},
 		},
 	},
-	plugins: [],
+	plugins: [addVariablesForColors],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+	let allColors = flattenColorPalette(theme("colors"));
+	let newVars = Object.fromEntries(
+		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
+
+	addBase({
+		":root": newVars,
+	});
+}

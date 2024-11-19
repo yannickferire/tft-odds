@@ -30,7 +30,7 @@ const Portals: NextPage = () => {
         <meta name="twitter:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Portals data</strong> tables</h1>
+      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Opening encounters data</strong> tables</h1>
       <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
       <Table className="mb-24">

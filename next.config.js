@@ -4,7 +4,7 @@ const nextConfig = {
 	poweredByHeader: false,
 	compress: true,
 	images: {
-		domains: ["raw.communitydragon.org"],
+		domains: ["raw.communitydragon.org", "pbs.twimg.com"],
 	},
 };
 

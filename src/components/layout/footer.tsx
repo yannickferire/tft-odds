@@ -5,7 +5,7 @@ import Script from 'next/script';
 const Footer = () => {
   return (
     <>
-    <footer className="bg-earlynight py-4 rounded">
+    <footer className="bg-earlynight py-4 rounded z-10">
       <div className="flex flex-col sm:flex-row px-4 justify-between gap-4 sm:gap-8 md:gap-16">
         <div className="order-2 sm:order-1 flex-1">
           <p className="text-xs text-crema leading-5 opacity-40 mt-4 sm:mt-0">TFT Odds isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.<br/>
@@ -18,19 +18,13 @@ const Footer = () => {
               <Link 
                 href="/"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Home</Link>
+            </li>
+            <li>
+              <Link 
+                href="/champions"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Champions</Link>
-            </li>
-            <li>
-              <Link 
-                href={`/tome-of-traits`}
-                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Tome of traits</Link>
-            </li>
-            <li>
-              <Link 
-                href={`/loaded-dice`}
-                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Loaded Dice</Link>
             </li>
             <li>
               <Link 
@@ -54,9 +48,9 @@ const Footer = () => {
             </li>
             <li>
               <Link 
-                href={`/data/portals`}
+                href={`/data/encounters`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Portals Rewards</Link>
+              >Opening encounters</Link>
             </li>
           </ul>
           <ul className="flex-1 text-center sm:text-right text-xs text-crema leading-5">

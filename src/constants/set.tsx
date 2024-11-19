@@ -1,6 +1,6 @@
 // stateSet should be 'latest' if it's live or 'pbe' if it's the upcoming set
-export const stateSet: string = "latest";
-export const currentSet: number = 12;
+export const stateSet: string = "pbe";
+export const currentSet: number = 13;
 export const setStage: number = 1;
 export const patch: string = "14.16";
 export const apiURL = `https://raw.communitydragon.org/${stateSet}`;

@@ -20,13 +20,25 @@ export async function fetchChampions() {
   });
   const withSelectionChampions = filteredChampions.map((champion: any) => ({ ...champion, selected: false }));
   const withImageChampions = withSelectionChampions.map((champion: any) => {
-    // exceptions for Blitzcrank and Norra
-    const championUrl = champion.name === "Blitzcrank" ? "blitzcrank_small" : champion.name === "Norra & Yuumi" ? "norra" : champion.name;
+    // exceptions
+    const championUrl = 
+      champion.name === "Powder" ? "blue" : 
+      champion.name === "Dr. Mundo" ? "drmundo" : 
+      champion.name === "Scar" ? "flyguy" : 
+      champion.name === "Sevika" ? "lieutenant" : 
+      champion.name === "Smeech" ? "gremlin" : 
+      champion.name === "Vander" ? "prime" : 
+      champion.name === "Violet" ? "red" : 
+      champion.name === "Nunu & Willump" ? "nunuwillump" : 
+      champion.name === "Maddie" ? "shooter" : 
+      champion.name === "Renni" ? "chainsaw" : 
+      champion.name === "Loris" ? "beardy" : 
+      champion.name === "Steb" ? "fish" : 
+      champion.name;
     return {
       ...champion,
       championUrl,
       image: 
-        champion.name === "Blitzcrank" ? `${championImageURL}/tft${currentSet}_blitzcrank_small.tft_set12.png` :
         `${championImageURL}/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}_teamplanner_splash.png`
     };
   });

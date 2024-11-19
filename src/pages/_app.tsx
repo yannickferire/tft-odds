@@ -3,6 +3,10 @@ import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 
+import { useRouter } from 'next/router';
+
+import { AuroraBackground } from '@/components/ui/aurora-background';
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
@@ -17,19 +21,22 @@ const queryClient = new QueryClient({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isHomePage = router.pathname === '/';
+
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* <meta name="ezoic-site-verification" content="g1Z9B6z7ZdSh1I2ytsxu67eOj6djdK" /> */}
       </Head>
-      <div className="w-full xl:container px-5 pt-6 sm:pt-10 pb-6 sm:pb-8 flex flex-col min-h-screen">
-        <Layout>
-          <Component {...pageProps} />
-          <Analytics />
-          <ReactQueryDevtools />
-        </Layout>
-      </div>
+      <AuroraBackground opacity={(isHomePage ? 40 : 10 )}>  
+          <Layout>
+            <Component {...pageProps} />
+            <Analytics />
+            <ReactQueryDevtools />
+          </Layout>
+      </AuroraBackground>
    </QueryClientProvider>
   )
 }

@@ -52,9 +52,9 @@ export const rollingChancesByLevel: { [level: string]: { [cost: string]: number 
   },
   "level 8": {
     "1 cost": 18,
-    "2 cost": 27,
+    "2 cost": 25,
     "3 cost": 32,
-    "4 cost": 20,
+    "4 cost": 22,
     "5 cost": 3
   },
   "level 9": {
