@@ -55,6 +55,12 @@ const Header = () => {
           </li>
           <li>
             <Link 
+              href="/chem-baron" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/chem-baron' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Chem Baron</Link>
+          </li>
+          <li>
+            <Link 
               href="/augments-tier" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/augments-tier' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Augments Tier</Link>
@@ -80,6 +86,12 @@ const Header = () => {
               href="/champions" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/champions' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
+          </li>
+          <li>
+            <Link 
+              href="/chem-baron" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/chem-baron' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Chem Baron</Link>
           </li>
           <li>
             <Link 

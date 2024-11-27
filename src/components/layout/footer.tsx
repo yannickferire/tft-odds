@@ -28,6 +28,12 @@ const Footer = () => {
             </li>
             <li>
               <Link 
+                href="/chem-baron"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Chem Baron</Link>
+            </li>
+            <li>
+              <Link 
                 href={`/augments-tier`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Tier</Link>

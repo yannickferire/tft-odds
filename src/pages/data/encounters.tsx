@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
 import { hallOfNine, threshEarly, threshLate } from "@/constants/portals";
-import { formatConsumables } from "@/utils/formatConsumables";
+import { FormatConsumables } from "@/utils/formatConsumables";
 import {
   Table,
   TableBody,
@@ -31,7 +31,7 @@ const Portals: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Opening encounters data</strong> tables</h1>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Loot subscription</strong></h2>
+      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Sevika: Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
       <Table className="mb-24">
         <TableHeader>
@@ -45,7 +45,9 @@ const Portals: NextPage = () => {
             const uniqueKey = `hall-of-nine-${index + 1}`;
             return (
               <TableRow key={uniqueKey}>
-                <TableCell className={`py-1 border border-crema border-opacity-20`}>{formatConsumables(reward[0])}</TableCell>
+                <TableCell className={`py-4 border border-crema border-opacity-20`}>
+                  <FormatConsumables value={reward[0]} />
+                </TableCell>
                 <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
               </TableRow>
             );  
