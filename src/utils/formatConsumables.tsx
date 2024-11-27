@@ -127,21 +127,23 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
                   />
                 )}
                 {champion && (
-                  <div className={`inline-block align-middle w-8 h-8 relative mr-1 border-2 border-${champion.cost}cost box-border overflow-hidden`}>
-                    <Image
-                      src={champion.image}
-                      alt={champion.name}
-                      width={40}
-                      height={40}
-                      className="max-w-none w-16 -top-2 left-1/2 -translate-x-1/2 absolute inline-block"
-                    />
+                  <div className="inline-block mr-1 relative">
+                    <div className={`inline-block align-middle w-8 h-8 relative border-2 border-${champion.cost}cost box-border overflow-hidden`}>
+                      <Image
+                        src={champion.image}
+                        alt={champion.name}
+                        width={40}
+                        height={40}
+                        className="max-w-none w-16 -top-2 left-1/2 -translate-x-1/2 absolute inline-block"
+                      />
+                    </div>
                     {starMatch &&
                     <Image
                       src={`/images/icons/${starMatch[1]}-star.png`}
                       alt="2 star"
                       width={40}
                       height={13}
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20"
+                      className="max-w-none absolute -top-2 mt-1 left-1/2 -translate-x-1/2 z-20"
                     />
                   }
                   </div>
