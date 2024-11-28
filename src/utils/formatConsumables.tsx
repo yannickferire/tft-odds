@@ -25,6 +25,7 @@ const Consumables: { [key: string]: string } = {
   "Jewelled Gauntlet": '/images/items/JeweledGauntlet.png',
   "Rabadon's Deathcap": '/images/items/RabadonsDeathcap.png',
   "Zeke's Herald": '/images/items/ZekesHerald.png',
+  "Chalice of Power": '/images/items/Chalice.png',
   "Locket of the Iron Solari": '/images/items/LocketoftheIronSolari.png',
   "Zephyr": '/images/items/Zephyr.png',
   "Shroud of Stillness": '/images/items/Shroud.png',
@@ -39,6 +40,9 @@ const Consumables: { [key: string]: string } = {
   "Radiant Item": '/images/items/RadiantItem.png',
   "Radiant Item Conversion": '/images/items/RadiantItem.png',
   "Artifact Item" : '/images/items/Artifact.png',
+  "Infinity Force": '/images/items/InfinityForce.avif',
+  "Zhonya's Paradox": '/images/items/Zhonya.avif',
+  "Anima Visage": '/images/items/AnimaVisage.avif',
   // anvils
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
   "Support Item Anvil": '/images/items/SupportItemAnvil.avif',
