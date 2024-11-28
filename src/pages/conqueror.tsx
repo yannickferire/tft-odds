@@ -47,7 +47,10 @@ const Conqueror: NextPage = () => {
       </Head>
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><strong className="text-morning">Conqueror</strong> loot tables</h1>
       <ul className="mb-4 flex gap-2 justify-center">
-        {champs.filter((champion) => champion.traits.includes("Conqueror")).map((champion, index) => (
+        {champs
+          .filter((champion) => champion.traits.includes("Conqueror"))
+          .sort((a, b) => a.cost - b.cost)
+          .map((champion, index) => (
           <li 
           key={index} 
           className={`w-12 champion aspect-square border-2 border-${champion.cost}cost rounded relative text-${champion.cost}cost`}
