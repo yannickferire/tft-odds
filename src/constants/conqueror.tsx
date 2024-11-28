@@ -85,7 +85,7 @@ export const lootTable: Record<string, & Record<number, { value: string; percent
   },
   "1500 Conquest": {
     1: {
-      value: "2x Tactician's Crown + 1x Radiant Conversion + 80x Gold",
+      value: "2x Tactician's Crown + 1x Radiant Item Conversion + 80x Gold",
       percent: 100
     }
   },

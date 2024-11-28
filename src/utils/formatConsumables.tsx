@@ -37,7 +37,7 @@ const Consumables: { [key: string]: string } = {
   "Tier 3 Item": '/images/items/ItemComponent.png',
   "Tier 4 Item": '/images/items/ItemComponent.png',
   "Radiant Item": '/images/items/RadiantItem.png',
-  "Radiant Conversion": '/images/items/RadiantItem.png',
+  "Radiant Item Conversion": '/images/items/RadiantItem.png',
   "Artifact Item" : '/images/items/Artifact.png',
   // anvils
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
