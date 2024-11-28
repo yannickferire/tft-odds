@@ -34,6 +34,12 @@ const Footer = () => {
             </li>
             <li>
               <Link 
+                href="/conqueror"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Conqueror</Link>
+            </li>
+            <li>
+              <Link 
                 href={`/augments-tier`}
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Tier</Link>

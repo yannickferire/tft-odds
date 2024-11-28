@@ -37,6 +37,7 @@ const Consumables: { [key: string]: string } = {
   "Tier 3 Item": '/images/items/ItemComponent.png',
   "Tier 4 Item": '/images/items/ItemComponent.png',
   "Radiant Item": '/images/items/RadiantItem.png',
+  "Radiant Conversion": '/images/items/RadiantItem.png',
   "Artifact Item" : '/images/items/Artifact.png',
   // anvils
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
@@ -112,22 +113,33 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
               <>
                 <span>{count}x </span>
                 {imagePath && (
-                  <Image
-                    src={imagePath}
-                    alt={consumableName}
-                    width={32}
-                    height={32}
-                    className={`inline-block ml-1 -mt-1 mr-1 border-2 ${
-                      radiant ? 'border-gold' : 
-                      consumableName === "Tier 1 Item " ? 'border-1cost' :
-                      consumableName === "Tier 2 Item " ? 'border-2cost' :
-                      consumableName === "Tier 3 Item " ? 'border-3cost' :
-                      consumableName === "Tier 4 Item " ? 'border-4cost' : 'border-midday'
-                    } box-border`}
-                  />
+                  <div className="inline-block mr-2 ml-1 relative">
+                    <Image
+                      src={imagePath}
+                      alt={consumableName}
+                      width={32}
+                      height={32}
+                      className={`inline-block -mt-1 border-2 ${
+                        radiant ? 'border-gold' : 
+                        consumableName === "Tier 1 Item " ? 'border-1cost' :
+                        consumableName === "Tier 2 Item " ? 'border-2cost' :
+                        consumableName === "Tier 3 Item " ? 'border-3cost' :
+                        consumableName === "Tier 4 Item " ? 'border-4cost' : 'border-midday'
+                      } box-border`}
+                    />
+                    {starMatch &&
+                      <Image
+                        src={`/images/icons/${starMatch[1]}-star.png`}
+                        alt="2 star"
+                        width={40}
+                        height={13}
+                        className="max-w-none absolute -top-2 mt-1 left-1/2 -translate-x-1/2 z-20"
+                      />
+                    }
+                  </div>
                 )}
                 {champion && (
-                  <div className="inline-block mr-1 relative">
+                  <div className="inline-block mr-2 ml-1 relative">
                     <div className={`inline-block align-middle w-8 h-8 relative border-2 border-${champion.cost}cost box-border overflow-hidden`}>
                       <Image
                         src={champion.image}
@@ -138,14 +150,14 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
                       />
                     </div>
                     {starMatch &&
-                    <Image
-                      src={`/images/icons/${starMatch[1]}-star.png`}
-                      alt="2 star"
-                      width={40}
-                      height={13}
-                      className="max-w-none absolute -top-2 mt-1 left-1/2 -translate-x-1/2 z-20"
-                    />
-                  }
+                      <Image
+                        src={`/images/icons/${starMatch[1]}-star.png`}
+                        alt="2 star"
+                        width={40}
+                        height={13}
+                        className="max-w-none absolute -top-2 mt-1 left-1/2 -translate-x-1/2 z-20"
+                      />
+                    }
                   </div>
                 )}
               </>
