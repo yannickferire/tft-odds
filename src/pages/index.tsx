@@ -37,11 +37,11 @@ const Home: NextPage = () => {
         <span className="mt-2 block text-3xl lowercase tracking-normal">Odds, statistics and tips for the game</span>
       </h1>
       <Link href="/champions">
-      <article className="flex flex-col md:flex-row justify-between gap-12 flex-auto mb-24 bg-earlynight p-4 pb-10 md:p-10 rounded">
+      <article className="flex flex-col md:flex-row justify-between gap-12 flex-auto mb-8 bg-earlynight p-4 pb-10 md:p-10 rounded">
         <div className="flex-1 flex flex-col gap-4">
         <h2 className="text-3xl font-bold text-left">Champions rolling odds</h2>
         <p className="mb-2">Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder.</p>
-        <button className="inline w-fit text-left h-10 text-morning/80 hover-effect transition-all duration-300 ease-in-out"><span className="w-auto px-4 h-10 inline-block leading-10 rounded bg-morning text-midnight relative z-10 font-bold">Check it out</span></button>
+        <button className="inline w-fit text-left h-10 text-morning/80 hover-effect transition-all duration-300 ease-in-out"><span className="w-auto px-4 h-10 inline-block leading-10 rounded bg-morning text-midnight relative z-10 font-bold">Roll the dice</span></button>
         </div>
         <div className="relative flex-1 flex justify-center items-center">
           <motion.div
@@ -88,6 +88,50 @@ const Home: NextPage = () => {
         </div>
       </article>
       </Link>
+      <div className="flex flex-col md:flex-row gap-8 mb-24">
+      <Link href="/chem-baron" className="flex-1">
+      <article className="h-full flex flex-col md:flex-row justify-between gap-8 flex-[20%] bg-earlynight rounded relative">
+        <div className="w-full sm:w-4/5 lg:w-3/5 flex flex-col gap-4 p-4 pb-10 md:p-10">
+        <div className="flex items-start gap-4">
+          <Image className="block h-auto mt-0.5" src="/images/traits/set13/chem-baron.png" alt="Chem Baron Trait Image" width={30} height={30} />
+          <h2 className="text-3xl font-bold text-left leading-none">Chem Baron loots</h2>
+        </div>
+        <p className="mb-2 flex-grow">Discover exclusive rewards with the Chem Baron trait in Teamfight Tactics. Take a look at what the Black Market can offer you.</p>
+        <button className="inline w-fit text-left h-10 text-morning/80 hover-effect transition-all duration-300 ease-in-out"><span className="w-auto px-4 h-10 inline-block leading-10 rounded bg-morning text-midnight relative z-10 font-bold">Inject the Shimmer</span></button>
+        </div>
+        <div className="hidden sm:block absolute -bottom-[18px] right-4 lg:-bottom-[24px] lg:right-6">
+          <Image
+            src="/images/champions-home/sevika.png"
+            alt="Sevika"
+            width={216}
+            height={162}
+            className="scale-75 lg:scale-100 origin-bottom-right"
+            />
+        </div>
+      </article>
+      </Link>
+      <Link href="/conqueror" className="flex-1">
+      <article className="h-full flex flex-col md:flex-row justify-between gap-8 flex-[20%] bg-earlynight rounded relative">
+        <div className="w-full sm:w-4/5 lg:w-3/5 flex flex-col gap-4 p-4 pb-10 md:p-10">
+        <div className="flex items-start gap-4">
+          <Image className="block h-auto mt-1" src="/images/traits/set13/conqueror.png" alt="Conqueror Trait Image" width={30} height={30} />
+          <h2 className="text-3xl font-bold text-left leading-none">Conqueror rewards</h2>
+        </div>
+        <p className="mb-2 flex-grow">Be victorious by killing your enemy. Collect stacks of conquest and open War Chests full of loot!</p>
+        <button className="inline w-fit text-left h-10 text-morning/80 hover-effect transition-all duration-300 ease-in-out"><span className="w-auto px-4 h-10 inline-block leading-10 rounded bg-morning text-midnight relative z-10 font-bold">Open the War Chest</span></button>
+        </div>
+        <div className="hidden sm:block absolute -bottom-[33px] -right-4 lg:-bottom-[44px]">
+          <Image
+            src="/images/champions-home/ambessa.png"
+            alt="Ambessa"
+            width={310}
+            height={162}
+            className="scale-75 lg:scale-100 origin-bottom-right"
+            />
+        </div>
+      </article>
+      </Link>
+      </div>
     </>
   )
 }
