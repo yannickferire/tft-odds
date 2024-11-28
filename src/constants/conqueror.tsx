@@ -79,7 +79,7 @@ export const lootTable: Record<string, & Record<number, { value: string; percent
   },
   "1200 Conquest": {
     1: {
-      value: "1x Radiant Item + 1x Artifact Anvil + 1x Remover + 50x Gold",
+      value: "1x Radiant Item + 1x Artifact Item Anvil + 1x Remover + 50x Gold",
       percent: 100
     }
   },
