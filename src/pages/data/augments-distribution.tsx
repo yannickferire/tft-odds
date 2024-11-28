@@ -33,7 +33,7 @@ const DataAugments: NextPage = () => {
       </Head>
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Augments distribution</strong> rules</h1>
       <Table className="mb-16">
-        <TableCaption>Portals that changes augments tier will simply overwrite normal distribution.</TableCaption>
+        <TableCaption>Encounters that changes augments tier will simply overwrite normal distribution.</TableCaption>
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead>1st augment</TableHead>

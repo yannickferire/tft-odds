@@ -98,7 +98,7 @@ const ResultPossibilities: React.FC<IResultPossibilities> = ({ slotsTier, setSlo
           </article>
         ) : (
           <Table>
-            <TableCaption>Portals that changes augments tier will simply overwrite normal distribution.</TableCaption>
+            <TableCaption>Encounters that changes augments tier will simply overwrite normal distribution.</TableCaption>
             <TableHeader>
               <TableRow className="!border-b !border-crema !border-opacity-20">
                 <TableHead className="text-left">{positionOfAugment} augment possibilities</TableHead>
