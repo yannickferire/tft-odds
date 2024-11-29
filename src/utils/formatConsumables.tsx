@@ -43,6 +43,7 @@ const Consumables: { [key: string]: string } = {
   "Infinity Force": '/images/items/InfinityForce.avif',
   "Zhonya's Paradox": '/images/items/Zhonya.avif',
   "Anima Visage": '/images/items/AnimaVisage.avif',
+  "Boot": '/images/items/Boot.avif',
   // anvils
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
   "Support Item Anvil": '/images/items/SupportItemAnvil.avif',
@@ -52,6 +53,9 @@ const Consumables: { [key: string]: string } = {
   "3 Cost": '/images/items/3CostUnit.png',
   "4 Cost": '/images/items/4CostUnit.png',
   "5 Cost": '/images/items/5CostUnit.png',
+  "Champion": '/images/items/3CostUnit.png',
+  "Random Champion": '/images/items/2CostUnit.png',
+  "Random Higher Champion": '/images/items/4CostUnit.png',
   // others
   "Tome of Traits": '/images/items/TomeofTraits.avif',
   "Champion Duplicator": '/images/items/duplicator.png',
@@ -76,7 +80,11 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
     },
   });
 
-  const consumables = value.match(/(\d+)x\s+([\w\s']+)(\s*\d\*)?\s*/g);
+  const backtickPattern = /`([^`]+)`/;
+  const backtickMatch = value.match(backtickPattern);
+  const cleanedValue = value.replace(backtickPattern, "").trim();
+
+  const consumables = cleanedValue.match(/(\d+)x\s+([\w\s']+)(\s*\d\*)?\s*/g);
 
   if (!consumables) {
     return <span>{value}</span>; // Retourne directement si aucune correspondance
@@ -167,6 +175,9 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
               </>
             )}
             {consumableName !== "Gold" && cleanedConsumableName}
+            {backtickMatch && (
+              <span> {backtickMatch[1]}</span>
+            )}
           </span>
         );
       }

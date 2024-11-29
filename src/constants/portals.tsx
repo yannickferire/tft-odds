@@ -1,13 +1,13 @@
 export const hallOfNine = {
   "1x Item Component (not Spatula)": 14,
   "1x Spatula": 14,
-  "1x Ornn anvil": 14,
+  "1x Artifact Item Anvil": 14,
+  "1x Champion 2 star `(tier = stage - 1)`": 14,
+  "5x Gold `x stage`": 14,
+  "1x Support Item Anvil": 13,
   "1x Reforger": 13,
-  "2⭐ unit (tier = stage - 1)": 13,
-  "5 Gold x stage": 13,
-  "1x Tome of traits": 13,
-  "1x Tactician's Crown": 3,
-  "1x Boot": 3
+  "1x Boot": 3,
+  "1x Tactician's Crown": 1
 }
 
 export const threshEarly = {

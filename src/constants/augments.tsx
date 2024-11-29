@@ -123,43 +123,43 @@ export const goldenEgg = {
 }
 
 export const spoilsOfWarSilver = {
-  "4x Gold": 35,
-  "1x Item Component": 35,
-  "2x Champion (based on player level)": 10,
-  "1x Higher tier Champion (based on player level + 1)": 10,
-  "1x Lesser Champion Duplicator": 5,
-  "1x Champion Duplicator (max 1 all game)": 5
+  "1x Item Component": 50,
+  "1x Lesser Champion Duplicator": 29,
+  "1x Random Higher Champion `(tier = player level + 1)`": 10,
+  "4x Gold": 5,
+  "2x Random Champion `(tier = player level)`": 5,
+  "1x Champion Duplicator (max 1 all game)": 1
 }
 export const spoilsOfWarSilverGold = {
-  "1x Gold": 90,
-  "2x Gold": 10
+  "1x Gold": 99,
+  "3x Gold": 1
 }
 export const spoilsOfWarGold = {
-  "4x Gold": 35,
-  "1x Item Component": 35,
-  "2x Champion (based on player level)": 10,
-  "1x Higher tier Champion (based on player level + 1)": 10,
-  "1x Lesser Champion Duplicator": 5,
-  "1x Champion Duplicator (max 1 all game)": 5
+  "1x Item Component": 50,
+  "1x Lesser Champion Duplicator": 29,
+  "1x Random Higher Champion `(tier = player level + 1)`": 10,
+  "4x Gold": 5,
+  "2x Random Champion `(tier = player level)`": 5,
+  "1x Champion Duplicator (max 1 all game)": 1
 }
 export const spoilsOfWarGoldGold = {
-  "1x Gold": 75,
-  "2x Gold": 25,
-  "3x Gold": 5
+  "1x Gold": 83,
+  "2x Gold": 15,
+  "3x Gold": 2
 }
 export const spoilsOfWarPrismatic = {
-  "8x Gold": 35,
-  "1x Item Component": 35,
-  "2x Champion (based on player level)": 5,
-  "1x Higher tier Champion (based on player level + 1)": 10,
-  "1x Lesser Champion Duplicator": 5,
-  "1x Champion Duplicator (max 1 all game)": 5,
-  "1x Tome of Traits (max 1 all game)": 5  
+  "1x Item Component": 50,
+  "1x Lesser Champion Duplicator": 28,
+  "1x Random Higher Champion `(tier = player level + 1)`": 10,
+  "8x Gold": 5,
+  "2x Random Champion `(tier = player level)`": 5,
+  "1x Champion Duplicator (max 1 all game)": 1,
+  "1x Item Component + 1x Spatula": 1
 }
 export const spoilsOfWarPrismaticGold = {
-  "1x Gold": 70,
-  "2x Gold": 20,
-  "3x Gold": 10
+  "1x Gold": 81,
+  "2x Gold": 17,
+  "3x Gold": 2
 }
 
 export const marchOfProgress = {
