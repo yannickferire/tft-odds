@@ -15,6 +15,18 @@ import {
 import { useState } from "react";
 import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react"
 
 const Conqueror: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
@@ -46,7 +58,9 @@ const Conqueror: NextPage = () => {
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/conqueror.png" alt="Conqueror Trait Image" width="30" height="30" /> <strong className="text-morning">Conqueror</strong> loot tables</h1>
-      <ul className="mb-4 flex gap-2 justify-center">
+      <p className="text-center mb-6">Conquerors&apos; takedowns grant stacks of Conquest. After gaining enough Conquest, open War Chests full of loot!<br/>
+      Conquerors gain Attack Damage and Ability Power, increased by 3% for each War Chest opened.</p>
+      <ul className="mb-6 flex gap-2 justify-center">
         {champs
           .filter((champion) => champion.traits.includes("Conqueror"))
           .sort((a, b) => a.cost - b.cost)
@@ -65,8 +79,73 @@ const Conqueror: NextPage = () => {
         </li>
         ))}
       </ul>
-      <p className="text-center mb-8">Conquerors&apos; takedowns grant stacks of Conquest. After gaining enough Conquest, open War Chests full of loot!<br/>
-      Conquerors gain Attack Damage and Ability Power, increased by 3% for each War Chest opened.</p>
+      <article className="flex flex-col text-sm max-w-2xl mx-auto mb-6 px-4 gap-2">
+        <p><strong>This page shows you the rewards you can earn by activating the Conqueror trait</strong> on your board. By tracking your Conquest stacks you can predict the bonuses you&apos;ll receive.
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant="link" className="ml-2">More info</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent className="overflow-y-scroll max-h-[90vh]">
+            <AlertDialogHeader>
+              <AlertDialogTitle>Introduction</AlertDialogTitle>
+              <AlertDialogDescription>
+                <p>
+                  In Teamfight Tactics, the Conqueror trait provides a unique advantage by rewarding takedowns with Conquest stacks. 
+                  After accumulating enough stacks, War Chests filled with valuable loot are unlocked, 
+                  offering bonuses that can enhance your gameplay and strategy. 
+                  Understanding these rewards is key to making the most of Conqueror&apos;s power.
+                </p>
+              </AlertDialogDescription>
+              <hr className="opacity-30" />
+              <AlertDialogTitle>How This Page Works</AlertDialogTitle>
+              <AlertDialogDescription className="flex flex-col gap-2">
+                <p>1. <strong>Understanding Conqueror Rewards:</strong><br/>
+                  Conqueror&apos;s bonuses increase Attack Damage and Ability Power by 3% for each War Chest opened. 
+                  By unlocking War Chests, you gain significant advantages to outplay your opponents. 
+                  This page shows:
+                  <ul>
+                    <li>- The Conquest stacks needed to open each War Chest.</li>
+                    <li>- The rewards available at every tier.</li>
+                  </ul>
+                </p>
+                <p>2. <strong>Why This Page Is Useful:</strong><br/>
+                  By providing detailed insights into the Conqueror rewards system, this tool helps you:
+                  <ul>
+                    <li>- Plan your strategy to maximize loot collection.</li>
+                    <li>- Leverage bonuses to strengthen your board.</li>
+                    <li>- Predict what you’ll unlock in your next War Chest.</li>
+                  </ul>
+                </p>
+              </AlertDialogDescription>
+              <hr className="opacity-30" />
+              <AlertDialogTitle>How to Use the Conqueror Rewards Tracker</AlertDialogTitle>
+              <AlertDialogDescription className="flex flex-col gap-2">
+                <p>1. <strong>Activate the Conqueror Trait:</strong><br/>
+                  Ensure your board includes enough champions with the Conqueror trait to activate the bonus.
+                </p>
+                <p>2. <strong>Track Conquest Stacks:</strong><br/>
+                  View your next War Ches reward based on your Conquest Stacks.
+                </p>
+                <p>3. <strong>Plan Your Rewards:</strong><br/>
+                  Use the information provided to time your rolls, manage your board upgrades, and collect maximum rewards.
+                </p>
+              </AlertDialogDescription>
+              <hr className="opacity-30" />
+              <AlertDialogTitle>Conclusion</AlertDialogTitle>
+              <AlertDialogDescription className="flex flex-col gap-2">
+                <p>
+                  With this page, you can make the most of the Conqueror trait by effectively tracking and planning your rewards. 
+                  Unlock powerful bonuses, enhance your strategy, and outmaneuver your opponents. Explore the page now and dominate the battlefield!
+                </p>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter className="absolute right-2 top-2">
+              <AlertDialogCancel className="px-1 py-0.5"><X className="w-6 h-6" /></AlertDialogCancel>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+        </p>
+      </article>
       <Table className="mb-16">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">

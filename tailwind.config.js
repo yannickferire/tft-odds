@@ -4,7 +4,8 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
+    darkMode: ["class"],
+    content: [
 		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -48,52 +49,57 @@ module.exports = {
 		"focus:ring-prismatic/[.30]",
 	],
 	theme: {
-		screens: {
-			sm: "600px",
-			md: "820px",
-			lg: "1110px",
-			xl: "1280px",
-		},
-		container: {
-			center: true,
-		},
-		extend: {
-			colors: {
-				midnight: "#041C32",
-				earlynight: "#04293A",
-				midday: "#064663",
-				morning: "#ECB365",
-				crema: "#ffffd2",
-				bronze: "#9f561b",
-				silver: "#b5cbde",
-				gold: "#f9be0a",
-				"1cost": "#9f9a89",
-				"2cost": "#39b65a",
-				"3cost": "#2875be",
-				"4cost": "#aa09a4",
-				"5cost": "#d78e00",
-				support: "#39b65a",
-				carry: "#8b52e9",
-				s: "rgb(255, 127, 127)",
-				a: "rgb(255, 223, 127)",
-				b: "rgb(127, 255, 127)",
-			},
-			animation: {
-				aurora: "aurora 60s linear infinite",
-			},
-			keyframes: {
-				aurora: {
-					from: {
-						backgroundPosition: "50% 50%, 50% 50%",
-					},
-					to: {
-						backgroundPosition: "350% 50%, 350% 50%",
-					},
-				},
-			},
-		},
-	},
-	plugins: [addVariablesForColors],
+    	screens: {
+    		sm: '600px',
+    		md: '820px',
+    		lg: '1110px',
+    		xl: '1280px'
+    	},
+    	container: {
+    		center: 'true'
+    	},
+    	extend: {
+    		colors: {
+    			midnight: '#041C32',
+    			earlynight: '#04293A',
+    			midday: '#064663',
+    			morning: '#ECB365',
+    			crema: '#ffffd2',
+    			bronze: '#9f561b',
+    			silver: '#b5cbde',
+    			gold: '#f9be0a',
+    			'1cost': '#9f9a89',
+    			'2cost': '#39b65a',
+    			'3cost': '#2875be',
+    			'4cost': '#aa09a4',
+    			'5cost': '#d78e00',
+    			support: '#39b65a',
+    			carry: '#8b52e9',
+    			s: 'rgb(255, 127, 127)',
+    			a: 'rgb(255, 223, 127)',
+    			b: 'rgb(127, 255, 127)'
+    		},
+    		animation: {
+    			aurora: 'aurora 60s linear infinite'
+    		},
+    		keyframes: {
+    			aurora: {
+    				from: {
+    					backgroundPosition: '50% 50%, 50% 50%'
+    				},
+    				to: {
+    					backgroundPosition: '350% 50%, 350% 50%'
+    				}
+    			}
+    		},
+    		borderRadius: {
+    			lg: 'var(--radius)',
+    			md: 'calc(var(--radius) - 2px)',
+    			sm: 'calc(var(--radius) - 4px)'
+    		}
+    	}
+    },
+	plugins: [addVariablesForColors, require("tailwindcss-animate")],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
