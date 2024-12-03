@@ -28,7 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <meta name="ezoic-site-verification" content="g1Z9B6z7ZdSh1I2ytsxu67eOj6djdK" /> */}
       </Head>
       <AuroraBackground opacity={(isHomePage ? 40 : 10 )}>  
           <Layout>
