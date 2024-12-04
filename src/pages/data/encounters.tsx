@@ -124,16 +124,9 @@ const Portals: NextPage = () => {
                       <FormatChampions value={champion} />
                     </TableCell>
                   )}
-                  {variantIndex === 0 && (
-                    <TableCell className={`py-2 border border-crema text-center border-opacity-20`}>
-                      {encounterName}
-                    </TableCell>
-                  )}
-                  {variantIndex !== 0 && (
-                    <TableCell className={`py-2 border border-crema text-center border-opacity-20`}> 
-                      {variant.name || "Default"}
-                    </TableCell>
-                  )}
+                  <TableCell className={`py-2 border border-crema text-center border-opacity-20`}> 
+                    {variant.name || encounterName}
+                  </TableCell>
                   <TableCell className={`py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20`}>
                     {variant.chance}%
                   </TableCell>
