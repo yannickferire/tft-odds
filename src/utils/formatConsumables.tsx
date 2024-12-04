@@ -65,7 +65,6 @@ const Consumables: { [key: string]: string } = {
   "Magnetic Remover": '/images/items/remover.webp',
   "Remover": '/images/items/remover.webp',
 };
-
 interface FormatConsumablesProps {
   value: string;
 }

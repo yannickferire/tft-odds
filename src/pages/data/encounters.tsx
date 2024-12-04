@@ -1,8 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { hallOfNine, threshEarly, threshLate } from "@/constants/portals";
+import { encountersTable, hallOfNine } from "@/constants/portals";
 import { FormatConsumables } from "@/utils/formatConsumables";
+import { FormatChampions } from "@/utils/formatChampions";
 import {
   Table,
   TableBody,
@@ -95,6 +96,54 @@ const Portals: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
+      <Table className="mb-12">
+        <TableHeader>
+          <TableRow className="!border-b !border-crema !border-opacity-20">
+            <TableHead className="text-left">Opening Encounter</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+        {Object.entries(encountersTable).flatMap(([champion, encounters]) => {
+          const encounterEntries = Object.entries(encounters); // encounters for each champion
+          const rowCount: number = Object.values(encounters)
+            .flatMap(encounterData => (Array.isArray(encounterData) ? encounterData : [encounterData]))
+            .length;
+          const rowSpan: any = rowCount === 1 ? undefined : rowCount;
+
+          return encounterEntries.flatMap(([encounterName, encounterData], index) => {
+            // variants ?
+            const variants = Array.isArray(encounterData) ? encounterData : [{ chance: encounterData.chance }];
+            return variants.map((variant, variantIndex) => {
+              const uniqueKey = `${champion}-${index}-${variantIndex}`;
+              return (
+                <TableRow key={uniqueKey} className={`border ${index === 0 ? "border-t-midday border-t-2" : null}`}>
+                  {index === 0 && variantIndex === 0 && (
+                    <TableCell rowSpan={rowSpan} className={`py-2 w-1/4 font-semibold border border-crema border-opacity-20 bg-midnight`}>
+                      <FormatChampions value={champion} />
+                    </TableCell>
+                  )}
+                  {variantIndex === 0 && (
+                    <TableCell className={`py-2 border border-crema text-center border-opacity-20`}>
+                      {encounterName}
+                    </TableCell>
+                  )}
+                  {variantIndex !== 0 && (
+                    <TableCell className={`py-2 border border-crema text-center border-opacity-20`}> 
+                      {variant.name || "Default"}
+                    </TableCell>
+                  )}
+                  <TableCell className={`py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20`}>
+                    {variant.chance}%
+                  </TableCell>
+                </TableRow>
+              );
+            });
+          });
+        })}
+        </TableBody>
+      </Table>
       <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Sevika: Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
       <Table className="mb-24">

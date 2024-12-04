@@ -1,3 +1,57 @@
+export const encountersTable = {
+  "Heimerdinger": {
+    "Prismatic Game": [
+      { "name": "Prismatic Opener", "chance": 10 },
+      { "name": "Prismatic Finisher", "chance": 8 }
+    ]
+  },
+  "Vander": {
+    "3 Gold Augments": {
+      "chance": 15
+    }
+  },
+  "Vi": {
+    "2 Components Anvil": {
+      "chance": 15
+    }
+  },
+  "Powder": {
+    "Powder's Monkey": {
+      "chance": 12
+    }
+  },
+  "Jinx": {
+    "Scuttle Game": [
+      { "name": "Scuttle Puddle", "chance": 7.5 },
+      { "name": "Crab Rave", "chance": 2.5 }
+    ]
+  },
+  "Caitlyn": {
+    "Gold Subscription": {
+      "chance": 6
+    }
+  },
+  "Ekko": {
+    "All Prismatic Augments": {
+      "chance": 5
+    }
+  },
+  "Sevika": {
+    "Loot Subscription": {
+      "chance": 5
+    }
+  },
+  "Ambessa": {
+    "Wandering Trainer": {
+      "chance": 4
+    }
+  },
+  "Piltover or Zaun": {
+    "No Opening Encounter": {
+      "chance": 10
+    }
+  }
+};
 export const hallOfNine = {
   "1x Item Component (not Spatula)": 14,
   "1x Spatula": 14,
