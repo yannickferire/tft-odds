@@ -42,27 +42,27 @@ const Footer = () => {
           <ul className="flex-1 text-left text-xs text-crema leading-5">
             <li>
               <Link 
-                href={`/augments-tier`}
+                href="/encounters"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Opening encounters</Link>
+            </li>
+            <li>
+              <Link 
+                href="/augments/augments-tier"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Tier</Link>
             </li>
             <li>
               <Link 
-                href={`/data/augments-distribution`}
+                href="/augments/augments-distribution"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Distribution</Link>
             </li>
             <li>
               <Link 
-                href={`/data/augments-tables`}
+                href="/augments/augments-tables"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
               >Augments Tables</Link>
-            </li>
-            <li>
-              <Link 
-                href={`/data/encounters`}
-                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Opening encounters</Link>
             </li>
           </ul>
           <ul className="flex-1 text-center sm:text-right text-xs text-crema leading-5">
