@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="uppercase text-5xl my-24 font-bold text-center leading-tight tracking-wide">
+      <h1 className="uppercase text-5xl mt-12 mb-20 font-bold text-center leading-tight tracking-wide">
         Level up your <br/><strong className="inline font-bold text-morning">Teamfight Tactics</strong> experience
         <span className="mt-2 block text-3xl lowercase tracking-normal">Odds, statistics and tips for the game</span>
       </h1>
