@@ -32,11 +32,11 @@ const Consumables: { [key: string]: string } = {
   "Spatula": '/images/items/Spatula.png',
   "Bramble Vest": '/images/items/BrambleVest.png',
   "Item Component": '/images/items/ItemComponent.png',
-  "Tier 0 Item": '/images/items/ItemComponent.png',
-  "Tier 1 Item": '/images/items/ItemComponent.png',
-  "Tier 2 Item": '/images/items/ItemComponent.png',
-  "Tier 3 Item": '/images/items/ItemComponent.png',
-  "Tier 4 Item": '/images/items/ItemComponent.png',
+  "Tier 0 Item": '/images/items/Tier0.png',
+  "Tier 1 Item": '/images/items/Tier1.png',
+  "Tier 2 Item": '/images/items/Tier2.png',
+  "Tier 3 Item": '/images/items/Tier3.png',
+  "Tier 4 Item": '/images/items/Tier4.png',
   "Radiant Item": '/images/items/RadiantItem.png',
   "Radiant Item Conversion": '/images/items/RadiantItem.png',
   "Artifact Item" : '/images/items/Artifact.png',
@@ -132,10 +132,11 @@ export function FormatConsumables({ value }: FormatConsumablesProps) {
                       height={32}
                       className={`inline-block -mt-1 border-2 ${
                         radiant ? 'border-gold' : 
-                        consumableName === "Tier 1 Item " ? 'border-1cost' :
-                        consumableName === "Tier 2 Item " ? 'border-2cost' :
-                        consumableName === "Tier 3 Item " ? 'border-3cost' :
-                        consumableName === "Tier 4 Item " ? 'border-4cost' : 'border-midday'
+                        consumableName === "Tier 0 Item " ? 'border-1cost' :
+                        consumableName === "Tier 1 Item " ? 'border-2cost' :
+                        consumableName === "Tier 2 Item " ? 'border-3cost' :
+                        consumableName === "Tier 3 Item " ? 'border-4cost' :
+                        consumableName === "Tier 4 Item " ? 'border-5cost' : 'border-midday'
                       } box-border`}
                     />
                     {starMatch &&
