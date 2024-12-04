@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5955862670449423" crossOrigin="anonymous"></script>
       </Head>
       <AuroraBackground opacity={(isHomePage ? 40 : 10 )}>  
           <Layout>
