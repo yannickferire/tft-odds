@@ -57,7 +57,7 @@ const ChemBaron: NextPage = () => {
         <meta name="twitter:description" content="Discover exclusive rewards with the Chem Baron trait in Teamfight Tactics. Gain Shimmer after each player combat. At each stack of 100 Shimmer, the Black Market offers you contraband that only Chem-Barons can use." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/chem-baron.png" alt="Chem-Baron Trait Image" width="30" height="30" /> <strong className="text-morning">Chem Baron</strong> loot tables</h1>
+      <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/chem-baron.png" alt="Chem-Baron Trait Image" width="30" height="30" /> <strong className="text-morning">Chem Baron Loots</strong> tables</h1>
       <p className="text-center mb-6">Gain Shimmer after each player combat. If your loss streak is at least 3, gain more.<br/>
       At each stack of 100 Shimmer, the Black Market offers you contraband that only Chem-Barons can use. <br/>Chem-Barons gain max Health for each Black Market you pass on.</p>
       <ul className="mb-6 flex gap-2 justify-center">
@@ -132,7 +132,7 @@ const ChemBaron: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
-      <Table className="mb-16">
+      <Table className="mb-24">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left">Stacks</TableHead>

@@ -31,16 +31,16 @@ const Piltover: NextPage = () => {
     <>
       <Head>
         <title>Augments Data Tables – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
-        <link rel="canonical" href="https://tftodds.com/data/augments-tables" />
+        <link rel="canonical" href="https://tftodds.com/augments/augments-tables" />
         <meta name="description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
-        <meta property="og:title" content="Augments Data Tables – TFT odds Set 9" />
+        <meta property="og:title" content="Augments Data Tables – TFT odds Set 13" />
 		    <meta property="og:description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/data/augments-tables" />
+        <meta property="og:url" content="https://tftodds.com/augments/augments-tables" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Augments Data Tables – TFT odds Set 9" />
+        <meta name="twitter:title" content="Augments Data Tables – TFT odds Set 13" />
         <meta name="twitter:description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>

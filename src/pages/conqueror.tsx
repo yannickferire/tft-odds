@@ -57,7 +57,7 @@ const Conqueror: NextPage = () => {
         <meta name="twitter:description" content="Discover exclusive rewards with the Conqueror trait in Teamfight Tactics. Collect stacks of conquest and open War Chests full of loot!" />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/conqueror.png" alt="Conqueror Trait Image" width="30" height="30" /> <strong className="text-morning">Conqueror</strong> loot tables</h1>
+      <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/conqueror.png" alt="Conqueror Trait Image" width="30" height="30" /> <strong className="text-morning">Conqueror Chest</strong> tables</h1>
       <p className="text-center mb-6">Conquerors&apos; takedowns grant stacks of Conquest. After gaining enough Conquest, open War Chests full of loot!<br/>
       Conquerors gain Attack Damage and Ability Power, increased by 3% for each War Chest opened.</p>
       <ul className="mb-6 flex gap-2 justify-center">
@@ -146,7 +146,7 @@ const Conqueror: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
-      <Table className="mb-16">
+      <Table className="mb-24">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left">Stacks</TableHead>

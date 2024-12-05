@@ -30,13 +30,19 @@ const Footer = () => {
               <Link 
                 href="/chem-baron"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Chem Baron</Link>
+              >Chem Baron Loots</Link>
             </li>
             <li>
               <Link 
                 href="/conqueror"
                 className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
-              >Conqueror</Link>
+              >Conqueror Chest</Link>
+            </li>
+            <li>
+              <Link 
+                href="/family"
+                className="leading-[30px] sm:leading-normal inline-block opacity-40 hover:opacity-100 tracking-wider font-bold"
+              >Family Heist</Link>
             </li>
           </ul>
           <ul className="flex-1 text-left text-xs text-crema leading-5">

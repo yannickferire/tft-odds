@@ -57,13 +57,19 @@ const Header = () => {
             <Link 
               href="/chem-baron" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/chem-baron' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Chem Baron</Link>
+            >Chem Baron Loots</Link>
           </li>
           <li>
             <Link 
               href="/conqueror" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/conqueror' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Conqueror</Link>
+            >Conqueror Chest</Link>
+          </li>
+          <li>
+            <Link 
+              href="/family" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/family' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Family Heist</Link>
           </li>
           <li>
             <Link 
@@ -93,17 +99,30 @@ const Header = () => {
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/champions' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
           </li>
-          <li>
-            <Link 
-              href="/chem-baron" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/chem-baron' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Chem Baron</Link>
-          </li>
-          <li>
-            <Link 
-              href="/conqueror" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/conqueror' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Conqueror</Link>
+          <li className="hidden sm:inline-block relative group">
+            <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent hover:border-crema">Traits <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span></p>
+            <div className="hidden group-hover:inline-block absolute right-0 top-0 pt-8 cursor-pointer z-10">
+              <ul className="text-left w-44 bg-midday rounded-sm">
+                <li>
+                  <Link 
+                    href="/chem-baron" 
+                    className={`rounded-t-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/chem-baron' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Chem Baron Loots</Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/conqueror" 
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/conqueror' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Conqueror Chest</Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/family" 
+                    className={`rounded-b-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/family' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                  >Family Heist</Link>
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <Link 
@@ -124,13 +143,13 @@ const Header = () => {
                 <li>
                   <Link 
                     href="/augments/augments-distribution" 
-                    className={`rounded-t-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/augments/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/augments/augments-distribution' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Distribution</Link>
                 </li>
                 <li>
                   <Link 
                     href="/augments/augments-tables" 
-                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/augments/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                    className={`rounded-b-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/augments/augments-tables' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                   >Augments Tables</Link>
                 </li>
               </ul>

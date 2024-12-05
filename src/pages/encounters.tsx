@@ -29,17 +29,17 @@ const Portals: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Portals Rewards – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
-        <link rel="canonical" href="https://tftodds.com/data/portals" />
+        <title>Opening Encounters – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
+        <link rel="canonical" href="https://tftodds.com/encounters" />
         <meta name="description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
-        <meta property="og:title" content="Portals Reawards – TFT odds Set 10" />
+        <meta property="og:title" content="Opening Encounters – TFT odds Set 13" />
 		    <meta property="og:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/data/portals" />
+        <meta property="og:url" content="https://tftodds.com/encounters" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Portals Rewards – TFT odds Set 10" />
+        <meta name="twitter:title" content="Opening Encounters – TFT odds Set 13" />
         <meta name="twitter:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>

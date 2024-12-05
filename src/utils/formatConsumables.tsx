@@ -44,6 +44,9 @@ const Consumables: { [key: string]: string } = {
   "Zhonya's Paradox": '/images/items/Zhonya.avif',
   "Anima Visage": '/images/items/AnimaVisage.avif',
   "Boot": '/images/items/Boot.avif',
+  "Fishbones": '/images/items/Fishbones.png',
+  "Frying Pan": '/images/items/FryingPan.png',
+  "Training Dummy": '/images/items/TrainingDummy.png',
   // anvils
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
   "Support Item Anvil": '/images/items/SupportItemAnvil.avif',
@@ -56,6 +59,10 @@ const Consumables: { [key: string]: string } = {
   "Champion": '/images/items/3CostUnit.png',
   "Random Champion": '/images/items/2CostUnit.png',
   "Random Higher Champion": '/images/items/4CostUnit.png',
+  // emblems
+  "Pit Fighter Emblem": '/images/emblems/set13/PitFighter.png',
+  "Ambusher Emblem": '/images/emblems/set13/Ambusher.png',
+  "Watcher Emblem": '/images/emblems/set13/Watcher.png',
   // others
   "Tome of Traits": '/images/items/TomeofTraits.avif',
   "Champion Duplicator": '/images/items/duplicator.png',
