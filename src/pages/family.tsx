@@ -45,16 +45,16 @@ const Conqueror: NextPage = () => {
       <Head>
         <title>Family heist rewards tables – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/family" />
-        <meta name="description" content="Discover exclusive rewards with the Conqueror trait in Teamfight Tactics. Collect stacks of conquest and open War Chests full of loot!" />
-        <meta property="og:title" content="Conqueror tables – TFT odds Set 13" />
-		    <meta property="og:description" content="Discover exclusive rewards with the Conqueror trait in Teamfight Tactics. Collect stacks of conquest and open War Chests full of loot!" />
+        <meta name="description" content="Discover exclusive rewards with the Family trait in Teamfight Tactics. Progress the heist and get some powerful loots!" />
+        <meta property="og:title" content="Family heist rewards tables – TFT odds Set 13" />
+		    <meta property="og:description" content="Discover exclusive rewards with the Family trait in Teamfight Tactics. Progress the heist and get some powerful loots!" />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/family" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Conqueror tables – TFT odds Set 13" />
-        <meta name="twitter:description" content="Discover exclusive rewards with the Conqueror trait in Teamfight Tactics. Collect stacks of conquest and open War Chests full of loot!" />
+        <meta name="twitter:title" content="Family heist rewards tables – TFT odds Set 13" />
+        <meta name="twitter:description" content="Discover exclusive rewards with the Family trait in Teamfight Tactics. Progress the heist and get some powerful loots!" />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/family.png" alt="Family Trait Image" width="30" height="30" /> <strong className="text-morning">Family Heist</strong> tables</h1>
