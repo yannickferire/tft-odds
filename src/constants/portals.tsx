@@ -1,24 +1,9 @@
 export const encountersTable = {
   "Heimerdinger": {
     "Prismatic Game": [
-      { "name": "Prismatic Opener", "chance": 10 },
-      { "name": "Prismatic Finisher", "chance": 8 }
+      { "name": "Prismatic Opener", "chance": 6 },
+      { "name": "Prismatic Finisher", "chance": 4 }
     ]
-  },
-  "Vander": {
-    "3 Gold Augments": {
-      "chance": 15
-    }
-  },
-  "Vi": {
-    "2 Components Anvil": {
-      "chance": 15
-    }
-  },
-  "Powder": {
-    "Powder's Monkey": {
-      "chance": 12
-    }
   },
   "Jinx": {
     "Scuttle Game": [
@@ -26,9 +11,34 @@ export const encountersTable = {
       { "name": "Crab Rave", "chance": 2.5 }
     ]
   },
-  "Caitlyn": {
-    "Gold Subscription": {
-      "chance": 6
+  "Vander": {
+    "3 Gold Augments": {
+      "chance": 10
+    }
+  },
+  "Vi": {
+    "2 Components Anvil": {
+      "chance": 10
+    }
+  },
+  "Mel": {
+    "Radiant Blessing": {
+      "chance": 8
+    }
+  },
+  "Warwick": {
+    "Loot on kill": {
+      "chance": 8
+    }
+  },
+  "Viktor": {
+    "6 cost": {
+      "chance": 8
+    }
+  },
+  "Powder": {
+    "Powder's Monkey": {
+      "chance": 5
     }
   },
   "Ekko": {
@@ -36,9 +46,19 @@ export const encountersTable = {
       "chance": 5
     }
   },
+  "Jayce": {
+    "Artifact Anvil": {
+      "chance": 4
+    }
+  },
+  "Caitlyn": {
+    "Gold Subscription": {
+      "chance": 4
+    }
+  },
   "Sevika": {
     "Loot Subscription": {
-      "chance": 5
+      "chance": 4
     }
   },
   "Ambessa": {

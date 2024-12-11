@@ -136,7 +136,7 @@ const Anomalies: NextPage = () => {
         </p>
       </article>
       <article className="bg-earlynight max-w-xl w-full mx-auto p-6 rounded flex flex-col justify-center items-center">
-        <Tip>If you have <strong>57 golds</strong> to spend you could see all the anomalies</Tip>
+        <Tip>If you have <strong>57 golds</strong> to spend, you could see all the anomalies</Tip>
         <div className="flex gap-12 mb-6">
           <div>
             <p className="text-center"><strong>Anomalies</strong> you want:</p>

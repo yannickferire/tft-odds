@@ -21,6 +21,7 @@ export async function fetchChampions() {
   const withSelectionChampions = filteredChampions.map((champion: any) => ({ ...champion, selected: false }));
   const withImageChampions = withSelectionChampions.map((champion: any) => {
     // exceptions
+    let evolved = false;
     const championUrl = 
       champion.name === "Powder" ? "blue" : 
       champion.name === "Dr. Mundo" ? "drmundo" : 
@@ -34,12 +35,16 @@ export async function fetchChampions() {
       champion.name === "Renni" ? "chainsaw" : 
       champion.name === "Loris" ? "beardy" : 
       champion.name === "Steb" ? "fish" : 
+      champion.name === "Mel" ? "missmage" : 
       champion.name;
+    if (champion.name === "Mel" || champion.name === "Warwick" || champion.name === "Viktor") {
+      evolved = true;
+    }
     return {
       ...champion,
       championUrl,
       image: 
-        `${championImageURL}/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}_teamplanner_splash.png`
+        `${championImageURL}/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}_teamplanner_splash${evolved?'_evolved':''}.png`
     };
   });
 
