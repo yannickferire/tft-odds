@@ -9,7 +9,6 @@ import { currentSet, setStage } from '@/constants/set';
 const Home: NextPage = () => {
   const { scrollY } = useScroll();
   const translateYLeft = useTransform(scrollY, [0, 500], [0, 10]);
-  const translateXLeft = useTransform(scrollY, [0, 500], [0, -10]);
   const rotateLeft = useTransform(scrollY, [0, 500], [-6, -3]);
   const scaleCenter = useTransform(scrollY, [0, 500], [1.1, 1.15]);
   const translateYRight = useTransform(scrollY, [0, 500], [10, -10]);

@@ -73,6 +73,18 @@ const Header = () => {
           </li>
           <li>
             <Link 
+              href="/anomalies" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/anomalies' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Anomalies</Link>
+          </li>
+          <li>
+            <Link 
+              href="/encounters" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/encounters' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Encounters</Link>
+          </li>
+          <li>
+            <Link 
               href="/augments/augments-tier" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/augments/augments-tier' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Augments Tier</Link>
@@ -123,6 +135,12 @@ const Header = () => {
                 </li>
               </ul>
             </div>
+          </li>
+          <li>
+            <Link 
+              href="/anomalies" 
+              className={`relative z-20 text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/anomalies' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Anomalies</Link>
           </li>
           <li>
             <Link 

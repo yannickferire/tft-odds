@@ -27,8 +27,9 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react"
+import Tip from "@/components/layout/tip";
 
-const Conqueror: NextPage = () => {
+const Family: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
 
   const { isLoading, error, data } = useQuery('champions', () =>
@@ -60,7 +61,7 @@ const Conqueror: NextPage = () => {
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center"><Image className="inline-block -mt-2 mr-1" src="/images/traits/set13/family.png" alt="Family Trait Image" width="30" height="30" /> <strong className="text-morning">Family Heist</strong> tables</h1>
       <p className="text-center mb-4">Family members support each other, reducing their max Mana and gaining extra bonuses.<br/>
       (5) Heist on topside! After combat, progress the heist, increased for each surviving Family member!</p>
-      <p className="text-sm rounded-sm bg-morning/60 text-crema px-2 py-0.5 inline-block w-fit mx-auto mb-6">⚡ Tip: You need <strong>2 Family Emblems</strong> to unlock the Heist</p>
+      <Tip>You need <strong>2 Family Emblems</strong> to unlock the Heist</Tip>
       <ul className="mb-6 flex gap-2 justify-center">
         {champs
           .filter((champion) => champion.traits.includes("Family"))
@@ -205,4 +206,4 @@ const Conqueror: NextPage = () => {
   )
 }
 
-export default Conqueror;
+export default Family;
