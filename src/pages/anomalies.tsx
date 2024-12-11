@@ -24,25 +24,23 @@ import {
   ChartLegendContent
 } from "@/components/ui/chart"
 import Tip from "@/components/layout/tip"
+import GoldIcon from "@/components/icons/goldIcon";
 
 const totalAnomalies = 58;
 
-const probabilityAtLeastOne = (n: any, k: any) => {
-  if (n >= totalAnomalies) return 1; // Si on a tiré toutes les cartes, probabilité = 100%
-  const numerator = factorial(totalAnomalies - k) * factorial(totalAnomalies - n);
-  const denominator = factorial(totalAnomalies - k - n) * factorial(totalAnomalies);
-  return 1 - numerator / denominator;
+const probabilityAtLeastOne = (n: number, k: number) => {
+  const singleAnomalyProbability = 1 / totalAnomalies; // Probabilité de tirer une anomalie spécifique
+  return 1 - Math.pow(1 - singleAnomalyProbability, n * k); // Complément : au moins une fois
 };
 
-const factorial = (num: number): number => (num <= 1 ? 1 : num * factorial(num - 1));
 const generateChartData = () => {
   const chartData = [];
 
-  for (let n = 0; n <= totalAnomalies; n += 2) {
-    const probabilityOne = probabilityAtLeastOne(n+1, 1);
-    const probabilityTwo = probabilityAtLeastOne(n+1, 2);
-    const probabilityThree = probabilityAtLeastOne(n+1, 3);
-    const probabilityFour = probabilityAtLeastOne(n+1, 4);
+  for (let n = 0; n <= 100; n += 5) {
+    const probabilityOne = probabilityAtLeastOne(n + 1, 1);
+    const probabilityTwo = probabilityAtLeastOne(n + 1, 2);
+    const probabilityThree = probabilityAtLeastOne(n + 1, 3);
+    const probabilityFour = probabilityAtLeastOne(n + 1, 4);
 
     chartData.push({
       golds: n,
@@ -136,7 +134,6 @@ const Anomalies: NextPage = () => {
         </p>
       </article>
       <article className="bg-earlynight max-w-xl w-full mx-auto p-6 rounded flex flex-col justify-center items-center">
-        <Tip>If you have <strong>57 golds</strong> to spend, you could see all the anomalies</Tip>
         <div className="flex gap-12 mb-6">
           <div>
             <p className="text-center"><strong>Anomalies</strong> you want:</p>
@@ -165,8 +162,7 @@ const Anomalies: NextPage = () => {
               <span className="px-2 w-20 inline-block text-center">{golds}</span>
               <button
                 onClick={() => setGolds(golds + 3)} 
-                className={`text-midday/30 ${(golds >= totalAnomalies - 1)?'opacity-40':'hover-effect'}`} 
-                disabled={golds >= totalAnomalies - 1}
+                className={`text-midday/30 hover-effect`} 
               ><span className="w-10 h-10 block leading-9 rounded bg-midday text-crema relative z-10">+3</span></button>
             </div>
           </div>
@@ -192,6 +188,7 @@ const Anomalies: NextPage = () => {
               tickLine={true}
               axisLine={true}
               tickMargin={8}
+              tickFormatter={(value) => `${value} g`}
             />
             <YAxis
               dataKey="one"
@@ -199,7 +196,7 @@ const Anomalies: NextPage = () => {
               axisLine={true}
               tickMargin={8}
               domain={[0, 100]}
-                tickFormatter={(value) => `${value}%`}
+              tickFormatter={(value) => `${value}%`}
             />
             <ChartTooltip
               cursor={false}
