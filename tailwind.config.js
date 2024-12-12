@@ -73,6 +73,7 @@ module.exports = {
 				"3cost": "#2875be",
 				"4cost": "#aa09a4",
 				"5cost": "#d78e00",
+				"6cost": "#f9be0a",
 				support: "#39b65a",
 				carry: "#8b52e9",
 				s: "rgb(255, 127, 127)",
