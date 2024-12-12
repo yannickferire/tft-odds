@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
+import Link from 'next/link';
 import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
 import { baseCost, baseLevel } from '@/constants/constants';
@@ -117,7 +118,7 @@ const Home: NextPage = () => {
         </p>
       </article>
       <section className="flex w-full items-start flex-col md:flex-row flex-1">
-        <aside className="flex flex-col w-full md:w-2/6 xl:w-96 mb-6">
+        <aside className="flex flex-col w-full md:w-2/6 xl:w-96 mb-24">
           <h2 className="hidden">Select your level and a champion</h2>
           <div className="flex justify-between">
             <LevelSelector selectedLevel={selectedLevel} setSelectedLevel={setSelectedLevel} /> 
@@ -131,6 +132,7 @@ const Home: NextPage = () => {
           setSelectedCost={setSelectedCost}
           isLoading={isLoading}
         />
+        <p className="text-xs mt-2 px-2 text-center opacity-40">This tool doesn&apos;t include 6-cost odds, as they are based on the stage and calculated separately. <Link href="/6-costs" className="border-b border-crema">Check 6 cost odds now!</Link></p>
         </aside>
         <ChampionsOdds selectedLevel={selectedLevel} champs={champs} setChamps={setChamps} traits={traits} headliner={headliner} setHeadliner={setHeadliner} />
       </section>

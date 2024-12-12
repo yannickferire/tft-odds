@@ -2,9 +2,7 @@ import { type NextPage } from "next";
 import Image from 'next/image';
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { encountersTable, hallOfNine } from "@/constants/portals";
-import { FormatConsumables } from "@/utils/formatConsumables";
-import { FormatChampions } from "@/utils/formatChampions";
+import { odds } from "@/constants/6-costs";
 import {
   Table,
   TableBody,
@@ -77,9 +75,8 @@ const Portals: NextPage = () => {
         </li>
         ))}
       </ul>
-      <p className="text-center text-3xl mt-24 mb-24">This page is WIP, table will be live very soon</p>
-      {/* <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
-        <p>This page is designed to provide detailed insights into the <strong>random rewards and odds associated with the pre-game encounters</strong> in Teamfight Tactics. By understanding the mechanics and potential outcomes of these encounters, you can better prepare for the start of each game and adjust your strategy.
+      <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
+        <p>This page offers insights into the <strong>odds of finding the brand new 6-cost champions</strong> in TFT Set 13, helping you refine your strategy and increase your chances of securing these powerful units.
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button variant="link" className="ml-2">More info</Button>
@@ -88,89 +85,76 @@ const Portals: NextPage = () => {
             <AlertDialogHeader>
               <AlertDialogTitle>Introduction</AlertDialogTitle>
               <AlertDialogDescription>
-                <p>In Teamfight Tactics, the early-game encounter sets the tone for the rest of the match. These encounters provide unique rewards or changes that can significantly impact your strategy. Understanding the odds and random mechanics behind these encounters helps you better prepare and adjust accordingly.</p>
+                <p>
+                  In Teamfight Tactics, obtaining the powerful new 6-cost champions can significantly influence your late-game strategy. Understanding the odds and key mechanics behind their appearance will help you maximize your chances of success.
+                </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>How This Page Works</AlertDialogTitle>
+              <AlertDialogTitle>Key Points to Know</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>Understanding Early-Game Encounters:</strong> <br/>
-                At the start of each match, you&apos;ll encounter different scenarios that offer bonuses or alter the dynamics of the game. These can include stat boosts, item drops, or other modifiers based on random conditions.</p>
-                <p>2. <strong>Why This Information Is Useful:</strong><br/>
-                By studying the possible rewards and odds associated with these encounters, you can:
-                <ul>
-                  <li>- Predict the rewards you might receive.</li>
-                  <li>- Plan your strategy based on the potential bonuses or changes.</li>
-                  <li>- Adjust your tactics to take full advantage of the encounter outcomes.</li>
-                </ul>
+                <p>
+                  1. <strong>Those units are very rare:</strong> <br />
+                  The chances of encountering a 6-cost champion are initially low but increase notably at level 10.
+                </p>
+                <p>
+                  2. <strong>Viktor Opening Encounters&apos;s Boost:</strong> <br />
+                  If the opening encounter features Viktor, your odds of finding a 6-cost champion are tripled, making it a prime opportunity to secure these powerful units.
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
               <AlertDialogTitle>How to Use This Information</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>Review Encounter Scenarios:</strong> <br/>
-                Check the table to understand the different types of encounters and their corresponding odds.
+                <p>
+                  1. <strong>Track Your Level:</strong> <br />
+                  Aim for level 10 to maximize your odds of encountering 6-cost champions.
                 </p>
-                <p>2. <strong>Analyze Possible Outcomes:</strong><br/>
-                Use the data to predict what rewards or changes may occur based on the scenario you face at the start of your match.
-                </p>
-                <p>3. <strong>Plan Your Strategy:</strong><br/>
-                Tailor your early-game approach by factoring in the likely outcomes of your encounter, whether it&apos;s gaining a stat boost, a powerful item, or an alternate game modifier.
+                <p>
+                  2. <strong>Capitalize on Viktor:</strong> <br />
+                  Take full advantage of scenarios where Viktor Opening encounter show up to increase your chances of securing a 6-cost champion.
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
               <AlertDialogTitle>Conclusion</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>By understanding the odds and potential rewards of early-game encounters, you&apos;ll be able to make better decisions from the start and set yourself up for success throughout the match. Dive into the details now and enhance your early-game strategy!</p>
+                <p>
+                  By leveraging these odds and planning accordingly, you can significantly improve your chances of finding the new 6-cost champions and adapting your strategy for success. Dive into the details now and optimize your gameplay!
+                </p>
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter className="absolute right-2 top-2">
-              <AlertDialogCancel className="px-1 py-0.5"><X className="w-6 h-6" /></AlertDialogCancel>
+              <AlertDialogCancel className="px-1 py-0.5">
+                <X className="w-6 h-6" />
+              </AlertDialogCancel>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
         </p>
       </article>
-      <Table className="mb-12">
-        <TableHeader>
+      <div className="relative pt-8">
+      <p className="w-2/5 h-12 text-center absolute right-0 top-4 text-sm font-semibold text-3cost">Viktor Opening encounter (x3)</p>
+      <Table className="mb-24">
+        <TableHeader className="relative pt-4">
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead className="text-left">Opening Encounter</TableHead>
-            <TableHead>Name</TableHead>
-            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+            <TableHead>Stage</TableHead>
+            <TableHead className="w-1/5 text-morning">Odds Percentage</TableHead>
+            <TableHead className="w-1/5 text-morning">Lvl. 10</TableHead>
+            <TableHead className="w-1/5 text-3cost">Odds Percentage</TableHead>
+            <TableHead className="w-1/5 text-3cost">Lvl.10</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-        {Object.entries(encountersTable).flatMap(([champion, encounters]) => {
-          const encounterEntries = Object.entries(encounters); // encounters for each champion
-          const rowCount: number = Object.values(encounters)
-            .flatMap(encounterData => (Array.isArray(encounterData) ? encounterData : [encounterData]))
-            .length;
-          const rowSpan: any = rowCount === 1 ? undefined : rowCount;
-
-          return encounterEntries.flatMap(([encounterName, encounterData], index) => {
-            // variants ?
-            const variants = Array.isArray(encounterData) ? encounterData : [{ chance: encounterData.chance }];
-            return variants.map((variant, variantIndex) => {
-              const uniqueKey = `${champion}-${index}-${variantIndex}`;
-              return (
-                <TableRow key={uniqueKey} className={`border ${index === 0 ? "border-t-midday border-t-2" : null}`}>
-                  {index === 0 && variantIndex === 0 && (
-                    <TableCell rowSpan={rowSpan} className={`py-2 w-1/4 font-semibold border border-crema border-opacity-20 bg-midnight`}>
-                      <FormatChampions value={champion} />
-                    </TableCell>
-                  )}
-                  <TableCell className={`py-2 border border-crema text-center border-opacity-20`}> 
-                    {variant.name || encounterName}
-                  </TableCell>
-                  <TableCell className={`py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20`}>
-                    {variant.chance}%
-                  </TableCell>
-                </TableRow>
-              );
-            });
-          });
-        })}
+        {odds.map((row, rowIndex) => (
+          <TableRow key={rowIndex} className={`!border-b !border-crema !border-opacity-20`}>
+            <TableCell className="py-1 border text-center border-r border-crema border-opacity-20">{row.stage}</TableCell>
+            <TableCell className="py-1 text-center">{row.default}</TableCell>
+            <TableCell className="py-1 text-center border-r border-crema border-opacity-20">{row.max}</TableCell>
+            <TableCell className="py-1 text-center">{row.viktor}</TableCell>
+            <TableCell className="py-1 border-r border-crema border-opacity-20 text-center">{row.viktor_max}</TableCell>
+          </TableRow>
+        ))}
         </TableBody>
-      </Table> */}
+      </Table>
+      </div>
     </>
   )
 }

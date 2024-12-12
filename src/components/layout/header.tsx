@@ -55,6 +55,12 @@ const Header = () => {
           </li>
           <li>
             <Link 
+              href="/6-costs" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/6-costs' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >6 costs</Link>
+          </li>
+          <li>
+            <Link 
               href="/chem-baron" 
               className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/chem-baron' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
             >Chem Baron Loots</Link>
@@ -110,6 +116,12 @@ const Header = () => {
               href="/champions" 
               className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/champions' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
             >Champions</Link>
+          </li>
+          <li>
+            <Link 
+              href="/6-costs" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/6-costs' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >6 costs</Link>
           </li>
           <li className="hidden sm:inline-block relative group">
             <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent hover:border-crema">Traits <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span></p>
