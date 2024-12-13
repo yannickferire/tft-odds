@@ -43,16 +43,16 @@ const Portals: NextPage = () => {
       <Head>
         <title>6 costs reroll odds – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/6-costs" />
-        <meta name="description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
+        <meta name="description" content="Know your chances of hitting 6 cost champion in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:title" content="6 costs reroll odds – TFT odds Set 13" />
-		    <meta property="og:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
+		    <meta property="og:description" content="Know your chances of hitting 6 cost champion in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/encounters" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
 		    <meta name="twitter:site" content="@tftodds" />
         <meta name="twitter:title" content="6 costs reroll odds – TFT odds Set 13" />
-        <meta name="twitter:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
+        <meta name="twitter:description" content="Know your chances of hitting 6 cost champion in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">6 costs reroll odds</strong> table</h1>
