@@ -24,19 +24,35 @@ import {
   ChartLegendContent
 } from "@/components/ui/chart"
 import Tip from "@/components/layout/tip"
-import GoldIcon from "@/components/icons/goldIcon";
 
 const totalAnomalies = 58;
 
 const probabilityAtLeastOne = (n: number, k: number) => {
-  const singleAnomalyProbability = 1 / totalAnomalies; // Probabilité de tirer une anomalie spécifique
-  return 1 - Math.pow(1 - singleAnomalyProbability, n * k); // Complément : au moins une fois
+  let probability = 0;
+  const rollsBeforeReset = 12;
+  const rollsWithoutRepetition = Math.min(n, rollsBeforeReset); 
+
+  if (n == 1) {
+    const singleAnomalyProbability = 1 / (totalAnomalies - (n - 1));
+    probability = 1 - Math.pow(1 - singleAnomalyProbability, n * k);
+  } else if (rollsWithoutRepetition == n) {
+    const singleAnomalyProbability = 1 / (totalAnomalies - (n - 1) - 1);
+    probability = 1 - Math.pow(1 - singleAnomalyProbability, n * k);
+  } else {
+    const singleAnomalyProbability = 1 / totalAnomalies;
+    const singleAnomalyProbabilityWithoutRepetition = 1 / (totalAnomalies - (rollsBeforeReset));
+    const probabilityStart = Math.pow(1 - singleAnomalyProbabilityWithoutRepetition, rollsBeforeReset * k);
+    const probabilityEnd = Math.pow(1 - singleAnomalyProbability, (n - rollsBeforeReset) * k);
+    probability = 1 - probabilityStart * probabilityEnd;
+  }
+
+  return Math.min(probability, 1);
 };
 
 const generateChartData = () => {
   const chartData = [];
 
-  for (let n = 0; n <= 100; n += 5) {
+  for (let n = 0; n <= 60; n+=5) {
     const probabilityOne = probabilityAtLeastOne(n + 1, 1);
     const probabilityTwo = probabilityAtLeastOne(n + 1, 2);
     const probabilityThree = probabilityAtLeastOne(n + 1, 3);
@@ -133,6 +149,7 @@ const Anomalies: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
+      <Tip>Your first 12 anomalies are guaranteed to be unique - the pool resets after 11 rolls!</Tip>
       <article className="bg-earlynight max-w-xl w-full mx-auto p-6 rounded flex flex-col justify-center items-center">
         <div className="flex gap-12 mb-6">
           <div>
@@ -188,7 +205,7 @@ const Anomalies: NextPage = () => {
               tickLine={true}
               axisLine={true}
               tickMargin={8}
-              tickFormatter={(value) => `${value} g`}
+              tickFormatter={(value) => `${value}g`}
             />
             <YAxis
               dataKey="one"
