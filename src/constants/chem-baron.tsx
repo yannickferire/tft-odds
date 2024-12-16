@@ -39,7 +39,7 @@ export const lootTable: Record<string, & Record<number, { value: string; percent
       percent: 20
     },
     4: {
-      value: "1x Tier 0 Item + 1x Tier 1 Item + 1x Singer 2 star + 1x Remover",
+      value: "1x Tier 0 Item + 1x Tier 1 Item + 1x Singed 2 star + 1x Remover",
       percent: 10
     },
     5: {
@@ -95,11 +95,11 @@ export const lootTable: Record<string, & Record<number, { value: string; percent
       percent: 20
     },
     4: {
-      value: "1x Unleashed Toxins II + 1x Piltoven Hexarmor + 1x Renata 3 star + 1x Renni + 1x Remover",
+      value: "1x Unleashed Toxins II + 1x Piltoven Hexarmor + 1x Renata Glasc 3 star + 1x Renni + 1x Remover",
       percent: 9
     },
     5: {
-      value: "1x Destabilized Chemtank II + 1x Voltaic Saber + 3x Singer 3 star",
+      value: "1x Destabilized Chemtank II + 1x Voltaic Saber + 3x Singed 3 star",
       percent: 1
     }
   },

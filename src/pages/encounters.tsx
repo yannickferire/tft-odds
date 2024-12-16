@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
 import { encountersTable, hallOfNine } from "@/constants/portals";
+import { spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold } from "@/constants/augments";
 import { FormatConsumables } from "@/utils/formatConsumables";
 import { FormatChampions } from "@/utils/formatChampions";
 import {
@@ -137,9 +138,9 @@ const Portals: NextPage = () => {
         })}
         </TableBody>
       </Table>
-      <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Sevika: Loot subscription</strong></h2>
+      <h2 id="sevika" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Sevika: Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
-      <Table className="mb-24">
+      <Table className="mb-8">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left">Rewards</TableHead>
@@ -160,6 +161,56 @@ const Portals: NextPage = () => {
           })}
         </TableBody>
       </Table>
+      <h2 id="warwick" className="text-3xl pt-8 mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Warwick: Loot on kill</strong></h2>
+      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy champion, Warwick will occasionally devour their body and leave loot behind.</p>
+      <div className="flex mb-24 gap-6">
+        <div className="flex-1">
+          <Table>
+            <TableHeader>
+              <TableRow className="!border-b !border-crema !border-opacity-20">
+                <TableHead className="text-left">Rewards</TableHead>
+                <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {Object.entries(spoilsOfWarGold).map((reward, index) => {
+                const uniqueKey = `spoil-war-gold-${index + 1}`;
+                return (
+                  <TableRow key={uniqueKey}>
+                    <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
+                      <FormatConsumables value={reward[0]} />
+                    </TableCell>
+                    <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
+                  </TableRow>
+                );  
+              })}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="grow-0">
+          <Table className="w-50">
+            <TableHeader>
+              <TableRow className="!border-b !border-crema !border-opacity-20">
+                <TableHead className="text-left">+ Extra Gold</TableHead>
+                <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {Object.entries(spoilsOfWarGoldGold).map((reward, index) => {
+                const uniqueKey = `spoil-war-gold-gold-${index + 1}`;
+                return (
+                  <TableRow key={uniqueKey}>
+                    <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
+                      <FormatConsumables value={reward[0]} />
+                    </TableCell>
+                    <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
+                  </TableRow>
+                );  
+              })}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
       {/* <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Thresh&apos;s Sanctum</strong> – Shadow Isles region</h2>
       <p className="text-center mb-4">When ANY unit dies, collect their soul. <br/>Every 40 souls, gain a <strong>loot orb</strong>.</p>
       <Table className="mb-6">

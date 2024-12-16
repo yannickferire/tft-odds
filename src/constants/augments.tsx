@@ -154,7 +154,7 @@ export const spoilsOfWarPrismatic = {
   "8x Gold": 5,
   "2x Random Champion `(tier = player level)`": 5,
   "1x Champion Duplicator (max 1 all game)": 1,
-  "1x Item Component + 1x Spatula": 1
+  "1x Component Anvil + 1x Spatula": 1
 }
 export const spoilsOfWarPrismaticGold = {
   "1x Gold": 81,

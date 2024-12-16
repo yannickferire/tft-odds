@@ -51,6 +51,7 @@ const Consumables: { [key: string]: string } = {
   "Artifact Item Anvil": '/images/items/ArtifactItemAnvil.avif',
   "Support Item Anvil": '/images/items/SupportItemAnvil.avif',
   "Completed Item Anvil": '/images/items/CompletedItemAnvil.avif',
+  "Component Anvil": '/images/items/CompletedItemAnvil.avif',
   // units
   "2 Cost": '/images/items/2CostUnit.png',
   "3 Cost": '/images/items/3CostUnit.png',

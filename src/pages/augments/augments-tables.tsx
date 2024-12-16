@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
-import { goldenEgg, spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold, marchOfProgress } from "@/constants/augments";
+import { goldenEgg, spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold } from "@/constants/augments";
 import { numberOfChampionsByCost } from "@/constants/champions";
 import { FormatConsumables } from "@/utils/formatConsumables";
 import {
