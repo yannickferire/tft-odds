@@ -146,10 +146,20 @@ const Portals: NextPage = () => {
         {odds.map((row, rowIndex) => (
           <TableRow key={rowIndex} className={`!border-b !border-crema !border-opacity-20`}>
             <TableCell className="py-1 border text-center border-r border-crema border-opacity-20">{row.stage}</TableCell>
-            <TableCell className="py-1 text-center">{row.default}</TableCell>
-            <TableCell className="py-1 text-center border-r border-crema border-opacity-20">{row.max}</TableCell>
-            <TableCell className="py-1 text-center">{row.viktor}</TableCell>
-            <TableCell className="py-1 border-r border-crema border-opacity-20 text-center">{row.viktor_max}</TableCell>
+            <TableCell className="py-1 text-center">
+              {typeof row.default === "number" ? row.default.toFixed(2) + "%" : row.default}
+            </TableCell>
+            <TableCell className="py-1 text-center border-r border-crema border-opacity-20">
+              {row.default !== "-" ? (Number(row.default) + 1.1).toFixed(2) + "%" : "-"}
+            </TableCell>
+            <TableCell className="py-1 text-center">
+              {row.viktor !== undefined ? row.viktor.toFixed(2) : (Number(row.default) * 3).toFixed(2)}%
+            </TableCell>
+            <TableCell className="py-1 border-r border-crema border-opacity-20 text-center">
+              {row.viktor !== undefined 
+                ? (row.viktor + 3.3).toFixed(2) 
+                : ((Number(row.default) + 1.1) * 3).toFixed(2)}%
+            </TableCell>
           </TableRow>
         ))}
         </TableBody>
