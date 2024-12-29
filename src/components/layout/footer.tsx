@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 const Footer = () => {
+  // year
+  const year = new Date().getFullYear();
   return (
     <>
     <footer className="bg-earlynight py-4 rounded z-10">
@@ -94,12 +96,12 @@ const Footer = () => {
               <a rel="me" href="https://mastodon.social/@tftodds">@tftodds</a>
             </li>
             <li>
-              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/emerald.svg" alt="Rank: Emerald" /> tftodds com</a>
+              <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold"><Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/diamond.svg" alt="Rank: Diamond" /> tftodds com</a>
             </li>
             <li>
               <a href="mailto:hello@tftodds.com" className="leading-[30px] sm:leading-normal block opacity-40 hover:opacity-100 tracking-wider font-bold">hello@tftodds.com</a>
             </li>
-            <li><p className="inline opacity-40">© 2024 TFT Odds</p></li>
+            <li><p className="inline opacity-40">© {year} TFT Odds</p></li>
           </ul>
         </div>
       </div>
