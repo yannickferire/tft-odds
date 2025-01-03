@@ -21,11 +21,13 @@ interface IOddsByStar {
   opponentsCopies: number
   sameCostCopies: number;
   emoji: string;
-  headliner: boolean;
-  setHeadliner: (headliner: boolean) => void;
+  getOddsForStage: (stage: string, levelTen: boolean, viktor: boolean) => number; 
+  selectedStage: string;
+  levelTen: boolean;
+  viktor: boolean;
 }
 
-const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool, ownedCopies, opponentsCopies, sameCostCopies, emoji, headliner, setHeadliner }) => {
+const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool, ownedCopies, opponentsCopies, sameCostCopies, emoji, getOddsForStage, selectedStage, levelTen, viktor }) => {
   const [championCopies, setChampionCopies] = useState(numberOfCopiesByCost[champion.cost + " cost"]);
 
   const starColors = ['bronze', 'silver', 'gold'];
@@ -34,7 +36,9 @@ const OddsByStar: React.FC<IOddsByStar> = ({ star, champion, selectedLevel, pool
   
   let slotsPerRoll: number = championsPerRoll;
 
-  const championOfThisCostPerRoll = (rollingChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']) * slotsPerRoll / 100;
+  const championOfThisCostPerRoll = getOddsForStage(selectedStage, levelTen, viktor) * slotsPerRoll / 100;
+  console.log(championOfThisCostPerRoll);
+  // const championOfThisCostPerRoll = (rollingChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']) * slotsPerRoll / 100;
   const rollsNeeded = (copiesNeeded: number) => {
     let championCostPool = pool[champion.cost + " cost"];
     let numberOfRolls = 0;

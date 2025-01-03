@@ -25,19 +25,49 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react"
+import { X } from "lucide-react";
+import { baseCost, baseLevel } from '@/constants/constants';
+import LevelTenToggle from "@/components/6-costs/levelTenToggle";
+import ViktorToggle from "@/components/6-costs/viktorToggle";
+import ResetButton from "@/components/6-costs/resetButton";
+import ChampionsSelector from "@/components/6-costs/championsSelector";
+import ChampionsOdds from "@/components/6-costs/championsOdds";
+import StageSelector from "@/components/6-costs/stageSelector";
 
-const Portals: NextPage = () => {
+const SixCosts: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
+  const [traits, setTraits] = useState<any[]>([]);
+  const [selectedCost, setSelectedCost] = useState<string>(baseCost + " cost");
+  const [selectedLevel, setSelectedLevel] = useState<number>(baseLevel);
+  const [selectedStage, setSelectedStage] = useState<string>("4-6");
+  const [levelTen, setLevelTen] = useState(false);
+  const [viktor, setViktor] = useState(false);
 
   const { isLoading, error, data } = useQuery('champions', () =>
     fetchChampions(), 
     {
       onSuccess: (data) => {
-        setChamps(data.champions);
+        setChamps(data.champions.filter((champion: any) => champion.cost === 6));
+        setTraits(data.traits);
       }
     }
   );
+
+  const getOddsForStage = (stage: string, levelTen: boolean, viktor: boolean) => {
+    const stageData = odds.find(odd => odd.stage === stage);
+    const baseOdds = typeof stageData?.default === 'number' ? stageData.default : 0;
+    const levelTenOdds = levelTen ? baseOdds + 1.1 : baseOdds;
+    
+    if (viktor) {
+      if (stageData?.viktor !== undefined) {
+        return levelTen ? stageData.viktor + 3.3 : stageData.viktor;
+      }
+      return levelTenOdds * 3;
+    }
+    
+    return levelTenOdds;
+  };
+
   return (
     <>
       <Head>
@@ -55,26 +85,7 @@ const Portals: NextPage = () => {
         <meta name="twitter:description" content="Know your chances of hitting 6 cost champion in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">6 costs reroll odds</strong> table</h1>
-      <ul className="mb-6 flex gap-2 justify-center">
-        {champs
-          .filter((champion) => champion.cost === 6)
-          .sort((a, b) => a.cost - b.cost)
-          .map((champion, index) => (
-          <li 
-          key={index} 
-          className={`w-12 champion aspect-square border-2 border-carry rounded relative text-carry`}
-          title={champion.name}
-        >
-          <div className="w-full h-full relative block rounded overflow-hidden">
-            <Image 
-            className={`w-20 -left-8 -top-2 max-w-none absolute z-10`}
-            src={champion.image} 
-            alt={champion.name} width="53" height="53" />
-          </div>
-        </li>
-        ))}
-      </ul>
+      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">6 costs</strong> rolling odds</h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
         <p>This page offers insights into the <strong>odds of finding the brand new 6-cost champions</strong> in TFT Set 13, helping you refine your strategy and increase your chances of securing these powerful units.
         <AlertDialog>
@@ -130,6 +141,39 @@ const Portals: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
+      <section className="flex w-full items-start flex-col md:flex-row flex-1">
+        <aside className="flex flex-col w-full md:w-2/6 xl:w-96 mb-24">
+          <h2 className="hidden">Select your level, stage and a champion</h2>
+          <div className="flex justify-between mb-4">
+            <StageSelector selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
+            <LevelTenToggle levelTen={levelTen} setLevelTen={setLevelTen} />
+            <ViktorToggle viktor={viktor} setViktor={setViktor} />
+          </div>
+          <ChampionsSelector 
+            champs={champs} 
+            setChamps={setChamps}
+            selectedStage={selectedStage}
+            levelTen={levelTen}
+            viktor={viktor}
+            getOddsForStage={getOddsForStage}
+            isLoading={isLoading}
+          />
+          <ResetButton 
+            setSelectedStage={setSelectedStage}
+            selectedStage={selectedStage}
+            levelTen={levelTen}
+            viktor={viktor}
+            setLevelTen={setLevelTen}
+            setViktor={setViktor}
+            champs={champs} 
+            setChamps={setChamps} 
+          />
+        </aside>
+        <ChampionsOdds selectedLevel={selectedLevel} champs={champs} setChamps={setChamps} traits={traits} getOddsForStage={getOddsForStage} selectedStage={selectedStage}
+            levelTen={levelTen}
+            viktor={viktor} />
+      </section>
+      <h2 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">6 costs reroll odds</strong> table</h2>
       <div className="relative pt-8">
       <p className="w-2/5 h-12 text-center absolute right-0 top-4 text-sm font-semibold text-3cost">Viktor Opening encounter (x3)</p>
       <Table className="mb-24">
@@ -169,4 +213,4 @@ const Portals: NextPage = () => {
   )
 }
 
-export default Portals;
+export default SixCosts;
