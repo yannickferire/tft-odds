@@ -23,6 +23,7 @@ export async function fetchChampions() {
     // exceptions
     let evolved = false;
     const championUrl = 
+      // set 13
       champion.name === "Powder" ? "blue" : 
       champion.name === "Dr. Mundo" ? "drmundo" : 
       champion.name === "Scar" ? "flyguy" : 
@@ -36,6 +37,9 @@ export async function fetchChampions() {
       champion.name === "Loris" ? "beardy" : 
       champion.name === "Steb" ? "fish" : 
       champion.name === "Mel" ? "missmage" : 
+      // set 14
+      champion.name === "Jarvan IV" ? "jarvan" :
+      champion.name === "Nidalee" ? "nidaleecougar" :
       champion.name;
     if (champion.name === "Mel" || champion.name === "Warwick" || champion.name === "Viktor") {
       evolved = true;
