@@ -38,8 +38,10 @@ export async function fetchChampions() {
       champion.name === "Steb" ? "fish" : 
       champion.name === "Mel" ? "missmage" : 
       // set 14
-      champion.name === "Jarvan IV" ? "jarvan" :
+      // champion.name === "Jarvan IV" ? "jarvan" :
       champion.name === "Nidalee" ? "nidaleecougar" :
+      // set 15
+      champion.name === "Jarvan IV" ? "jarvaniv" :
       champion.name;
     if (champion.name === "Mel" || champion.name === "Warwick" || champion.name === "Viktor") {
       evolved = true;
