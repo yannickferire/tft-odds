@@ -55,33 +55,9 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/6-costs" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/6-costs' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >6 costs</Link>
-          </li>
-          <li>
-            <Link 
-              href="/chem-baron" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/chem-baron' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Chem Baron Loots</Link>
-          </li>
-          <li>
-            <Link 
-              href="/conqueror" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/conqueror' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Conqueror Chest</Link>
-          </li>
-          <li>
-            <Link 
-              href="/family" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/family' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Family Heist</Link>
-          </li>
-          <li>
-            <Link 
-              href="/anomalies" 
-              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/anomalies' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
-            >Anomalies</Link>
+              href="/rolling-odds" 
+              className={`py-2 inline-block text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-midnight ${router.pathname === '/rolling-odds' ? 'text-morning underline underline-offset-4 cursor-default' : ''}`}
+            >Champions rolling odds</Link>
           </li>
           <li>
             <Link 
@@ -119,40 +95,9 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/6-costs" 
-              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/6-costs' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >6 costs</Link>
-          </li>
-          <li className="hidden sm:inline-block relative group">
-            <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent hover:border-crema">Traits <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span></p>
-            <div className="hidden group-hover:inline-block absolute -left-2 top-0 pt-8 cursor-pointer z-10">
-              <ul className="text-left w-44 bg-midday rounded-sm">
-                <li>
-                  <Link 
-                    href="/chem-baron" 
-                    className={`rounded-t-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/chem-baron' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Chem Baron Loots</Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/conqueror" 
-                    className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/conqueror' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Conqueror Chest</Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/family" 
-                    className={`rounded-b-sm block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${router.pathname === '/family' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-                  >Family Heist</Link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <Link 
-              href="/anomalies" 
-              className={`relative z-20 text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/anomalies' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
-            >Anomalies</Link>
+              href="/rolling-odds" 
+              className={`text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent ${router.pathname === '/rolling-odds' ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+            >Champions rolling odds</Link>
           </li>
           <li>
             <Link 
