@@ -1,4 +1,4 @@
-import { fetchChampionsURL, currentSet, championImageURL, gameURL } from "@/constants/set";
+import { apiURL, fetchChampionsURL, currentSet, gameURL } from "@/constants/set";
 
 export async function fetchAugments() {
   const response = await fetch(fetchChampionsURL);
@@ -7,6 +7,7 @@ export async function fetchAugments() {
   // champs
   const dataChampions = data.sets[currentSet].champions;
   const filteredChampions = dataChampions.filter((champion: any) => champion.traits.length > 0);
+  const championImageURL = `${apiURL}/game/assets/ux/tft/championsplashes`;
   const withImageChampions = filteredChampions.map((champion: any) => ({
     ...champion,
     // if champion is from Stage 2, then modifie url to get the correct image
