@@ -1,5 +1,4 @@
 import { rollingChancesByLevel } from '@/constants/game';
-import { rollingHeadlinersChancesByLevel } from '@/constants/game';
 
 interface IRollingOdds {
   selectedLevel: number;

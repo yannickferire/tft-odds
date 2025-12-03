@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { rollingHeadlinersChancesByLevel } from '@/constants/game';
 import { numberOfChampionsByCost } from '@/constants/champions';
 
 interface IOddsHeadliner{
@@ -16,8 +15,10 @@ interface IOddsHeadliner{
 }
 
 const OddsHeadliner: React.FC<IOddsHeadliner> = ({ headliner, selectedLevel, champion }) => {
-  const percentOfThisChampCost = (rollingHeadlinersChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']);
-  const chanceToSeeThisChamp = percentOfThisChampCost * 1 / numberOfChampionsByCost[champion.cost + " cost"];
+  // Archived: rollingHeadlinersChancesByLevel no longer exists
+  // const percentOfThisChampCost = (rollingHeadlinersChancesByLevel['level ' + selectedLevel][champion.cost + ' cost']);
+  // const chanceToSeeThisChamp = percentOfThisChampCost * 1 / numberOfChampionsByCost[champion.cost + " cost"];
+  const chanceToSeeThisChamp = 0;
 
   return chanceToSeeThisChamp > 0 ? (
     <div className="animate-fromtop animate-delay-5 mt-5 rounded bg-[#e5e5bc] p-2 flex items-center justify-center">
