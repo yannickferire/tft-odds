@@ -212,7 +212,7 @@ function BadgeButton({
       data-slot="badge-button"
       className={cn(badgeButtonVariants({ variant, className }))}
       role="button"
-      {...props}
+      {...(props as any)}
     />
   );
 }
