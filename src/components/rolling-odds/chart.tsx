@@ -185,7 +185,7 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
           <div className="relative">
             <ChartContainer
               config={chartConfig}
-              className="h-[400px] w-full ps-1.5 pe-2.5 overflow-visible [&_.recharts-curve.recharts-tooltip-cursor]:stroke-initial"
+              className="h-[360px] w-full ps-1.5 pe-2.5 overflow-visible [&_.recharts-curve.recharts-tooltip-cursor]:stroke-initial"
             >
               <ComposedChart
                 data={oddsData}
@@ -237,7 +237,7 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
                   tick={{ fontSize: 12, fill: '#a3a3a3' }}
                   tickFormatter={(value) => `${value}%`}
                   domain={[0, 100]}
-                  tickCount={6}
+                  tickCount={5}
                   tickMargin={12}
                   label={{ value: 'Probability to hit', angle: -90, position: 'insideLeft', fill: '#a3a3a3' }}
                 />
