@@ -1,76 +1,99 @@
 export const encountersTable = {
-  "Heimerdinger": {
-    "Prismatic Game": [
-      { "name": "Prismatic Opener", "chance": 6 },
-      { "name": "Prismatic Finisher", "chance": 4 }
-    ]
-  },
-  "Jinx": {
-    "Scuttle Game": [
-      { "name": "Scuttle Puddle", "chance": 7.5 },
-      { "name": "Crab Rave", "chance": 2.5 }
-    ]
-  },
-  "Vander": {
-    "3 Gold Augments": {
-      "chance": 10
+  "Darius": {
+    "3 cost start": {
+      "chance": 7
     }
   },
-  "Vi": {
-    "2 Components Anvil": {
-      "chance": 10
+  "Lissandra": {
+    "Howling abyss (5x 1 costs)": {
+      "chance": 7
     }
   },
-  "Mel": {
-    "Radiant Blessing": {
-      "chance": 8
+  "Baron Nashor": {
+    "Silver scrapes": {
+      "chance": 7
     }
   },
-  "Warwick": {
-    "Loot on kill": {
-      "chance": 8
+  "Poppy": {
+    "Components anvil": {
+      "chance": 6,
+      "text": "Start with 2 components anvil."
     }
   },
-  "Viktor": {
-    "6 cost": {
-      "chance": 8
+  "Twisted Fate": {
+    "Golden Gala": {
+      "chance": 6
     }
   },
-  "Powder": {
-    "Powder's Monkey": {
-      "chance": 5
+  "Rift Herald": {
+    "Scuttle Puddle": {
+      "chance": 6,
+      "text": "Monsters are replaced by crabs that drop bonus loot!"
     }
   },
   "Ekko": {
-    "All Prismatic Augments": {
+    "Upgraded start": {
+      "chance": 6
+    }
+  },
+  "Leblanc": {
+    "Augment round swap": {
+      "chance": 6
+    }
+  },
+  "Draven": {
+    "Gold on player death": {
+      "chance": 6
+    }
+  },
+  "Tahm Kench": {
+    "Gold Subscription": {
       "chance": 5
     }
   },
-  "Jayce": {
-    "Artifact Anvil": {
-      "chance": 4
-    }
-  },
-  "Caitlyn": {
-    "Gold Subscription": {
-      "chance": 4
-    }
-  },
-  "Sevika": {
+  "Zoe": {
     "Loot Subscription": {
-      "chance": 4
+      "chance": 5
     }
   },
-  "Ambessa": {
-    "Wandering Trainer": {
-      "chance": 4
+  "Teemo": {
+    "Augments rerolls +1": {
+      "chance": 5
     }
   },
-  "Piltover or Zaun": {
+  "None": {
     "No Opening Encounter": {
-      "chance": 10
+      "chance": 5
     }
-  }
+  },
+  "Seraphine": {
+    "Prismatic Party": {
+      "chance": 4,
+      "text": "All augments offered this game will be prismatic tier."
+    }
+  },
+  "Galio": {
+    "Prismatic prelude": {
+      "chance": 4,
+      "text": "The first augment offered this game will be prismatic tier."
+    }
+  },
+  "Zilean": {
+    "Prismatic finale": {
+      "chance": 4,
+      "text": "The last augment offered this game will be prismatic tier."
+    }
+  },
+  "Ryze": {
+    "Emblem ensemble": {
+      "chance": 4
+    }
+  },
+  "Xin Zhao": {
+    "2 cost start": {
+      "chance": 4
+    }
+  },
 };
 export const hallOfNine = {
   "1x Item Component (not Spatula)": 14,

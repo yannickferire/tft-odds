@@ -15,7 +15,7 @@ export function FormatChampions({ value }: FormatChampionsProps) {
     onSuccess: (data) => {
       // Recherche du champion correspondant à "value"
       const foundChampion = data.champions.find(
-        (champ: any) => champ.name.toLowerCase() === value.toLowerCase()
+        (champ: any) => champ.name.trim().toLowerCase() === value.trim().toLowerCase()
       );
       setChampion(foundChampion);
     },
@@ -29,22 +29,21 @@ export function FormatChampions({ value }: FormatChampionsProps) {
     return <span>Error loading champions.</span>;
   }
 
-  if (!champion) {
-    return <span>{value}</span>;
-  }
-
   return (
     <div className="flex items-center">
       <div className="w-12 h-12 relative rounded-full border-2 mr-2 border-midday overflow-hidden">
-      <Image
-        src={champion.image}
-        alt={champion.name}
-        width={48}
-        height={48}
-        className="max-w-none w-16 h-16 aspect-square absolute right-0 top-1/2 -translate-y-1/2 mt-2"
-      />
+        {champion ? (
+          <Image
+            src={champion.image}
+            alt={champion.name}
+            width={48}
+            height={48}
+          />
+        ) : (
+          <div className="w-full h-full bg-white/10" />
+        )}
       </div>
-      <span className="font-medium">{champion.name}</span>
+      <span className="font-medium">{champion ? champion.name : value}</span>
     </div>
   );
 }

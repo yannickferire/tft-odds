@@ -6,11 +6,11 @@ import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
 import { baseCost, baseLevel } from '@/constants/constants';
 import { currentSet, setStage } from '@/constants/set';
-import LevelSelector from "@/components/champions/levelSelector";
-import ResetButton from "@/components/champions/resetButton";
-import RollingOdds from "@/components/champions/rollingOdds";
-import ChampionsSelector from "@/components/champions/championsSelector";
-import ChampionsOdds from "@/components/champions/championsOdds";
+import LevelSelector from "@/components/archived/champions/levelSelector";
+import ResetButton from "@/components/archived/champions/resetButton";
+import RollingOdds from "@/components/archived/champions/rollingOdds";
+import ChampionsSelector from "@/components/archived/champions/championsSelector";
+import ChampionsOdds from "@/components/archived/champions/championsOdds";
 import {
   AlertDialog,
   AlertDialogCancel,

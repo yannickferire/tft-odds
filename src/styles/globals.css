@@ -12,6 +12,9 @@
   :root {
     --radius: 0.5rem
   }
+  .theme {
+    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite
+  }
 }
 body {
   background: #041C32;
@@ -174,5 +177,16 @@ select {
   100% {
     transform: scale(1) rotate(0);
     opacity: 1;
+  }
+}
+
+@theme inline {
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
   }
 }

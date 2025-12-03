@@ -32,16 +32,16 @@ const Portals: NextPage = () => {
       <Head>
         <title>Opening Encounters – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/encounters" />
-        <meta name="description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
-        <meta property="og:title" content="Opening Encounters – TFT odds Set 13" />
-		    <meta property="og:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
+        <meta name="description" content="View all Opening Encounter odds for TFT Set 16. Discover spawn rates, rewards and champions for each encounter to optimize your early game strategy." />
+        <meta property="og:title" content={`Opening Encounters – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta property="og:description" content="View all Opening Encounter odds for TFT Set 16. Discover spawn rates, rewards and champions for each encounter to optimize your early game strategy." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/encounters" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Opening Encounters – TFT odds Set 13" />
-        <meta name="twitter:description" content="A simple table with rewards for a specific Portal. Know exactly your chance to get what you want and improve your gameplan!" />
+        <meta name="twitter:site" content="@tftodds" />
+        <meta name="twitter:title" content={`Opening Encounters – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta name="twitter:description" content="View all Opening Encounter odds for TFT Set 16. Discover spawn rates, rewards and champions for each encounter to optimize your early game strategy." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">Opening encounters data</strong> tables</h1>
@@ -138,9 +138,9 @@ const Portals: NextPage = () => {
         })}
         </TableBody>
       </Table>
-      <h2 id="sevika" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Sevika: Loot subscription</strong></h2>
+      <h2 id="sevika" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Zoe: Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
-      <Table className="mb-8">
+      <Table className="mb-20">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead className="text-left">Rewards</TableHead>
@@ -161,56 +161,6 @@ const Portals: NextPage = () => {
           })}
         </TableBody>
       </Table>
-      <h2 id="warwick" className="text-3xl pt-8 mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Warwick: Loot on kill</strong></h2>
-      <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">When you kill an enemy champion, Warwick will occasionally devour their body and leave loot behind.</p>
-      <div className="flex mb-24 gap-6">
-        <div className="flex-1">
-          <Table>
-            <TableHeader>
-              <TableRow className="!border-b !border-crema !border-opacity-20">
-                <TableHead className="text-left">Rewards</TableHead>
-                <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {Object.entries(spoilsOfWarGold).map((reward, index) => {
-                const uniqueKey = `spoil-war-gold-${index + 1}`;
-                return (
-                  <TableRow key={uniqueKey}>
-                    <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
-                    </TableCell>
-                    <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
-                  </TableRow>
-                );  
-              })}
-            </TableBody>
-          </Table>
-        </div>
-        <div className="grow-0">
-          <Table className="w-50">
-            <TableHeader>
-              <TableRow className="!border-b !border-crema !border-opacity-20">
-                <TableHead className="text-left">+ Extra Gold</TableHead>
-                <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {Object.entries(spoilsOfWarGoldGold).map((reward, index) => {
-                const uniqueKey = `spoil-war-gold-gold-${index + 1}`;
-                return (
-                  <TableRow key={uniqueKey}>
-                    <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
-                    </TableCell>
-                    <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
-                  </TableRow>
-                );  
-              })}
-            </TableBody>
-          </Table>
-        </div>
-      </div>
       {/* <h2 className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Thresh&apos;s Sanctum</strong> – Shadow Isles region</h2>
       <p className="text-center mb-4">When ANY unit dies, collect their soul. <br/>Every 40 souls, gain a <strong>loot orb</strong>.</p>
       <Table className="mb-6">

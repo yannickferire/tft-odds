@@ -27,12 +27,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { baseCost, baseLevel } from '@/constants/constants';
-import LevelTenToggle from "@/components/6-costs/levelTenToggle";
-import ViktorToggle from "@/components/6-costs/viktorToggle";
-import ResetButton from "@/components/6-costs/resetButton";
-import ChampionsSelector from "@/components/6-costs/championsSelector";
-import ChampionsOdds from "@/components/6-costs/championsOdds";
-import StageSelector from "@/components/6-costs/stageSelector";
+import LevelTenToggle from "@/components/archived/6-costs/levelTenToggle";
+import ViktorToggle from "@/components/archived/6-costs/viktorToggle";
+import ResetButton from "@/components/archived/6-costs/resetButton";
+import ChampionsSelector from "@/components/archived/6-costs/championsSelector";
+import ChampionsOdds from "@/components/archived/6-costs/championsOdds";
+import StageSelector from "@/components/archived/6-costs/stageSelector";
 
 const SixCosts: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);

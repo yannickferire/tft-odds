@@ -31,16 +31,16 @@ const DataAugments: NextPage = () => {
       <Head>
         <title>Augments odds – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/augments/augments-distribution" />
-        <meta name="description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
-        <meta property="og:title" content="Augments Distribution – TFT odds Set 13" />
-		    <meta property="og:description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
+        <meta name="description" content="Complete augment distribution guide for TFT Set 16. View all possible augment tier scenarios and their probabilities to master your augment strategy." />
+        <meta property="og:title" content={`Augments Distribution – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta property="og:description" content="Complete augment distribution guide for TFT Set 16. View all possible augment tier scenarios and their probabilities to master your augment strategy." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/augments/augments-distribution" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Augments Distribution – TFT odds Set 13" />
-        <meta name="twitter:description" content="Comprehensive augments distribution rules cheatsheet. Will your final augment be a silver, gold or prismatic one? Master all the possible augment scenario." />
+        <meta name="twitter:site" content="@tftodds" />
+        <meta name="twitter:title" content={`Augments Distribution – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta name="twitter:description" content="Complete augment distribution guide for TFT Set 16. View all possible augment tier scenarios and their probabilities to master your augment strategy." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">Augments distribution</strong> rules</h1>

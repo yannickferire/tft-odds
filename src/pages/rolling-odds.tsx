@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
+import { useQuery } from 'react-query';
+import { fetchChampions } from '@/utils/fetchChampions';
 import { currentSet, setStage } from '@/constants/set';
+import { useTFTData } from '@/hooks/useTFTData';
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -12,76 +16,98 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react"
+import { X } from "lucide-react";
+import LineChart2 from "@/components/rolling-odds/chart";
+import { Champion } from "@/types/champion";
 
 const RollingOddsPage: NextPage = () => {
+  // Set "Any 3 cost" as default selected champion
+  const [selectedChampion, setSelectedChampion] = useState<Champion | null>({
+    name: 'Any 3 cost',
+    cost: 3,
+    traits: [],
+    image: '',
+    championUrl: '',
+    selected: false
+  });
+
+  const { data } = useQuery('champions', fetchChampions);
+
+  // Fetch complete TFT data for DevTools exploration
+  useTFTData();
+
+  const champions = data?.champions || [];
+
   return (
     <>
       <Head>
-        <title>Teamfight Tactics Odds – TFT Set {currentSet}{setStage === 2 ? '.5': null} probabilities tools</title>
-        <link rel="canonical" href="https://tftodds.com/champions" />
-        <meta name="description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
-        <meta property="og:title" content="Teamfight Tactics Odds – TFT Set 13 probabilities tools" />
-		    <meta property="og:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
+        <title>Rolling Odds Calculator – TFT Set {currentSet}{setStage === 2 ? '.5' : ''} | TFT Odds</title>
+        <link rel="canonical" href="https://tftodds.com/rolling-odds" />
+        <meta name="description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
+        <meta property="og:title" content={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`} />
+        <meta property="og:description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/champions" />
+        <meta property="og:url" content="https://tftodds.com/rolling-odds" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Teamfight Tactics Odds – TFT Set 13 probabilities tools" />
-        <meta name="twitter:description" content="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder." />
+        <meta name="twitter:site" content="@tftodds" />
+        <meta name="twitter:title" content={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`} />
+        <meta name="twitter:description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
-      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center">Champions <strong className="text-morning">rolling odds</strong><span className="hidden"> – See how much gold you need for every units!</span></h1>
+      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center">Champions <strong className="text-morning">rolling odds tool</strong><span className="hidden"> – See how much gold you need for every units!</span></h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
-        <p><strong>This tool is designed to help you calculate the average number of rolls and gold needed to find a champion</strong>. Either you need one Heimerdinger or a 3-star Kog&apos;Maw, you’ll get precise estimates to plan your economy efficiently. With this knowledge, you can optimize your reroll strategy, manage your resources wisely, and stay ahead of the competition.
+        <p><strong>This advanced calculator shows you the exact probability of hitting any champion based on your level, gold spent, and game conditions</strong>. Whether you are slow-rolling for a 3-star Bard or fast-8 hunting for Aatrox, get precise probability curves to optimize your rolling strategy.
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button variant="link" className="ml-2">More info</Button>
           </AlertDialogTrigger>
           <AlertDialogContent className="overflow-y-scroll max-h-[90vh]">
             <AlertDialogHeader>
-              <AlertDialogTitle>Introduction</AlertDialogTitle>
+              <AlertDialogTitle>What is Rolling Odds Calculator?</AlertDialogTitle>
               <AlertDialogDescription>
-                <p>In Teamfight Tactics, managing your economy effectively is crucial to securing consistent TOP 4. Whether you&apos;re rerolling for key champions or aiming for that coveted 3-star upgrade, understanding the average gold cost and roll probability is vital.</p>
+                <p>This tool calculates the cumulative probability of finding champions across multiple rerolls. Unlike basic odds that show chances per shop, this shows your actual success rate after spending X gold rolling, accounting for level, contestation, unlockable champions, and copies already owned.</p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>How This Tool Works</AlertDialogTitle>
+              <AlertDialogTitle>How to Use This Tool</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>Understanding Champion Rolls:</strong><br/>
-                  Each champion&apos;s availability depends on their tier, the number of copies already taken by other players, and the stage of the game. The tool calculates the average number of rolls needed and the gold cost to:
+                <p><strong>1. Select Your Target:</strong><br/>
+                  Choose a specific champion (e.g., Morgana, Silco) or a generic cost tier (e.g., &quot;Any 3 cost&quot;) to see odds for finding any champion of that cost.
+                </p>
+                <p><strong>2. Configure Your Situation:</strong><br/>
                   <ul>
-                    <li>- Find a champion for the first time.</li>
-                    <li>- Upgrade them to 2 stars (3 copies).</li>
-                    <li>- Achieve a 3-star version (9 copies).</li>
+                    <li>- <strong>Level:</strong> Higher levels give better odds for expensive units</li>
+                    <li>- <strong>Max Gold:</strong> How much gold you plan to spend rolling</li>
+                    <li>- <strong>Copies Owned:</strong> Units you already have (affects 2★ and 3★ odds)</li>
+                    <li>- <strong>Contestation:</strong> How many other players want the same unit</li>
+                    <li>- <strong>Other Cost Out:</strong> Units of the same cost taken by other players</li>
+                    <li>- <strong>Unlockable Champions:</strong> Mark champions you&apos;ve unlocked through encounters</li>
                   </ul>
                 </p>
-                <p>2. <strong>Why This Tool Is Useful:</strong><br/>
-                  By providing precise calculations, this tool helps you:
+                <p><strong>3. Read the Chart:</strong><br/>
+                  The graph shows three probability curves:
                   <ul>
-                    <li>- Anticipate the cost of rerolling for specific champions.</li>
-                    <li>- Optimize your economy and manage your gold wisely.</li>
-                    <li>- Adapt your strategy based on competition for key units.</li>
+                    <li>- <strong>1★ (Green):</strong> Probability to find at least 1 copy</li>
+                    <li>- <strong>2★ (Blue):</strong> Probability to find 3 copies total (for 2-star)</li>
+                    <li>- <strong>3★ (Purple):</strong> Probability to find 9 copies total (for 3-star)</li>
                   </ul>
+                  Each line shows how probability increases as you spend more gold.
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>How to Use the Champion Roll Calculator</AlertDialogTitle>
+              <AlertDialogTitle>Key Stats Explained</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>Select Your Champion:</strong><br/>
-                  Use the champion selector to choose the champion you’re targeting.
-                </p>
-                <p>2. <strong>Adjust Variables:</strong><br/>
-                  If you already own some copies of the champion or notice high competition, update the tool with these factors.
-                </p>
-                <p>3. <strong>View the Results:</strong><br/>
-                  The tool will display the average gold cost and rolls required to achieve your desired outcome.
-                </p>
+                <p><strong>Shop Odds per Roll:</strong> Your chance to see the champion in a single shop refresh at your current level.</p>
+                <p><strong>Expected Rolls to Hit:</strong> Average number of rerolls needed to find 1 copy. This helps you budget your gold (2 gold per roll).</p>
+                <p><strong>Copies in Pool:</strong> Shows remaining copies of your champion and the total pool for that cost tier. When contested or pool is small, odds decrease significantly.</p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>Conclusion</AlertDialogTitle>
+              <AlertDialogTitle>Pro Tips</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>With this tool, you’ll have the insights you need to manage your gold efficiently and make smarter decisions. Plan your reroll strategy, adapt to competition, and take control of your path to victory. Explore the tool now and dominate your games!</p>
+                <p>• <strong>Level before rolling:</strong> If odds are low at level 7, consider leveling to 8 first for better rates on 4-costs and 5-costs.</p>
+                <p>• <strong>Track contestation:</strong> If 2+ players want the same champion, adjust the slider to see realistic odds.</p>
+                <p>• <strong>Know when to pivot:</strong> If probability stays below 50% after 30 gold, consider switching targets.</p>
+                <p>• <strong>3-star calculations:</strong> Use this to decide if slow-rolling for a 3-star is worth it based on your economy.</p>
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter className="fixed right-2 top-2">
@@ -91,8 +117,12 @@ const RollingOddsPage: NextPage = () => {
         </AlertDialog>
         </p>
       </article>
-      <section className="flex w-full items-start flex-col md:flex-row flex-1">
-       
+      <section className="flex w-full items-start flex-col md:flex-row flex-1 mb-20">
+        <LineChart2
+          champions={champions}
+          selectedChampion={selectedChampion}
+          setSelectedChampion={setSelectedChampion}
+        />
       </section>
     </>
   )

@@ -32,16 +32,16 @@ const Piltover: NextPage = () => {
       <Head>
         <title>Augments Data Tables – TFT odds Set {currentSet}{setStage === 2 ? '.5': null}</title>
         <link rel="canonical" href="https://tftodds.com/augments/augments-tables" />
-        <meta name="description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
-        <meta property="og:title" content="Augments Data Tables – TFT odds Set 13" />
-		    <meta property="og:description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
+        <meta name="description" content="Detailed reward tables for TFT Set 16 augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more." />
+        <meta property="og:title" content={`Augments Data Tables – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta property="og:description" content="Detailed reward tables for TFT Set 16 augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more." />
         <meta property="og:image" content="https://tftodds.com/share.jpg" />
         <meta property="og:url" content="https://tftodds.com/augments/augments-tables" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-		    <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content="Augments Data Tables – TFT odds Set 13" />
-        <meta name="twitter:description" content="Tables for the benefits you can get from your augments. The Golden Egg, March of Progress, Spoils of war, all of the orbs may lead you to victory!" />
+        <meta name="twitter:site" content="@tftodds" />
+        <meta name="twitter:title" content={`Augments Data Tables – TFT odds Set ${currentSet}${setStage === 2 ? '.5': ''}`} />
+        <meta name="twitter:description" content="Detailed reward tables for TFT Set 16 augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more." />
         <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
       </Head>
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center"><strong className="text-morning">Augments data</strong> tables</h1>

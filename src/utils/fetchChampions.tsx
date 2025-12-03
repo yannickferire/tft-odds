@@ -1,11 +1,14 @@
-import { fetchChampionsURL, currentSet, championImageURL, gameURL } from "@/constants/set";
+import { apiURL, fetchChampionsURL, currentSet, gameURL } from "@/constants/set";
+import { fetchUnlockableChampions } from "./unlockableChampionsSet16";
 
 export async function fetchChampions() {
   const response = await fetch(fetchChampionsURL);
   const data = await response.json();
 
+  // Fetch unlockable champions (Set 16 specific logic)
+  const unlockableChampionNames = await fetchUnlockableChampions();
+
   // champions
-  // const dataChampions = data.setData[0].champions;
   const dataChampions = data.sets[currentSet].champions;
   const uniqueChampionNames: any = {};
   const filteredChampions = dataChampions.filter((champion: any, index: number, array: any[]) => {
@@ -18,63 +21,81 @@ export async function fetchChampions() {
     }
     return false;
   });
-  const withSelectionChampions = filteredChampions.map((champion: any) => ({ ...champion, selected: false }));
+
+  // Helper function to normalize champion names for comparison
+  const normalizeChampionName = (name: string): string => {
+    return name.replace(/[' &-]/g, '').toLowerCase();
+  };
+
+  const withSelectionChampions = filteredChampions.map((champion: any) => {
+    const isUnlockable = unlockableChampionNames.has(normalizeChampionName(champion.name));
+
+    return {
+      ...champion,
+      selected: false,
+      unlockable: isUnlockable,
+      locked: isUnlockable
+    };
+  });
+
+  // Champion name mappings for image URLs (exceptions to default naming)
+  const championUrlMappings: Record<string, string> = {
+    // Set 13
+    "Powder": "blue",
+    "Dr. Mundo": "drmundo",
+    "Scar": "flyguy",
+    "Sevika": "lieutenant",
+    "Smeech": "gremlin",
+    "Vander": "prime",
+    "Violet": "red",
+    "Nunu & Willump": "nunuwillump",
+    "Maddie": "shooter",
+    "Renni": "chainsaw",
+    "Steb": "fish",
+    "Mel": "missmage",
+    // Set 14
+    "Nidalee": "nidaleecougar",
+    // Set 15
+    "Jarvan IV": "jarvaniv",
+    "Rammus": "rammuspb",
+    // Set 16
+    "T-Hex": "thex",
+    "Lucian & Senna": "lucian",
+    "Kobuko & Yuumi": "kobuko",
+  };
+
+  const championUrlSquareMappings: Record<string, string> = {
+    "Rammus": "rammus",
+  };
+
   const withImageChampions = withSelectionChampions.map((champion: any) => {
-    // exceptions
-    let evolved = false;
-    const championUrl = 
-      // set 13
-      champion.name === "Powder" ? "blue" : 
-      champion.name === "Dr. Mundo" ? "drmundo" : 
-      champion.name === "Scar" ? "flyguy" : 
-      champion.name === "Sevika" ? "lieutenant" : 
-      champion.name === "Smeech" ? "gremlin" : 
-      champion.name === "Vander" ? "prime" : 
-      champion.name === "Violet" ? "red" : 
-      champion.name === "Nunu & Willump" ? "nunuwillump" : 
-      champion.name === "Maddie" ? "shooter" : 
-      champion.name === "Renni" ? "chainsaw" : 
-      champion.name === "Loris" ? "beardy" : 
-      champion.name === "Steb" ? "fish" : 
-      champion.name === "Mel" ? "missmage" : 
-      // set 14
-      // champion.name === "Jarvan IV" ? "jarvan" :
-      champion.name === "Nidalee" ? "nidaleecougar" :
-      // set 15
-      champion.name === "Jarvan IV" ? "jarvaniv" :
-      champion.name;
-    if (champion.name === "Mel" || champion.name === "Warwick" || champion.name === "Viktor") {
-      evolved = true;
-    }
+    const championUrl = championUrlMappings[champion.name] || champion.name;
+    const championUrlSquare = championUrlSquareMappings[champion.name] || championUrl;
     return {
       ...champion,
       championUrl,
       image: 
-        `${championImageURL}/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}_teamplanner_splash${evolved?'_evolved':''}.png`
+        `${apiURL}/game/assets/characters/tft${currentSet}_${championUrl.toLowerCase().replace(/[' ]/g, '')}/hud/tft${currentSet}_${championUrlSquare.toLowerCase().replace(/[' ]/g, '')}_square.tft_set${currentSet}.png`
     };
   });
 
-  // traits
-  const dataTraits = data.sets[currentSet].traits.map((trait: any) => ({
-    ...trait,
-    selected: false,
-    image: `${gameURL}/${trait.icon.toLowerCase().replace(".tex", ".png")}`
-  }));
-  const filteredTraits = dataTraits.filter((trait: any) => trait.name !== "Deadeye" && trait.name !== "Yordle" && trait.name !== "Redeemer" && trait.name !== "Shadow Isles");
-  const sortedTraits = filteredTraits.sort((a: any, b: any) => {
-    if (a.name === "Threat") {
-      return 1; // "Threat" doit être placé après "b"
-    } else if (b.name === "Threat") {
-      return -1; // "Threat" doit être placé avant "a"
-    } else {
-      return a.name.localeCompare(b.name); // tri par ordre alphabétique pour les autres noms de traits
-    }
-  });
+  // Traits
+  const excludedTraits = ["Deadeye", "Yordle", "Redeemer", "Shadow Isles"];
 
-  //emblems
-  // const items = data.items;
-  // const emblems = items.filter((item: any) => item.apiName.includes("TFT9") && item.apiName.includes("Item") && item.apiName.includes("Emblem"));
-  
+  const sortedTraits = data.sets[currentSet].traits
+    .map((trait: any) => ({
+      ...trait,
+      selected: false,
+      image: `${gameURL}/${trait.icon.toLowerCase().replace(".tex", ".png")}`
+    }))
+    .filter((trait: any) => !excludedTraits.includes(trait.name))
+    .sort((a: any, b: any) => {
+      // "Threat" should always be last
+      if (a.name === "Threat") return 1;
+      if (b.name === "Threat") return -1;
+      return a.name.localeCompare(b.name);
+    });
+
   const enhancedData = { champions: withImageChampions, traits: sortedTraits };
 
   return enhancedData;

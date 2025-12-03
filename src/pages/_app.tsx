@@ -15,7 +15,9 @@ import Layout from '@/components/layout/_layout';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: false, // default: true
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000, // 5 minutes - data is considered fresh for 5 min
+      cacheTime: 10 * 60 * 1000, // 10 minutes - cache is kept for 10 min
     },
   },
 })

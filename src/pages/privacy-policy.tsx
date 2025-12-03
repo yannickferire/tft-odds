@@ -10,7 +10,7 @@ const PrivacyPolicy: NextPage = () => {
         <link rel="canonical" href="https://tftodds.com/privacy-policy" />
         <meta name="description" content="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay to climb." />
       </Head>
-      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Privacy Policy</strong> probabilities<small className="block font-normal text-lg mt-2">Updated at August 15th, 2024</small></h1>
+      <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center"><strong className="text-morning">Privacy Policy</strong> probabilities<small className="block font-normal text-lg mt-2">Updated at December 2nd, 2025</small></h1>
       <section className="flex items-center flex-col flex-1">
         <main className="mt-4 mb-16 w-full flex flex-col space-y-3 max-w-4xl">
           <p>tftodds (“we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy explains how your
