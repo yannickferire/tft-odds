@@ -18,10 +18,11 @@ import CopiesStats from './copies-stats';
 import MaxGoldStat from './max-gold-stat';
 import ChartLegend from './chart-legend';
 import UnlockableChampionsButton from './unlockable-champions-button';
-import { RotateCcw } from 'lucide-react';
+import { RotateCcw, Camera, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { lightenColor } from '@/utils/rolling-odds-utils';
 import { useRollingOddsState } from './hooks/useRollingOddsState';
+import { useScreenshot } from './hooks/useScreenshot';
 import { chartConfig, chartMargins, chartDimensions } from './config/chart-config';
 
 interface LineChart2Props {
@@ -31,6 +32,8 @@ interface LineChart2Props {
 }
 
 export default function LineChart2({ champions, selectedChampion: externalSelectedChampion, setSelectedChampion: externalSetSelectedChampion }: LineChart2Props) {
+  const cardRef = React.useRef<HTMLDivElement>(null);
+
   const {
     selectedChampion,
     setSelectedChampion,
@@ -68,6 +71,12 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
     adjustedChampionsByCost,
   } = useRollingOddsState(champions);
 
+  // Screenshot hook
+  const { captureScreenshot, status: screenshotStatus } = useScreenshot({
+    elementRef: cardRef,
+    championName: selectedChampion?.name,
+  });
+
   // Initialize internal state from external on first render only
   React.useEffect(() => {
     if (externalSelectedChampion && !selectedChampion) {
@@ -85,7 +94,7 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
 
   return (
     <div className="w-full h-full">
-      <Card className="w-full h-full bg-black/20 backdrop-blur-xl border-0 border-t-2 border-b-2 border-white/10 rounded-none text-neutral-50">
+      <Card ref={cardRef} className="w-full h-full bg-black/20 backdrop-blur-xl border-0 border-t-2 border-b-2 border-white/10 rounded-none text-neutral-50">
         <CardHeader className="border-0 min-h-auto pt-6 pb-4 flex flex-col gap-3">
           <CardTitle className="text-lg font-semibold text-neutral-50 sr-only">Rolling odds probability</CardTitle>
           <div className="flex justify-between gap-4">
@@ -103,17 +112,48 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
                 setUnlockedChampions={setUnlockedChampions}
               />
             </div>
-            {/* Reset Button */}
-            <Button
-              onClick={handleReset}
-              disabled={isAtDefault}
-              variant="outline"
-              className="h-12 bg-midnight border-white/10 text-crema hover:bg-black/40 hover:text-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed"
-              title={isAtDefault ? "Already at default values" : "Reset to default values"}
-            >
-              <RotateCcw className="w-4 h-4" />
-              <span>Reset</span>
-            </Button>
+            <div data-screenshot-buttons className="flex gap-2">
+              {/* Screenshot Button */}
+              <Button
+                onClick={captureScreenshot}
+                disabled={!selectedChampion || screenshotStatus !== 'idle'}
+                variant="outline"
+                size="icon"
+                className={`bg-midnight border-white/10 text-crema ${
+                  screenshotStatus === 'idle'
+                    ? 'hover:bg-black/40 hover:text-neutral-50'
+                    : 'opacity-100 cursor-default'
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
+                title={
+                  screenshotStatus === 'capturing'
+                    ? 'Capturing screenshot...'
+                    : screenshotStatus === 'success'
+                    ? 'Screenshot saved!'
+                    : 'Take screenshot'
+                }
+              >
+                {screenshotStatus === 'capturing' && (
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white/80 rounded-full animate-spin" />
+                )}
+                {screenshotStatus === 'success' && (
+                  <Check className="w-4 h-4" />
+                )}
+                {screenshotStatus === 'idle' && (
+                  <Camera className="w-4 h-4" />
+                )}
+              </Button>
+              {/* Reset Button */}
+              <Button
+                onClick={handleReset}
+                disabled={isAtDefault}
+                variant="outline"
+                className="bg-midnight border-white/10 text-crema hover:bg-black/40 hover:text-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                title={isAtDefault ? "Already at default values" : "Reset to default values"}
+              >
+                <RotateCcw className="w-4 h-4" />
+                Reset
+              </Button>
+            </div>
           </div>
           <div className="flex gap-4">
           {/* Champion Selector */}
@@ -419,6 +459,9 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
             show3Star={show3Star}
             copiesOwned={copiesOwned}
           />
+
+          {/* Watermark placeholder - Will be filled during screenshot */}
+          <div data-watermark-placeholder></div>
         </CardContent>
       </Card>
     </div>

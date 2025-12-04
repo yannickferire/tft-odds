@@ -36,8 +36,8 @@ export default function LevelSelector({ level, setLevel }: LevelSelectorProps) {
       <div className="relative">
         {/* Floating label */}
         <div className="absolute -top-2 left-2 z-10 flex items-center gap-1 backdrop-blur-lg px-1">
-          <ChevronsUp className="w-4 h-4 text-neutral-400" />
-          <span className="text-xs text-neutral-400">level</span>
+          <ChevronsUp className="w-4 h-4 text-neutral-400 flex-shrink-0" />
+          <span className="text-xs text-neutral-400 leading-none">level</span>
         </div>
 
         <Group className={numberFieldGroupClassName}>

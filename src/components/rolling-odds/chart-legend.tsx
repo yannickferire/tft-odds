@@ -141,10 +141,11 @@ export default function ChartLegend({
 
   return (
     <div className="px-2.5 py-8">
-      <div className="flex items-center justify-center gap-3">
-        {legendItems.map((item, index) => (
+      <div data-legend-container className="flex items-center justify-center gap-3">
+        {legendItems.map((item) => (
           <button
             key={item.label}
+            data-star-visible={item.isVisible}
             onClick={item.toggle}
             disabled={item.isDisabled}
             className={`
@@ -165,7 +166,7 @@ export default function ChartLegend({
               <div className={`absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full ${item.color.replace('text-', 'bg-')}`} />
             </div>
             <div className="flex items-center gap-0.5">
-              {Array.from({ length: index + 1 }).map((_, starIndex) => (
+              {Array.from({ length: item.starLevel }).map((_, starIndex) => (
                 <Star
                   key={starIndex}
                   className={`w-3 h-3 ${item.color} fill-current`}

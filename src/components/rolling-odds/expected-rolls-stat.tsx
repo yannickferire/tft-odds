@@ -28,12 +28,12 @@ export default function ExpectedRollsStat({ level, cost, copiesOwned, contestedC
           </div>
           <div className="flex items-center gap-2.5">
             <span className="inline-flex items-center gap-1 text-2xl font-semibold leading-none text-crema w-14">
-              {Math.round(expectedRolls1Copy)}
+              <span className="leading-none">{Math.round(expectedRolls1Copy)}</span>
               <RollIcon color="crema" size={5} />
             </span>
-            <span className="inline-flex items-center gap-1 text-xs font-medium text-crema">
+            <span className="inline-flex items-center gap-1 text-xs font-medium text-crema leading-none">
               <GoldIcon color="crema" size={3} />
-              {goldCost}
+              <span className="leading-none">{goldCost}</span>
             </span>
           </div>
         </div>

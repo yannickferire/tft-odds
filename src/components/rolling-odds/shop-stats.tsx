@@ -39,22 +39,22 @@ export default function ShopStats({ level, cost, setLevel }: ShopStatsProps) {
 
   // Determine feedback based on current vs best level
   const feedback = level === bestLevel ? (
-    <span className="inline-flex items-center gap-1 text-xs font-medium text-yellow-500">
-      <Star className="w-5 h-5" />
-      Best level
+    <span className="inline-flex items-center gap-1 text-xs font-medium text-yellow-500 leading-none">
+      <Star className="w-5 h-5 flex-shrink-0" />
+      <span className="leading-none">Best level</span>
     </span>
   ) : probDiff > 0 ? (
     <span
-      className="inline-flex items-center gap-1 text-xs font-medium text-green-500 cursor-pointer hover:underline"
+      className="inline-flex items-center gap-1 text-xs font-medium text-green-500 cursor-pointer hover:underline leading-none"
       onClick={() => setLevel(nextLevel)}
     >
-      <TrendingUp className="w-5 h-5" />
-      +{probDiff}% at lvl {nextLevel}
+      <TrendingUp className="w-5 h-5 flex-shrink-0" />
+      <span className="leading-none">+{probDiff}% at lvl {nextLevel}</span>
     </span>
   ) : probDiff < 0 ? (
-    <span className="inline-flex items-center gap-1 text-xs font-medium text-red-500">
-      <TrendingDown className="w-5 h-5" />
-      {probDiff}% at lvl {nextLevel}
+    <span className="inline-flex items-center gap-1 text-xs font-medium text-red-500 leading-none">
+      <TrendingDown className="w-5 h-5 flex-shrink-0" />
+      <span className="leading-none">{probDiff}% at lvl {nextLevel}</span>
     </span>
   ) : null;
 

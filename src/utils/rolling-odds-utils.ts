@@ -202,4 +202,4 @@ export const numberFieldGroupClassName = "border-white/10 data-focus-within:bord
 /**
  * Shared class names for NumberField Input
  */
-export const numberFieldInputClassName = "selection:bg-neutral-900 selection:text-crema w-full grow pr-1 py-2 text-center tabular-nums outline-none text-crema bg-transparent";
+export const numberFieldInputClassName = "selection:bg-neutral-900 selection:text-crema w-full grow pr-1 py-2 text-center tabular-nums outline-none text-crema bg-transparent leading-none flex items-center justify-center";
