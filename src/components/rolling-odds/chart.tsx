@@ -15,6 +15,7 @@ import CustomTooltip from './chart-tooltip';
 import ShopStats from './shop-stats';
 import ExpectedRollsStat from './expected-rolls-stat';
 import CopiesStats from './copies-stats';
+import MaxGoldStat from './max-gold-stat';
 import ChartLegend from './chart-legend';
 import UnlockableChampionsButton from './unlockable-champions-button';
 import { RotateCcw } from 'lucide-react';
@@ -169,6 +170,13 @@ export default function LineChart2({ champions, selectedChampion: externalSelect
                 contestedCopies={contestedCopies}
                 otherCostOut={otherCostOut}
                 adjustedChampionsByCost={adjustedChampionsByCost}
+              />
+              <MaxGoldStat
+                oddsData={oddsData}
+                maxGold={maxGold}
+                show1Star={show1Star}
+                show2Star={show2Star}
+                show3Star={show3Star}
               />
               <CopiesStats
                 championName={selectedChampion.name}
