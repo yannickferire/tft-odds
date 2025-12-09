@@ -64,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold">
-                  <Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/gold.png" alt="Rank: Gold" /> tftodds com
+                  <Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/platinum.svg" alt="Rank: Platinum" /> tftodds com
                 </a>
               </li>
               <li>
