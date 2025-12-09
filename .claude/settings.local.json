@@ -1,14 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(npx node:*)",
+      "Bash(npx tsx:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
       "Bash(curl:*)",
-      "Bash(npm run dev:*)",
-      "Bash(git push:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(npx next build:*)",
-      "Bash(=24.x\" to \"24.x\" to prevent automatic upgrades to future major versions and remove Vercel warnings.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

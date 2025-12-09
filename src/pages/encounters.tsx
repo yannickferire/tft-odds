@@ -3,7 +3,7 @@ import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
 import { encountersTable, hallOfNine } from "@/constants/portals";
 import { spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold } from "@/constants/augments";
-import { FormatConsumables } from "@/utils/formatConsumables";
+import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import { FormatChampions } from "@/utils/formatChampions";
 import {
   Table,
@@ -115,9 +115,10 @@ const Portals: NextPage = () => {
 
           return encounterEntries.flatMap(([encounterName, encounterData], index) => {
             // variants ?
-            const variants = Array.isArray(encounterData) ? encounterData : [{ chance: encounterData.chance }];
+            const variants = Array.isArray(encounterData) ? encounterData : [{ chance: encounterData.chance, text: encounterData.text }];
             return variants.map((variant, variantIndex) => {
               const uniqueKey = `${champion}-${index}-${variantIndex}`;
+              const encounterText = variant.text || encounterData.text;
               return (
                 <TableRow key={uniqueKey} className={`border ${index === 0 ? "border-t-midday border-t-2" : null}`}>
                   {index === 0 && variantIndex === 0 && (
@@ -125,8 +126,11 @@ const Portals: NextPage = () => {
                       <FormatChampions value={champion} />
                     </TableCell>
                   )}
-                  <TableCell className={`py-2 border border-crema text-center border-opacity-20`}> 
-                    {variant.name || encounterName}
+                  <TableCell className={`py-2 border border-crema border-opacity-20`}>
+                    <div className="font-semibold leading-none mb-px mt-0.5">{variant.name || encounterName}</div>
+                    {encounterText && (
+                      <div className="text-sm opacity-70 font-normal">{encounterText}</div>
+                    )}
                   </TableCell>
                   <TableCell className={`py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20`}>
                     {variant.chance}%
@@ -140,11 +144,11 @@ const Portals: NextPage = () => {
       </Table>
       <h2 id="sevika" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><strong className="text-morning">Zoe: Loot subscription</strong></h2>
       <p className="text-center mb-4">At the start of each stage, everyone gets the same <strong>loot from a highly varied pool</strong>.</p>
-      <Table className="mb-20">
+      <Table className="w-full mb-20">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead className="text-left">Rewards</TableHead>
-            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+            <TableHead className="text-left">Possible Rewards</TableHead>
+            <TableHead className="text-center w-24">Odds</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -152,12 +156,14 @@ const Portals: NextPage = () => {
             const uniqueKey = `hall-of-nine-${index + 1}`;
             return (
               <TableRow key={uniqueKey}>
-                <TableCell className={`py-4 border border-crema border-opacity-20`}>
-                  <FormatConsumables value={reward[0]} />
+                <TableCell className="py-1.5 border border-crema border-opacity-20">
+                  <FormatConsumablesWithTooltip value={reward[0]} />
                 </TableCell>
-                <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
+                <TableCell className="py-1.5 font-semibold text-center text-base border border-crema border-opacity-20">
+                  {reward[1]}%
+                </TableCell>
               </TableRow>
-            );  
+            );
           })}
         </TableBody>
       </Table>

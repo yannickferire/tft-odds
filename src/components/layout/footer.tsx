@@ -14,12 +14,6 @@ const Footer = () => {
     <>
       <footer className="bg-earlynight py-4 rounded z-10">
         <div className="flex flex-col sm:flex-row px-4 justify-between gap-4 sm:gap-8 md:gap-16">
-          <div className="order-2 sm:order-1 flex-1">
-            <p className="text-xs text-crema leading-5 opacity-40 mt-4 sm:mt-0">
-              TFT Odds isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
-              <br />
-            </p>
-          </div>
           <div className="order-1 sm:order-2 flex-1 flex">
             {/* First column: Home + items without children */}
             <ul className="flex-1 text-left text-xs text-crema leading-5">
@@ -84,6 +78,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <p className="text-xs text-crema leading-5 opacity-40 mt-4 px-4">
+              TFT Odds isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+              <br />
+            </p>
       </footer>
       <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-1QTL0DHGW5"/>
       <Script

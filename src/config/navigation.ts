@@ -18,8 +18,8 @@ export const navigationConfig: NavigationItem[] = [
     href: '/augments',
     children: [
       {
-        label: 'Augments Tier',
-        href: '/augments/augments-tier'
+        label: 'Augments Simulator',
+        href: '/augments/augments-simulator'
       },
       {
         label: 'Augments Distribution',
@@ -28,6 +28,20 @@ export const navigationConfig: NavigationItem[] = [
       {
         label: 'Augments Tables',
         href: '/augments/augments-tables'
+      }
+    ]
+  },
+  {
+    label: 'Traits',
+    href: '/traits',
+    children: [
+      {
+        label: 'Ixtal Cashout',
+        href: '/traits/ixtal-cashout'
+      },
+      {
+        label: 'Yordle Bags',
+        href: '/traits/yordle-bags'
       }
     ]
   }

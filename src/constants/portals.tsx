@@ -1,97 +1,110 @@
 export const encountersTable = {
   "Darius": {
     "3 cost start": {
-      "chance": 7
+      "chance": 7.2,
+      "text": "Start with a random 3-cost champion this game."
     }
   },
   "Lissandra": {
     "Howling abyss (5x 1 costs)": {
-      "chance": 7
+      "chance": 7.2,
+      "text": "Gain 5 random 1-costs to fight on the Howling Abyss."
     }
   },
   "Baron Nashor": {
     "Silver scrapes": {
-      "chance": 7
+      "chance": 7.2,
+      "text": "The last two surviving players gain 70 gold for an epic final fight."
     }
   },
   "Poppy": {
     "Components anvil": {
-      "chance": 6,
-      "text": "Start with 2 components anvil."
+      "chance": 6.2,
+      "text": "Poppy grants you two component anvils."
     }
   },
   "Twisted Fate": {
     "Golden Gala": {
-      "chance": 6
+      "chance": 6.2,
+      "text": "Twisted Fate deals out all gold tier augments this game."
     }
   },
   "Rift Herald": {
     "Scuttle Puddle": {
-      "chance": 6,
-      "text": "Monsters are replaced by crabs that drop bonus loot!"
+      "chance": 6.2,
+      "text": "Rift Herald happily fills the game with crabs carrying bonus loot."
     }
   },
   "Ekko": {
     "Upgraded start": {
-      "chance": 6
+      "chance": 6.2,
+      "text": "Ekko upgrades your starting champion to 2-star."
     }
   },
   "Leblanc": {
     "Augment round swap": {
-      "chance": 6
+      "chance": 6.2,
+      "text": "LeBlanc manipulates augments to be offered earlier this game."
     }
   },
   "Draven": {
     "Gold on player death": {
-      "chance": 6
+      "chance": 6.2,
+      "text": "Whenever a player is eliminated, Draven rewards surviving players with gold per eliminated player."
     }
   },
   "Tahm Kench": {
     "Gold Subscription": {
-      "chance": 5
+      "chance": 5.2,
+      "text": "Tahm Kench grants you gold each stage."
     }
   },
   "Zoe": {
     "Loot Subscription": {
-      "chance": 5
+      "chance": 5.2,
+      "text": "Zoe gives you highly varied loot at the start of each stage!"
     }
   },
   "Teemo": {
     "Augments rerolls +1": {
-      "chance": 5
+      "chance": 5.2,
+      "text": "Teemo's scouting party has found +1 Augment reroll for all augments."
     }
   },
   "None": {
     "No Opening Encounter": {
-      "chance": 5
+      "chance": 5.2,
+      "text": "It's a calm day in Runeterra. No encounter this game."
     }
   },
   "Seraphine": {
     "Prismatic Party": {
-      "chance": 4,
-      "text": "All augments offered this game will be prismatic tier."
+      "chance": 4.1,
+      "text": "Seraphine turns all augments to prismatic tier this game."
     }
   },
   "Galio": {
     "Prismatic prelude": {
-      "chance": 4,
-      "text": "The first augment offered this game will be prismatic tier."
+      "chance": 4.1,
+      "text": "Galio's entrance turns the first augment to prismatic this game."
     }
   },
   "Zilean": {
     "Prismatic finale": {
-      "chance": 4,
-      "text": "The last augment offered this game will be prismatic tier."
+      "chance": 4.1,
+      "text": "Zilean ages the last augment to perfection. It will be prismatic this game."
     }
   },
   "Ryze": {
     "Emblem ensemble": {
-      "chance": 4
+      "chance": 4.1,
+      "text": "Ryze grants you 3 random emblems to begin your journey."
     }
   },
   "Xin Zhao": {
     "2 cost start": {
-      "chance": 4
+      "chance": 4.1,
+      "text": "Start with a random 2-cost champion this game."
     }
   },
 };

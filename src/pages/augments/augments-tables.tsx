@@ -4,7 +4,7 @@ import Head from "next/head";
 import { currentSet, setStage } from '@/constants/set';
 import { goldenEgg, spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold } from "@/constants/augments";
 import { numberOfChampionsByCost } from "@/constants/champions";
-import { FormatConsumables } from "@/utils/formatConsumables";
+import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import {
   Table,
   TableBody,
@@ -100,11 +100,11 @@ const Piltover: NextPage = () => {
       </article>
       <h2 id="golden-egg" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/TheGoldenEgg.avif" alt="The Golden Egg" width="50" height="50" /> <strong className="text-morning">The Golden Egg</strong></h2>
       <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">Gain a massive golden egg that hatches in 11 turns. Victorious player combats accelerate the hatch timer by an additional turn.</p>
-      <Table className="mb-8">
+      <Table className="w-full mb-8">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead className="text-left"><span className="mr-2 bg-prismatic text-midnight/[.8] px-1 rounded-sm">Prismatic</span> The Golden Egg rewards</TableHead>
-            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+            <TableHead className="text-left"><span className="mr-2 bg-prismatic text-midnight/[.8] px-1 rounded-sm">Prismatic</span> Possible Rewards</TableHead>
+            <TableHead className="text-center w-24">Odds</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -112,12 +112,12 @@ const Piltover: NextPage = () => {
             const uniqueKey = `golden-egg-${index + 1}`;
             return (
               <TableRow key={uniqueKey}>
-                <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                  <FormatConsumables value={reward[0]} />
+                <TableCell className="py-1.5 border border-crema border-opacity-20">
+                  <FormatConsumablesWithTooltip value={reward[0]} />
                 </TableCell>
-                <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
+                <TableCell className="py-1.5 font-semibold text-center text-base border border-crema border-opacity-20">{reward[1]}%</TableCell>
               </TableRow>
-            );  
+            );
           })}
         </TableBody>
       </Table>
@@ -138,7 +138,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
@@ -161,7 +161,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
@@ -186,7 +186,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
@@ -209,7 +209,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
@@ -234,7 +234,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
@@ -257,7 +257,7 @@ const Piltover: NextPage = () => {
                 return (
                   <TableRow key={uniqueKey}>
                     <TableCell className={`py-4 leading-[3em] border border-crema border-opacity-20`}>
-                      <FormatConsumables value={reward[0]} />
+                      <FormatConsumablesWithTooltip value={reward[0]} />
                     </TableCell>
                     <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{reward[1]}%</TableCell>
                   </TableRow>
