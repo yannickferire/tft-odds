@@ -7,11 +7,38 @@ const SITE_URL = 'https://tftodds.com';
 interface SitemapUrl {
   loc: string;
   lastmod: string;
+  priority: string;
+  changefreq: string;
 }
 
 // Get current date in ISO format
 const getCurrentDate = (): string => {
   return new Date().toISOString().split('T')[0] + 'T00:00:00+00:00';
+};
+
+// Determine priority and changefreq based on URL
+const getUrlMetadata = (url: string): { priority: string; changefreq: string } => {
+  // Homepage has highest priority
+  if (url === '/') {
+    return { priority: '1.0', changefreq: 'weekly' };
+  }
+
+  // Main tools (rolling odds)
+  if (url === '/rolling-odds') {
+    return { priority: '0.9', changefreq: 'weekly' };
+  }
+
+  // Trait pages and augment subpages
+  if (url === '/encounters' || url.startsWith('/augments/augments-simulator/')) {
+    return { priority: '0.8', changefreq: 'weekly' };
+  }
+
+  if (url.startsWith('/augments/') || url.startsWith('/traits/') || url.startsWith('/data/')) {
+    return { priority: '0.7', changefreq: 'weekly' };
+  }
+
+  // Default for other pages
+  return { priority: '0.6', changefreq: 'monthly' };
 };
 
 // Flatten navigation config to get all URLs
@@ -39,18 +66,24 @@ const generateSitemap = (): string => {
   const urls = getAllUrls();
 
   // Add homepage
+  const homepageMetadata = getUrlMetadata('/');
   const sitemapUrls: SitemapUrl[] = [
     {
       loc: SITE_URL + '/',
-      lastmod: currentDate
+      lastmod: currentDate,
+      priority: homepageMetadata.priority,
+      changefreq: homepageMetadata.changefreq
     }
   ];
 
   // Add all navigation URLs
   urls.forEach(url => {
+    const metadata = getUrlMetadata(url);
     sitemapUrls.push({
       loc: SITE_URL + url,
-      lastmod: currentDate
+      lastmod: currentDate,
+      priority: metadata.priority,
+      changefreq: metadata.changefreq
     });
   });
 
@@ -59,6 +92,8 @@ const generateSitemap = (): string => {
     .map(url => `  <url>
     <loc>${url.loc}</loc>
     <lastmod>${url.lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
   </url>`)
     .join('\n');
 
