@@ -151,9 +151,19 @@ export function cleanItemDescription(desc: string | null, effects?: Record<strin
       // Skip internal keys like {27d80030}
       if (key.startsWith('{')) return;
 
-      // Replace @KeyName@ or @KeyName*100@ with the value
-      const regex = new RegExp(`@${key}(@|\\*100@)`, 'g');
-      cleanedDesc = cleanedDesc.replace(regex, () => value.toString());
+      // Replace @KeyName*100@ with value * 100 (for percentages)
+      const regexWithMultiply = new RegExp(`@${key}\\*100@`, 'g');
+      cleanedDesc = cleanedDesc.replace(regexWithMultiply, () => {
+        const percentValue = Math.round(value * 100);
+        return percentValue.toString();
+      });
+
+      // Replace @KeyName@ with the raw value
+      const regexNormal = new RegExp(`@${key}@`, 'g');
+      cleanedDesc = cleanedDesc.replace(regexNormal, () => {
+        // Round to avoid floating point errors
+        return Math.round(value).toString();
+      });
     });
   }
 

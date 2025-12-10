@@ -121,6 +121,17 @@ export default function ItemTooltip({ item, children }: ItemTooltipProps) {
                     // Crit icon needs to be smaller because of different viewBox dimensions
                     const isCritIcon = key === 'CritChance' || key === 'Crit' || key === 'Critical Strike';
                     const iconSize = isCritIcon ? 12 : 14;
+
+                    // Format the value: if it's a decimal (< 1), multiply by 100 for percentage display
+                    let displayValue = value;
+                    if (typeof value === 'number' && value < 1 && value > 0) {
+                      // Convert decimal to percentage (e.g., 0.30 -> 30)
+                      displayValue = Math.round(value * 100);
+                    } else if (typeof value === 'number') {
+                      // Round whole numbers to remove floating point errors
+                      displayValue = Math.round(value);
+                    }
+
                     return (
                       <span key={key} className="flex items-center gap-1">
                         <Image
@@ -130,7 +141,7 @@ export default function ItemTooltip({ item, children }: ItemTooltipProps) {
                           height={iconSize}
                           className="inline-block"
                         />
-                        <span className="font-medium text-crema/90">{value}</span>
+                        <span className="font-medium text-crema/90">{displayValue}</span>
                       </span>
                     );
                   })}
