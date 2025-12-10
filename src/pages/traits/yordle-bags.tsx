@@ -74,78 +74,80 @@ const Ixtal: NextPage = () => {
         <TraitChampionsList champions={champs} traitName="Yordle" />
       </div>
       
-      {/* <article className="flex flex-col text-sm max-w-2xl mx-auto mb-6 px-4 gap-2">
+      <article className="flex flex-col text-sm max-w-2xl mx-auto mb-6 px-4 gap-2">
         <p>
-          <strong>This page showcases all the rewards you can unlock by cashing out</strong> with the Ixtal trait active. By banking gold throughout the game, you increase your cashout level and unlock increasingly valuable rewards.
+          <strong>This page showcases all the rewards you can unlock from Yordle Grab Bags</strong> when you reach 8 Yordles. Each round, you&apos;ll receive a grab bag containing valuable loot to power up your board.
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button variant="link" className="ml-2">More info</Button>
             </AlertDialogTrigger>
           <AlertDialogContent className="overflow-y-scroll max-h-[90vh]">
             <AlertDialogHeader>
-              <AlertDialogTitle>TFT Set 16 Ixtal Trait Cashout Guide</AlertDialogTitle>
+              <AlertDialogTitle>TFT Set 16 Yordle Trait Guide</AlertDialogTitle>
               <AlertDialogDescription>
                 <p>
-                  The Ixtal trait in Teamfight Tactics Set 16 introduces a unique quest and cashout system with Sunshards.
-                  At 3 Ixtal, you complete quests to earn Sunshards, which can be spent on 20 different cashout levels for powerful rewards.
-                  At 5 Ixtal, you heal 2 player health at combat start. At 7 Ixtal, you earn 50 bonus Sunshards and bonus loot after winning combat.
-                  This comprehensive guide shows all cashout odds, costs, and rewards to help you maximize your TFT strategy.
+                  The Yordle trait in Teamfight Tactics Set 16 rewards you for fielding multiple Yordles with scaling bonuses and powerful loot.
+                  At 2 Yordles, your units gain Health and Attack Speed for each unique Yordle fielded. At 4 Yordles, your first shop each round has a Yordle in it. At 6 Yordles, you get 2 free rerolls each round.
+                  At 8 Yordles, you receive a Yordle Grab Bag each round containing high-value items and champions. This comprehensive guide shows all grab bag odds to help you maximize your TFT strategy.
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>Understanding Ixtal Cashout Rewards & Odds</AlertDialogTitle>
+              <AlertDialogTitle>Understanding Yordle Grab Bag Rewards & Odds</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>20 Cashout Levels with Progressive Costs:</strong><br/>
-                  Each Ixtal cashout level requires an increasing amount of Sunshards to unlock. Our complete cashout table displays:
+                <p>1. <strong>Yordle Grab Bag Contents:</strong><br/>
+                  The Yordle Grab Bag you receive at 8 Yordles can contain various rewards. Our complete table displays:
                   <ul>
-                    <li>- Sunshard cost for each of the 20 cashout levels</li>
                     <li>- Exact probability percentages for all reward options</li>
                     <li>- Complete list of items, champions, and consumables available</li>
-                    <li>- Estimated gold value to help you decide when to cashout</li>
+                    <li>- High-value rewards including 4 and 5-cost Yordle champions</li>
+                    <li>- Gold and item combinations to accelerate your board strength</li>
                   </ul>
                 </p>
-                <p>2. <strong>7 Ixtal Bonus Loot System:</strong><br/>
-                  When you reach 7 Ixtal, you automatically earn 50 Sunshards and bonus loot after each combat victory. This bonus system features 9 different reward types including:
+                <p>2. <strong>Yordle Synergy Bonuses:</strong><br/>
+                  The Yordle trait provides powerful scaling bonuses as you add more Yordles:
                   <ul>
-                    <li>- Item Components (30% chance)</li>
-                    <li>- Masterwork Upgrades (25% chance)</li>
-                    <li>- 5-Cost champions with gold (15% chance)</li>
-                    <li>- Rare items like Spatula, Artifact Anvils, and Ixtal Emblems</li>
+                    <li>- (2) Yordles gain 40 Health and 5% Attack Speed per unique Yordle (3-stars grant 50% more!)</li>
+                    <li>- (4) Your first shop each round has a Yordle in it</li>
+                    <li>- (6) Get 2 free rerolls each round</li>
+                    <li>- (8) Receive a Yordle Grab Bag each round</li>
                   </ul>
                 </p>
                 <p>3. <strong>Strategic Value for TFT Players:</strong><br/>
-                  Understanding Ixtal cashout odds helps you:
+                  Understanding Yordle Grab Bag odds helps you:
                   <ul>
-                    <li>- Plan optimal economy and Sunshard management</li>
-                    <li>- Maximize reward value based on cashout timing</li>
-                    <li>- Evaluate risk vs reward for different cashout tiers</li>
-                    <li>- Leverage 7 Ixtal bonus loot for competitive advantage</li>
+                    <li>- Plan your composition around the 8 Yordle breakpoint</li>
+                    <li>- Maximize value from consistent grab bag rewards</li>
+                    <li>- Evaluate the power spike from reaching 8 Yordles</li>
+                    <li>- Leverage free rerolls and shop bonuses for economy advantage</li>
                   </ul>
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>How to Use the Ixtal Cashout System</AlertDialogTitle>
+              <AlertDialogTitle>How to Use the Yordle Trait</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
-                <p>1. <strong>Activate 3 Ixtal for Quest System:</strong><br/>
-                  Field at least 3 Ixtal champions to unlock quests. Complete quests before combat ends to earn Sunshards and get a new quest next round.
+                <p>1. <strong>Build Towards 8 Yordles:</strong><br/>
+                  Field 8 unique Yordles to unlock the Grab Bag reward. Use the shop bonus at 4 Yordles and free rerolls at 6 Yordles to help you find Yordle units.
                 </p>
-                <p>2. <strong>Accumulate Sunshards:</strong><br/>
-                  Throughout the game, complete quests to earn Sunshards. Your total Sunshards determine which cashout levels you can access.
+                <p>2. <strong>Tactician&apos;s Crown Power Spike:</strong><br/>
+                  Tactician&apos;s Crowns are extremely powerful in Yordle compositions! They allow you to reach 8 Yordles at level 7 instead of waiting for level 8, letting you access Yordle Grab Bags multiple rounds earlier. This early access to consistent high-value loot can be game-winning.
                 </p>
-                <p>3. <strong>Choose Optimal Cashout Timing:</strong><br/>
-                  Use our detailed probability tables to identify the best cashout level based on your current Sunshards and desired rewards.
+                <p>3. <strong>Maximize 3-Star Value:</strong><br/>
+                  3-star Yordles grant 50% more bonus stats. Use the free rerolls at 6 Yordles to help you 3-star your key units.
                 </p>
-                <p>4. <strong>Leverage 5 and 7 Ixtal Bonuses:</strong><br/>
-                  At 5 Ixtal, heal 2 health each combat. At 7 Ixtal, earn automatic 50 Sunshards plus bonus loot from the 9-reward loot table after victories.
+                <p>4. <strong>Leverage Consistent Loot:</strong><br/>
+                  At 8 Yordles, you receive a grab bag every round. This consistent value stream helps you scale into the late game.
+                </p>
+                <p>5. <strong>Use Shop and Reroll Advantages:</strong><br/>
+                  The guaranteed Yordle in your first shop and 2 free rerolls per round make it easier to hit your composition and find upgrades.
                 </p>
               </AlertDialogDescription>
               <hr className="opacity-30" />
-              <AlertDialogTitle>Master TFT Set 16 Ixtal Strategy</AlertDialogTitle>
+              <AlertDialogTitle>Master TFT Set 16 Yordle Strategy</AlertDialogTitle>
               <AlertDialogDescription className="flex flex-col gap-2">
                 <p>
-                  Dominate your TFT Set 16 games by mastering the Ixtal cashout system.
-                  Track your Sunshards, complete quests efficiently, and use our detailed odds tables to cashout at the perfect moment.
-                  With full knowledge of all 20 cashout levels and the 7 Ixtal bonus loot system, you&apos;ll consistently secure high-value rewards and climb the ranked ladder.
+                  Dominate your TFT Set 16 games by mastering the Yordle trait.
+                  Build towards 8 Yordles to unlock powerful grab bags each round, leverage free rerolls to upgrade your board, and use our detailed odds tables to understand your expected value.
+                  With full knowledge of Yordle Grab Bag contents and the trait&apos;s scaling bonuses, you&apos;ll consistently secure high-value rewards and climb the ranked ladder.
                 </p>
               </AlertDialogDescription>
             </AlertDialogHeader>
@@ -155,7 +157,7 @@ const Ixtal: NextPage = () => {
           </AlertDialogContent>
         </AlertDialog>
         </p>
-      </article> */}
+      </article>
         <Table className="w-full mb-24">
           <TableHeader>
             <TableRow className="!border-b !border-crema !border-opacity-20">

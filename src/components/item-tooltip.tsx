@@ -99,14 +99,13 @@ export default function ItemTooltip({ item, children }: ItemTooltipProps) {
         {/* Header with item image and name */}
         <div className="flex items-center gap-3 p-3 border-b border-crema/20">
           {item.imageUrl && (
-            <img
+            <Image
               src={item.imageUrl}
               alt={item.name}
+              width={32}
+              height={32}
               className="w-8 h-8 object-contain flex-shrink-0"
-              onError={(e) => {
-                // Fallback to placeholder if image fails to load
-                e.currentTarget.style.display = 'none';
-              }}
+              unoptimized
             />
           )}
           <div className="flex-1 min-w-0">
@@ -171,13 +170,13 @@ export default function ItemTooltip({ item, children }: ItemTooltipProps) {
                 return (
                   <React.Fragment key={idx}>
                     {componentItem?.imageUrl && (
-                      <img
+                      <Image
                         src={componentItem.imageUrl}
                         alt={componentItem.name}
+                        width={24}
+                        height={24}
                         className="w-6 h-6 object-contain"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                        }}
+                        unoptimized
                       />
                     )}
                     {idx < item.composition.length - 1 && (
