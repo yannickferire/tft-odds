@@ -111,15 +111,14 @@ export const augmentsDistribution = [
 ]
 
 export const goldenEgg = {
-  "2x Tactician's Crown + 1x Thief's Gloves + 20x Gold": 15,
+  "1x Tactician's Crown + 88x Gold": 15,
+  "2x Tactician's Crown + 1x Thief's Gloves + 30x Gold": 15,
+  "1x Tactician's Crown + 2x Radiant Item + 10x Gold": 15,
   "1x Tactician's Crown + 1x Radiant Thief's Gloves + 1x Thief's Gloves + 25x Gold": 15,
-  "1x Tactician's Crown + 60x Gold": 10,
-  "1x Tactician's Crown + 1x Jewelled Gauntlet + 1x Infinity Edge + 1x Guardbreaker + 1x Quicksilver + 1x Hand of Justice + 1x Remover + 10x Gold": 10,
-  "1x Tactician's Crown + 1x Zeke's Herald + 1x Chalice of Power + 25x Gold": 10,
-  "1x Tactician's Crown + 1x Radiant Item + 1x Artifact Item + 1x Item Component + 10x Gold + 1x Remover": 10,
+  "1x Tactician's Crown + 1x Radiant Item + 1x Artifact Item + 1x Item Component + 1x Magnetic Remover + 10x Gold": 10,
+  "1x Infinity Force + 1x Zhonya's Paradox + 1x Anima Visage + 1x Champion Duplicator + 2x Magnetic Remover + 25x Gold": 10,
   "1x Tactician's Crown + 4x 5 Cost + 2x Champion Duplicator + 30x Gold": 10,
-  "1x Tactician's Crown + 2x Radiant Item + 10x Gold": 10,
-  "1x Infinity Force + 1x Zhonya's Paradox + 1x Anima Visage + 1x Champion Duplicator + 2x Remover + 25x Gold": 10,
+  "1x Tactician's Crown + 1x Jewelled Gauntlet + 1x Infinity Edge + 1x Guardbreaker + 1x Quicksilver + 1x Hand of Justice + 1x Magnetic Remover + 10x Gold": 10,
 }
 
 export const spoilsOfWarSilver = {
