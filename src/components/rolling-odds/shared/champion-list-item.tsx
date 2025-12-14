@@ -44,6 +44,7 @@ export default function ChampionListItem({
             src={champion.image}
             alt={champion.name}
             fill
+            sizes="32px"
             className="object-cover scale-110"
           />
         </div>

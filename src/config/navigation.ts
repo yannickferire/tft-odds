@@ -52,6 +52,10 @@ export const navigationConfig: NavigationItem[] = [
       {
         label: 'Shops Odds',
         href: '/data/shops-odds'
+      },
+      {
+        label: 'Champion Bags',
+        href: '/data/champion-bags'
       }
     ]
   }

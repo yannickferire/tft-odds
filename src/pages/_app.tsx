@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
+import Script from 'next/script';
 
 import { useRouter } from 'next/router';
 
@@ -24,17 +25,24 @@ const queryClient = new QueryClient({
   },
 })
 
+
+
 const GoogleAds = () => {
   const { consent } = useCookieConsent();
 
   if (!consent.marketing) return null;
 
   return (
-    <Head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5955862670449423" crossOrigin="anonymous"></script>
-    </Head>
+    <Script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5955862670449423"
+      crossOrigin="anonymous"
+      strategy="afterInteractive"
+    />
   )
 }
+
+import { DefaultSeo } from 'next-seo';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -43,9 +51,35 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <CookieConsentProvider>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
+        <DefaultSeo
+          title="Teamfight Tactics Odds – TFT Set 13 probabilities tools"
+          description="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder."
+          openGraph={{
+            type: 'website',
+            locale: 'en_US',
+            url: 'https://tftodds.com/',
+            site_name: 'Teamfight Tactics Odds',
+            images: [
+              {
+                url: 'https://tftodds.com/share.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'TFT Odds Share Image',
+              },
+            ],
+          }}
+          twitter={{
+            handle: '@tftodds',
+            site: '@tftodds',
+            cardType: 'summary_large_image',
+          }}
+          additionalMetaTags={[
+            {
+              name: 'viewport',
+              content: 'width=device-width, initial-scale=1.0',
+            }
+          ]}
+        />
         <GoogleAds />
         <AuroraBackground opacity={(isHomePage ? 40 : 10)}>
           <Layout>

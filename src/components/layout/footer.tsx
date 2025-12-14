@@ -58,13 +58,13 @@ const Footer = () => {
               <li>
                 <a href="https://twitter.com/tftodds" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold">
                   <svg className="w-3.5 inline-block relative top-px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
-                    <path fill="#ffffff" className="scale-75" d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
-                    </svg> @tftodds
+                    <path fill="#ffffff" className="scale-75" d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
+                  </svg> @tftodds
                 </a>
               </li>
               <li>
                 <a href="https://tactics.tools/player/euw/tftodds%20com" className="leading-[30px] sm:leading-normal opacity-40 hover:opacity-100 tracking-wider font-bold">
-                  <Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/platinum.svg" alt="Rank: Platinum" /> tftodds com
+                  <Image className="inline-block -mt-1" width="20" height="20" src="/images/ranks/platinum.svg" alt="Rank: Platinum" style={{ width: 'auto', height: 'auto' }} /> tftodds com
                 </a>
               </li>
               <li>
@@ -79,11 +79,11 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-xs text-crema leading-5 opacity-40 mt-4 px-4">
-              TFT Odds isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
-              <br />
-            </p>
+          TFT Odds isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+          <br />
+        </p>
       </footer>
-      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-1QTL0DHGW5"/>
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-1QTL0DHGW5" />
       <Script
         id='google-analytics'
         strategy="afterInteractive"

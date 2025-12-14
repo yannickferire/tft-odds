@@ -4,7 +4,6 @@ const nextConfig = {
 	poweredByHeader: false,
 	compress: true,
 	images: {
-		unoptimized: true,
 		domains: ["raw.communitydragon.org", "pbs.twimg.com"],
 	},
 	async redirects() {

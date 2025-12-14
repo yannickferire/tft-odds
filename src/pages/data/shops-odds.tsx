@@ -55,7 +55,7 @@ const ShopsOdds: NextPage = () => {
         <strong className="text-morning">Shop Odds</strong> Data
       </h1>
 
-      <article className="flex flex-col text-sm max-w-4xl mx-auto mb-12 px-4 gap-2">
+      <article className="flex flex-col text-sm max-w-6xl w-full mx-auto mb-12 px-4 gap-2">
         <p className="text-center mb-8">
           This table displays the probability of finding champions of different costs in your shop at each player level.
           <AlertDialog>
@@ -102,10 +102,10 @@ const ShopsOdds: NextPage = () => {
               {[1, 2, 3, 4, 5].map((cost) => (
                 <TableHead
                   key={cost}
-                  className="text-center font-bold text-white"
+                  className="text-center font-bold text-white px-2"
                   style={{ backgroundColor: possibleCost[cost].hex }}
                 >
-                  {cost} Cost
+                  {cost === 5 ? '5 & 7 Cost' : `${cost} Cost`}
                 </TableHead>
               ))}
             </TableRow>
@@ -117,11 +117,11 @@ const ShopsOdds: NextPage = () => {
                   {level}
                 </TableCell>
                 {[1, 2, 3, 4, 5].map((cost) => {
-                  const chance = chances[`${cost} cost`];
+                  const chance = chances[`${cost} cost`] || 0;
                   return (
                     <TableCell
                       key={cost}
-                      className="py-3 text-center border border-crema border-opacity-20"
+                      className="py-3 text-center border border-crema border-opacity-20 font-medium"
                       style={{ opacity: chance > 0 ? getOpacity(chance) : 0.3 }}
                     >
                       {chance > 0 ? `${chance}%` : '-'}
@@ -132,7 +132,7 @@ const ShopsOdds: NextPage = () => {
             ))}
           </TableBody>
         </Table>
-      </article>
+      </article >
     </>
   );
 };

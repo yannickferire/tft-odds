@@ -139,9 +139,8 @@ export default function ChampionSelector({ champions, selectedChampion, setSelec
           role="combobox"
           aria-expanded={open}
           disabled={isLoading}
-          className={`${SELECTOR_WIDTH} ${SELECTOR_HEIGHT} pr-1 pl-0 justify-between bg-midnight border-2 text-crema hover:bg-black/25 hover:text-crema ${
-            isLoading ? 'border-white/10' : selectedChampion ? getCostClasses(selectedChampion.cost).borderClassWithOpacity : 'border-white/10'
-          }`}
+          className={`${SELECTOR_WIDTH} ${SELECTOR_HEIGHT} pr-1 pl-0 justify-between bg-midnight border-2 text-crema hover:bg-black/25 hover:text-crema ${isLoading ? 'border-white/10' : selectedChampion ? getCostClasses(selectedChampion.cost).borderClassWithOpacity : 'border-white/10'
+            }`}
         >
           {isLoading ? (
             <span className="flex min-w-0 items-center gap-2">
@@ -158,6 +157,7 @@ export default function ChampionSelector({ champions, selectedChampion, setSelec
                     src={displayChampion.image}
                     alt={displayChampion.name}
                     fill
+                    sizes="44px"
                     className={`object-cover ${!selectedChampion.image ? GENERIC_IMAGE_OPACITY : ''}`}
                   />
                 )}
@@ -231,6 +231,7 @@ export default function ChampionSelector({ champions, selectedChampion, setSelec
                               src={randomChamp.image}
                               alt={randomChamp.name}
                               fill
+                              sizes="32px"
                               className={`object-cover scale-110 ${GENERIC_IMAGE_OPACITY}`}
                             />
                           )}

@@ -1,4 +1,4 @@
-export const possibleCost: {[key: string]: {hex: string}} = {
+export const possibleCost: { [key: string]: { hex: string } } = {
   1: {
     "hex": "#213042"
   },
@@ -13,5 +13,11 @@ export const possibleCost: {[key: string]: {hex: string}} = {
   },
   5: {
     "hex": "#b89d27"
+  },
+  6: {
+    "hex": "#1abaaa"
+  },
+  7: {
+    "hex": "#3d3d3d"
   }
 }
