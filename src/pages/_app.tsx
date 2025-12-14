@@ -11,6 +11,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
 import Layout from '@/components/layout/_layout';
+import { CookieConsentProvider, useCookieConsent } from '@/context/CookieConsentContext';
+import { CookieConsent } from '@/components/CookieConsent';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,23 +24,38 @@ const queryClient = new QueryClient({
   },
 })
 
+const GoogleAds = () => {
+  const { consent } = useCookieConsent();
+
+  if (!consent.marketing) return null;
+
+  return (
+    <Head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5955862670449423" crossOrigin="anonymous"></script>
+    </Head>
+  )
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isHomePage = router.pathname === '/';
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5955862670449423" crossOrigin="anonymous"></script>
-      </Head>
-      <AuroraBackground opacity={(isHomePage ? 40 : 10 )}>  
+      <CookieConsentProvider>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
+        <GoogleAds />
+        <AuroraBackground opacity={(isHomePage ? 40 : 10)}>
           <Layout>
             <Component {...pageProps} />
             <Analytics />
             <ReactQueryDevtools />
           </Layout>
-      </AuroraBackground>
-   </QueryClientProvider>
+          <CookieConsent />
+        </AuroraBackground>
+      </CookieConsentProvider>
+    </QueryClientProvider>
   )
 }

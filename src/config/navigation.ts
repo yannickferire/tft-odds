@@ -44,5 +44,15 @@ export const navigationConfig: NavigationItem[] = [
         href: '/traits/yordle-bags'
       }
     ]
+  },
+  {
+    label: 'Data',
+    href: '/data',
+    children: [
+      {
+        label: 'Shops Odds',
+        href: '/data/shops-odds'
+      }
+    ]
   }
 ];

@@ -59,7 +59,7 @@ const Header = () => {
           <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent hover:border-crema">
             {item.label} <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span>
           </p>
-          <div className="hidden group-hover:inline-block absolute right-0 top-0 pt-8 cursor-pointer z-10">
+          <div className="hidden group-hover:inline-block absolute right-0 top-full pt-2 cursor-pointer z-10">
             <ul className="text-left w-44 bg-midday rounded-sm">
               {item.children.map((child, index) => {
                 const childActive = router.pathname === child.href;
@@ -106,8 +106,8 @@ const Header = () => {
           <p className="bg-earlynight px-2 py-1 ml-3 -mb-px rounded text-xs">
             <span className="flex">
               <span className="opacity-40">
-              Set {currentSet}{setStage === 2 ? '.5': null}
-              {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : <small className="ml-1 opacity-50">– Patch {patch}</small>}</span>
+                Set {currentSet}{setStage === 2 ? '.5' : null}
+                {stateSet === 'pbe' ? <small className="ml-1 opacity-50">– PBE</small> : <small className="ml-1 opacity-50">– Patch {patch}</small>}</span>
             </span>
           </p>
         </div>
