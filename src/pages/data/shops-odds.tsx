@@ -47,11 +47,11 @@ const ShopsOdds: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Shop Odds – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description={`Detailed shop odds for TFT Set ${currentSet}. Find out the probability of finding 1, 2, 3, 4, and 5 cost champions at each level.`}
+        title={`TFT Shop Odds & Level Rolling Chances - Set ${currentSet}`}
+        description={`Detailed shop probabilities for TFT Set ${currentSet}. Find out the exact chance of finding 1, 2, 3, 4, and 5 cost champions at every level.`}
         openGraph={{
-          title: `Shop Odds – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: `Detailed shop odds for TFT Set ${currentSet}. Find out the probability of finding 1, 2, 3, 4, and 5 cost champions at each level.`
+          title: `TFT Shop Odds & Level Rolling Chances - Set ${currentSet}`,
+          description: `Detailed shop probabilities for TFT Set ${currentSet}. Find out the exact chance of finding 1, 2, 3, 4, and 5 cost champions at every level.`
         }}
       />
 

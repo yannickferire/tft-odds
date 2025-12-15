@@ -108,7 +108,7 @@ export const AugmentsTablesCard = () => {
   };
 
   return (
-    <Link href="/augments/augments-tables" className="block h-full">
+    <Link href="/augments/augments-tables" className="block h-full" title="View Augment Drop Rates and Tables">
       <div className="group relative flex flex-col h-full overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 hover:border-morning/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,179,101,0.1)]">
 
         {/* Background Decorative Gradient */}

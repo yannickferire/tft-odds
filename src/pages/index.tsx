@@ -33,8 +33,8 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
   return (
     <>
       <NextSeo
-        title={`Teamfight Tactics Odds – TFT Set ${currentSet} probabilities tools`}
-        description="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder."
+        title={`TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities`}
+        description={`Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Check our Rolling odds, Augment odds and Encounters tools.`}
         titleTemplate="%s"
       />
       {/* Hero Section - Breakout Layout */}
@@ -82,7 +82,7 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
           <span className="text-gradient">Encounters & Augments</span>
         </h3>
         <p className="text-center max-w-md mx-auto mb-10 text-base leading-tight opacity-80">
-          Optimize your strategy with detailed probabilities for every encounter and augment choice.
+          Optimize your strategy with detailed probabilities for every encounter and augment odds choice.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
           <div className="lg:col-span-2">

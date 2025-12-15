@@ -29,12 +29,12 @@ const AugmentsTier: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Augments tier possibilities – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Predict your next augment tier in TFT Set 16. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections."
+        title={`TFT Augment Simulator - Set ${currentSet} Rolling Practice`}
+        description={`Predict your next augment tier in TFT Set ${currentSet}. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections.`}
         canonical="https://tftodds.com/augments/augments-tier"
         openGraph={{
-          title: `Augments tier possibilities – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "Predict your next augment tier in TFT Set 16. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections.",
+          title: `TFT Augment Simulator - Set ${currentSet} Rolling Practice`,
+          description: `Predict your next augment tier in TFT Set ${currentSet}. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',

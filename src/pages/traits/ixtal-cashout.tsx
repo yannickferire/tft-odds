@@ -44,12 +44,12 @@ const Ixtal: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Ixtal cashout rewards TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Discover the Ixtal cashout rewards in Teamfight Tactics Set 16. View complete odds, costs, and rewards for all 20 cashout levels!"
+        title={`TFT Ixtal Cashout Table - Set ${currentSet} Rewards & Odds`}
+        description={`Discover the Ixtal cashout rewards in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards for all 20 cashout levels!`}
         canonical="https://tftodds.com/traits/ixtal-cashout"
         openGraph={{
-          title: `Ixtal cashout rewards TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "Discover the Ixtal cashout rewards in Teamfight Tactics Set 16. View complete odds, costs, and rewards for all 20 cashout levels!",
+          title: `TFT Ixtal Cashout Table - Set ${currentSet} Rewards & Odds`,
+          description: `Discover the Ixtal cashout rewards in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards for all 20 cashout levels!`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',

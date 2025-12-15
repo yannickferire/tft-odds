@@ -44,12 +44,12 @@ const Ixtal: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Yordle grab bag TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Discover the Yordle grab bag in Teamfight Tactics Set 16. View complete odds, costs, and rewards!"
+        title={`TFT Yordle Bags - Set ${currentSet} Drop Rates`}
+        description={`Discover the Yordle grab bag in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards!`}
         canonical="https://tftodds.com/traits/yordle-bags"
         openGraph={{
-          title: `Yordle grab bag TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "Discover the Yordle grab bag in Teamfight Tactics Set 16. View complete odds, costs, and rewards!",
+          title: `TFT Yordle Bags - Set ${currentSet} Drop Rates`,
+          description: `Discover the Yordle grab bag in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards!`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',

@@ -30,12 +30,13 @@ const Piltover: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Augments Data Tables – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Detailed reward tables for TFT Set 16 augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more."
+
+        title={`TFT Augment Odds & Drop Tables - Set ${currentSet} Loot Rates`}
+        description={`Detailed reward tables for TFT Set ${currentSet} augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more.`}
         canonical="https://tftodds.com/augments/augments-tables"
         openGraph={{
-          title: `Augments Data Tables – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "Detailed reward tables for TFT Set 16 augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more.",
+          title: `TFT Augment Odds & Drop Tables - Set ${currentSet} Loot Rates`,
+          description: `Detailed reward tables for TFT Set ${currentSet} augments. Discover loot drop rates for The Golden Egg, Spoils of War, Pandora's Bench and more.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
@@ -46,57 +47,9 @@ const Piltover: NextPage = () => {
       />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide"><strong className="text-morning">Augments data</strong> tables</h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
-        <p><strong>This page is designed to provide detailed insights into the random rewards and unique mechanics of specific Augments</strong> in Teamfight Tactics.
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button variant="link" className="ml-2">More info</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent className="overflow-y-scroll max-h-[90vh]">
-              <AlertDialogHeader>
-                <AlertDialogTitle>Introduction</AlertDialogTitle>
-                <AlertDialogDescription>
-                  <p>In Teamfight Tactics, understanding the rewards and unique mechanics of specific Augments can significantly enhance your gameplay. These Augments often come with random or conditional rewards that can swing the tide of a match when utilized effectively.</p>
-                </AlertDialogDescription>
-                <hr className="opacity-30" />
-                <AlertDialogTitle>How This Page Works</AlertDialogTitle>
-                <AlertDialogDescription className="flex flex-col gap-2">
-                  <p>1. <strong>Exploring Augment Rewards:</strong><br />
-                    Certain Augments offer random bonuses or unique effects that depend on specific in-game conditions. These mechanics are displayed clearly to help you understand their potential benefits.
-                  </p>
-                  <p>2. <strong>Why This Information Is Valuable:</strong><br />
-                    By learning about these unique Augment mechanics, you can:
-                    <ul>
-                      <li>- Predict and plan for possible random rewards.</li>
-                      <li>- Maximize the value of Augments by meeting their conditions.</li>
-                      <li>- Adjust your strategy to leverage their effects more effectively.</li>
-                    </ul>
-                  </p>
-                </AlertDialogDescription>
-                <hr className="opacity-30" />
-                <AlertDialogTitle>How to Use This Information</AlertDialogTitle>
-                <AlertDialogDescription className="flex flex-col gap-2">
-                  <p>1. <strong>Identify Key Augments:</strong><br />
-                    Review the Augments covered in the table to understand their random rewards and mechanics.
-                  </p>
-                  <p>2. <strong>Incorporate Into Your Strategy:</strong><br />
-                    Use the provided data to determine which Augments best align with your composition or game plan.
-                  </p>
-                  <p>3. <strong>Adapt to Your Game:</strong><br />
-                    Keep track of Augment rewards during your match and adjust your tactics to capitalize on the opportunities they provide.
-                  </p>
-                </AlertDialogDescription>
-                <hr className="opacity-30" />
-                <AlertDialogTitle>Conclusion</AlertDialogTitle>
-                <AlertDialogDescription className="flex flex-col gap-2">
-                  <p>By mastering the nuances of Augment rewards, you can make better decisions and elevate your gameplay. Dive into the details now and turn these insights into your advantage!</p>
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter className="absolute right-2 top-2">
-                <AlertDialogCancel className="px-1 py-0.5"><X className="w-6 h-6" /></AlertDialogCancel>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-        </p>
+        <p><strong>This page is designed to provide detailed insights into the random rewards and unique mechanics of specific Augments</strong> in Teamfight Tactics Set {currentSet}.</p>
+        <p>In Teamfight Tactics, understanding the rewards and unique mechanics of specific Augments can significantly enhance your gameplay. These Augments often come with random or conditional rewards that can swing the tide of a match when utilized effectively.</p>
+        <p className="opacity-80">Check the table below to understand the different types of encounters and their corresponding odds.</p>
       </article>
       <h2 id="golden-egg" className="text-3xl mt-4 mb-2 font-bold px-4 text-center"><Image className="inline-block mr-1" src="/images/augments/TheGoldenEgg.avif" alt="The Golden Egg" width="50" height="50" /> <strong className="text-morning">The Golden Egg</strong></h2>
       <p className="text-center mb-4 max-w-md relative left-1/2 -translate-x-1/2">Gain a massive golden egg that hatches in 11 turns. Victorious player combats accelerate the hatch timer by an additional turn.</p>

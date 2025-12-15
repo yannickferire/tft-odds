@@ -70,11 +70,11 @@ const ChampionBags: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Champion Bags – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description={`Champion bag sizes and pool details for TFT Set ${currentSet}.`}
+        title={`TFT Champion Pool Sizes & Bag Data - Set ${currentSet}`}
+        description={`Champion bag sizes, pool counts and unlockable champion details for TFT Set ${currentSet}. Understand the rolling pool mechanics.`}
         openGraph={{
-          title: `Champion Bags – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: `Champion bag sizes and pool details for TFT Set ${currentSet}.`,
+          title: `TFT Champion Pool Sizes & Bag Data - Set ${currentSet}`,
+          description: `Champion bag sizes, pool counts and unlockable champion details for TFT Set ${currentSet}. Understand the rolling pool mechanics.`,
         }}
       />
 

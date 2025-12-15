@@ -30,13 +30,13 @@ const Portals: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Opening Encounters – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="View all Opening Encounter odds for TFT Set 16. Discover spawn rates, rewards and champions for each encounter to optimize your early game strategy."
+        title={`TFT Set ${currentSet} Encounters - Opening Odds & Rewards`}
+        description={`View all chances for Opening Encounter odds for TFT Set ${currentSet}. Discover spawn rates, rewards and champions for each Set ${currentSet} encounter to optimize your early game strategy.`}
         canonical="https://tftodds.com/encounters"
         openGraph={{
           url: 'https://tftodds.com/encounters',
-          title: `Opening Encounters – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "View all Opening Encounter odds for TFT Set 16. Discover spawn rates, rewards and champions for each encounter to optimize your early game strategy.",
+          title: `TFT Set ${currentSet} Encounters - Opening Odds & Rewards`,
+          description: `View all chances for Opening Encounter odds for TFT Set ${currentSet}. Discover spawn rates, rewards and champions for each Set ${currentSet} encounter to optimize your early game strategy.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',

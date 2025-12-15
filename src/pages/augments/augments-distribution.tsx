@@ -29,12 +29,12 @@ const DataAugments: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Augments odds – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Complete augment distribution guide for TFT Set 16. View all possible augment tier scenarios and their probabilities to master your augment strategy."
+        title={`TFT Augment Distribution Stats - Set ${currentSet} Probability Tables`}
+        description={`Complete augment distribution guide for TFT Set ${currentSet}. View all possible augment tier scenarios (Silver, Gold, Prismatic) and their probabilities.`}
         canonical="https://tftodds.com/augments/augments-distribution"
         openGraph={{
-          title: `Augments Distribution – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
-          description: "Complete augment distribution guide for TFT Set 16. View all possible augment tier scenarios and their probabilities to master your augment strategy.",
+          title: `TFT Augment Distribution Stats - Set ${currentSet} Probability Tables`,
+          description: `Complete augment distribution guide for TFT Set ${currentSet}. View all possible augment tier scenarios (Silver, Gold, Prismatic) and their probabilities.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',

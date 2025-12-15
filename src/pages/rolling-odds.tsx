@@ -41,13 +41,13 @@ const RollingOddsPage: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
-        description="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned."
+        title={`TFT Rolling Odds Calculator - Set ${currentSet} Reroll Probabilities`}
+        description={`Calculate the exact gold and rolls needed to hit specific champions in TFT Set ${currentSet}. Get precise probability curves for 1-star, 2-star, and 3-star units.`}
         canonical="https://tftodds.com/rolling-odds"
         openGraph={{
           url: 'https://tftodds.com/rolling-odds',
-          title: `Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`,
-          description: "Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned.",
+          title: `TFT Rolling Odds Calculator - Set ${currentSet} Reroll Probabilities`,
+          description: `Calculate the exact gold and rolls needed to hit specific champions in TFT Set ${currentSet}. Get precise probability curves for 1-star, 2-star, and 3-star units.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
