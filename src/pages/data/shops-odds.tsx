@@ -113,15 +113,15 @@ const ShopsOdds: NextPage = () => {
           <TableBody>
             {filteredLevels.map(([level, chances]) => (
               <TableRow key={level}>
-                <TableCell className="py-3 font-medium border border-crema border-opacity-20 capitalize">
-                  {level}
+                <TableCell className="py-3 font-bold text-lg border border-crema border-opacity-20 capitalize">
+                  {level.replace('level ', '')}
                 </TableCell>
                 {[1, 2, 3, 4, 5].map((cost) => {
                   const chance = chances[`${cost} cost`] || 0;
                   return (
                     <TableCell
                       key={cost}
-                      className="py-3 text-center border border-crema border-opacity-20 font-medium"
+                      className="py-3 text-center border border-crema border-opacity-20 font-bold text-lg"
                       style={{ opacity: chance > 0 ? getOpacity(chance) : 0.3 }}
                     >
                       {chance > 0 ? `${chance}%` : '-'}

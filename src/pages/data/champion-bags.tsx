@@ -127,13 +127,13 @@ const ChampionBags: NextPage = () => {
           <TableBody>
             {/* Row 1: Number of Champions (from constants) */}
             <TableRow>
-              <TableCell className="py-3 font-medium border border-crema border-opacity-20 capitalize">
+              <TableCell className="py-3 font-bold text-lg border border-crema border-opacity-20 capitalize">
                 Champions
               </TableCell>
               {[1, 2, 3, 4, 5].map((cost) => (
                 <TableCell
                   key={cost}
-                  className="py-3 text-center border border-crema border-opacity-20 font-medium"
+                  className="py-3 text-center border border-crema border-opacity-20 font-bold text-lg"
                 >
                   {getChampionsCount(cost)}
                 </TableCell>
@@ -142,7 +142,7 @@ const ChampionBags: NextPage = () => {
 
             {/* Row 2: Unlockable Champions (from constants) */}
             <TableRow>
-              <TableCell className="py-3 font-medium border border-crema border-opacity-20 capitalize">
+              <TableCell className="py-3 font-bold text-lg border border-crema border-opacity-20 capitalize">
                 <div className="flex items-center gap-2">
                   <Image
                     src="/images/icons/unlockableindicator_unlocked.png"
@@ -156,7 +156,7 @@ const ChampionBags: NextPage = () => {
               {[1, 2, 3, 4, 5].map((cost) => (
                 <TableCell
                   key={cost}
-                  className="py-3 text-center border border-crema border-opacity-20 font-medium"
+                  className="py-3 text-center border border-crema border-opacity-20 font-bold text-lg"
                 >
                   {getUnlockablesCount(cost)}
                 </TableCell>
@@ -165,7 +165,7 @@ const ChampionBags: NextPage = () => {
 
             {/* Row 3: Copies per Champion */}
             <TableRow>
-              <TableCell className="py-3 font-medium border border-crema border-opacity-20 capitalize">
+              <TableCell className="py-3 font-bold text-lg border border-crema border-opacity-20 capitalize">
                 Copies
               </TableCell>
               {[1, 2, 3, 4, 5].map((cost) => (
