@@ -112,7 +112,7 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
           <span className="text-gradient">Traits infos</span>
         </h3>
         <p className="text-center max-w-md mx-auto mb-10 text-base leading-tight opacity-80">
-          Maximize your board's potential with specialized tools for complex trait mechanics.
+          Maximize your board&apos;s potential with specialized tools for complex trait mechanics.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <FeatureCard

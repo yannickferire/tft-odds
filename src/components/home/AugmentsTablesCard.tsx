@@ -123,7 +123,7 @@ export const AugmentsTablesCard = () => {
             </svg>
           </h3>
           <p className="text-base text-white/70 leading-snug max-w-sm">
-            Discover detailed loot tables for every augment. See what's inside the Golden Egg and more.
+            See what&apos;s inside the Golden Egg and more.
           </p>
         </div>
 
