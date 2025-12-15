@@ -101,6 +101,10 @@ module.exports = {
 				a: "rgb(255, 223, 127)",
 				b: "rgb(127, 255, 127)",
 			},
+			fontFamily: {
+				display: ["'Bricolage Grotesque'", "sans-serif"],
+				sans: ["'Jost'", "sans-serif"],
+			},
 			animation: {
 				aurora: "aurora 60s linear infinite",
 			},

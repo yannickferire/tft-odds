@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { type NextPage } from "next";
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
 import { currentSet, setStage } from '@/constants/set';
@@ -40,22 +40,23 @@ const RollingOddsPage: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Rolling Odds Calculator – TFT Set {currentSet}{setStage === 2 ? '.5' : ''} | TFT Odds</title>
-        <link rel="canonical" href="https://tftodds.com/rolling-odds" />
-        <meta name="description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
-        <meta property="og:title" content={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`} />
-        <meta property="og:description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
-        <meta property="og:image" content="https://tftodds.com/share.jpg" />
-        <meta property="og:url" content="https://tftodds.com/rolling-odds" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tftodds" />
-        <meta name="twitter:title" content={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`} />
-        <meta name="twitter:description" content="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned." />
-        <meta name="twitter:image" content="https://tftodds.com/share.jpg" />
-      </Head>
-      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center">Champions <strong className="text-morning">rolling odds tool</strong><span className="hidden"> – See how much gold you need for every units!</span></h1>
+      <NextSeo
+        title={`Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
+        description="Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned."
+        canonical="https://tftodds.com/rolling-odds"
+        openGraph={{
+          url: 'https://tftodds.com/rolling-odds',
+          title: `Rolling Odds Calculator – TFT Set ${currentSet}${setStage === 2 ? '.5' : ''} | TFT Odds`,
+          description: "Calculate the exact gold and rolls needed to hit any champion in TFT. Get precise probabilities for 1-star, 2-star, and 3-star units based on level, contestation, and copies owned.",
+          images: [
+            {
+              url: 'https://tftodds.com/share.jpg',
+              alt: 'TFT Odds Share Image',
+            },
+          ],
+        }}
+      />
+      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide">Champions <strong className="text-morning">rolling odds tool</strong><span className="hidden"> – See how much gold you need for every units!</span></h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">
         <p><strong>This advanced calculator shows you the exact probability of hitting any champion based on your level, gold spent, and game conditions</strong>. Whether you are slow-rolling for a 3-star Bard or fast-8 hunting for Aatrox, get precise probability curves to optimize your rolling strategy.
           <AlertDialog>

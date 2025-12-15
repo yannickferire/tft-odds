@@ -59,8 +59,8 @@ const Header = () => {
           <p className="text-crema transition-all duration-300 ease-in-out cursor-pointer font-bold border-b-2 border-transparent hover:border-crema">
             {item.label} <span className="inline-block rotate-180 relative -top-0.5 text-2xl font-normal leading-3">^</span>
           </p>
-          <div className="hidden group-hover:inline-block absolute right-0 top-full pt-2 cursor-pointer z-10">
-            <ul className="text-left w-44 bg-midday rounded-sm">
+          <div className="hidden group-hover:inline-block absolute right-0 top-full pt-2 cursor-pointer z-10 animate-fadein animate-speed-fast">
+            <ul className="text-left w-44 bg-midday rounded-sm shadow-xl">
               {item.children.map((child, index) => {
                 const childActive = router.pathname === child.href;
                 const isFirst = index === 0;
@@ -70,7 +70,7 @@ const Header = () => {
                   <li key={child.href}>
                     <Link
                       href={child.href}
-                      className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema ${isFirst ? 'rounded-t-sm' : ''} ${isLast ? 'rounded-b-sm' : ''} ${childActive ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
+                      className={`block pt-2 h-10 px-2 text-crema transition-all duration-300 ease-in-out cursor-pointer hover:text-midday hover:bg-crema hover:pl-3 ${isFirst ? 'rounded-t-sm' : ''} ${isLast ? 'rounded-b-sm' : ''} ${childActive ? 'text-morning border-morning cursor-default' : 'hover:border-crema'}`}
                     >
                       {child.label}
                     </Link>

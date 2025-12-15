@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/react';
-import Head from 'next/head';
 import Script from 'next/script';
 
 import { useRouter } from 'next/router';
@@ -43,6 +42,7 @@ const GoogleAds = () => {
 }
 
 import { DefaultSeo } from 'next-seo';
+import { defaultSeoConfig } from '@/config/seo';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -51,35 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <CookieConsentProvider>
-        <DefaultSeo
-          title="Teamfight Tactics Odds – TFT Set 13 probabilities tools"
-          description="Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder."
-          openGraph={{
-            type: 'website',
-            locale: 'en_US',
-            url: 'https://tftodds.com/',
-            site_name: 'Teamfight Tactics Odds',
-            images: [
-              {
-                url: 'https://tftodds.com/share.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'TFT Odds Share Image',
-              },
-            ],
-          }}
-          twitter={{
-            handle: '@tftodds',
-            site: '@tftodds',
-            cardType: 'summary_large_image',
-          }}
-          additionalMetaTags={[
-            {
-              name: 'viewport',
-              content: 'width=device-width, initial-scale=1.0',
-            }
-          ]}
-        />
+        <DefaultSeo {...defaultSeoConfig} />
         <GoogleAds />
         <AuroraBackground opacity={(isHomePage ? 40 : 10)}>
           <Layout>

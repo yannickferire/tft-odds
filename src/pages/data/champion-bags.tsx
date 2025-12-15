@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 import { useQuery } from "react-query";
 import { fetchChampions } from "@/utils/fetchChampions";
 import { numberOfChampionsByCost, numberOfCopiesByCost, numberOfUnlockableChampionsByCost } from "@/constants/champions";
@@ -69,12 +69,16 @@ const ChampionBags: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Champion Bags – TFT odds Set {currentSet}{setStage === 2 ? '.5' : null}</title>
-        <meta name="description" content={`Champion bag sizes and pool details for TFT Set ${currentSet}.`} />
-      </Head>
+      <NextSeo
+        title={`Champion Bags – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`}
+        description={`Champion bag sizes and pool details for TFT Set ${currentSet}.`}
+        openGraph={{
+          title: `Champion Bags – TFT odds Set ${currentSet}${setStage === 2 ? '.5' : ''}`,
+          description: `Champion bag sizes and pool details for TFT Set ${currentSet}.`,
+        }}
+      />
 
-      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center">
+      <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide">
         <strong className="text-morning">Champion Bags</strong> Data
       </h1>
 
