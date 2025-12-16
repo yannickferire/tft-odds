@@ -65,10 +65,13 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
           <div className="relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[50vw] lg:max-w-[600px]">
             <Link href="/rolling-odds">
               <div className="hero-glow-permanent rounded-lg overflow-hidden border-2 border-crema/20 cursor-pointer group">
-                <img
+                <NextImage
                   src="/rolling-odds-preview.jpg"
                   alt="Rolling Odds Calculator Interface"
+                  width={600}
+                  height={400}
                   className="w-full h-auto"
+                  priority
                 />
               </div>
             </Link>

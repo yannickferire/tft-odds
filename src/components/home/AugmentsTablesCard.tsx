@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useItemsData } from '@/hooks/useItemsData';
 import { goldenEgg } from "@/constants/augments";
 import GoldIcon from '@/components/icons/goldIcon';
@@ -87,7 +88,7 @@ export const AugmentsTablesCard = () => {
     if (imageUrl) {
       return (
         <div key={index} className="inline-flex items-center gap-1 bg-[#1A2332] border border-white/10 rounded pr-2 py-0.5 mx-1 pl-0.5" title={name}>
-          <img src={imageUrl} alt={name} className="w-6 h-6 rounded" />
+          <Image src={imageUrl!} alt={name} width={24} height={24} className="w-6 h-6 rounded" unoptimized />
           {count && <span className="text-xs font-bold text-white/80 ml-1">{count}</span>}
           <span className="text-[10px] text-white/60 truncate max-w-[80px] hidden md:inline-block">{name}</span>
         </div>

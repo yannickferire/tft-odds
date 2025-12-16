@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Champion } from '@/types/tft';
 
@@ -48,10 +49,13 @@ export const EncountersCard = ({
                 className="relative w-12 h-12 rounded-full border-2 border-[#0f172a] shadow-lg overflow-hidden transition-transform duration-300 hover:scale-110 hover:z-10"
                 style={{ zIndex: 10 - index }}
               >
-                <img
+                <Image
                   src={champion.image}
                   alt={champion.name}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-cover"
+                  unoptimized
                 />
               </div>
             ))}

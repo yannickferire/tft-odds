@@ -62,14 +62,14 @@ const CarouselOdds: NextPage = () => {
                 <AlertDialogTitle>Strategic Planning with Carousel Odds</AlertDialogTitle>
                 <AlertDialogDescription>
                   <p>
-                    The Carousel is more than just a draft; it's a probability event that can dictate your game plan. By understanding these odds, you can make smarter decisions about holding components or committing to a line.
+                    The Carousel is more than just a draft; it&apos;s a probability event that can dictate your game plan. By understanding these odds, you can make smarter decisions about holding components or committing to a line.
                   </p>
                 </AlertDialogDescription>
                 <hr className="opacity-30" />
                 <AlertDialogTitle>The Spatula Angle</AlertDialogTitle>
                 <AlertDialogDescription className="flex flex-col gap-2">
                   <p>
-                    In Stages 2, 3, and 4, there is always a chance for Spatulas or Frying Pans to appear. If you are sitting on a single component needed for a game-winning emblem, knowing these odds helps you decide if it's worth playing for the "high roll" or if you should slam a safer item to preserve HP.
+                    In Stages 2, 3, and 4, there is always a chance for Spatulas or Frying Pans to appear. If you are sitting on a single component needed for a game-winning emblem, knowing these odds helps you decide if it&apos;s worth playing for the &quot;high roll&quot; or if you should slam a safer item to preserve HP.
                   </p>
                 </AlertDialogDescription>
                 <hr className="opacity-30" />
