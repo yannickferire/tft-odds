@@ -56,6 +56,10 @@ export const navigationConfig: NavigationItem[] = [
       {
         label: 'Champion Bags',
         href: '/data/champion-bags'
+      },
+      {
+        label: 'Carousel Odds',
+        href: '/data/carousel-odds'
       }
     ]
   }

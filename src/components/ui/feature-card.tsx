@@ -46,7 +46,7 @@ export const FeatureCard = ({
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold mb-3 text-crema group-hover:text-morning transition-colors duration-300">
+        <h3 className="text-2xl font-bold text-crema mb-3 group-hover:text-morning transition-colors flex items-center gap-2 tracking-wide">
           {title}
         </h3>
 

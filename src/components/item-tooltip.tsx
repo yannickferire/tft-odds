@@ -10,6 +10,7 @@ import { useItemsData } from '@/hooks/useItemsData';
 interface ItemTooltipProps {
   item: Item | null;
   children: React.ReactNode;
+  hideDescription?: boolean;
 }
 
 // Mapping des noms de stats vers leurs icônes
@@ -32,13 +33,17 @@ const STAT_ICONS: Record<string, string> = {
   'Durability': '/images/icons/durability.png',
   'Omnivamp': '/images/icons/omnivamp.png',
   'Bonus Damage': '/images/icons/bonusdamage.png',
+  'ManaRegen': '/images/icons/mana.svg',
+  'MagicResist': '/images/icons/magicresist.svg',
+  'AbilityPower': '/images/icons/abilitypower.svg',
+  'AttackDamage': '/images/icons/attackdamage.svg',
 };
 
 /**
  * ItemTooltip component - Displays a tooltip with item details on hover
  * Uses Radix UI HoverCard for better accessibility and positioning
  */
-export default function ItemTooltip({ item, children }: ItemTooltipProps) {
+export default function ItemTooltip({ item, children, hideDescription = false }: ItemTooltipProps) {
   const { allItems } = useItemsData();
 
   if (!item) {
@@ -151,7 +156,7 @@ export default function ItemTooltip({ item, children }: ItemTooltipProps) {
         </div>
 
         {/* Description */}
-        {cleanedDescription && (
+        {cleanedDescription && !hideDescription && (
           <div className="p-3 border-b border-crema/20">
             <p className="text-crema/90 text-sm leading-relaxed whitespace-pre-wrap">
               {formatDescription(cleanedDescription)}
