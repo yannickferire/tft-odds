@@ -118,7 +118,7 @@ export const goldenEgg = {
   "1x Tactician's Crown + 1x Radiant Item + 1x Artifact Item + 1x Item Component + 1x Magnetic Remover + 10x Gold": 10,
   "1x Infinity Force + 1x Zhonya's Paradox + 1x Anima Visage + 1x Champion Duplicator + 2x Magnetic Remover + 25x Gold": 10,
   "1x Tactician's Crown + 4x 5 Cost + 2x Champion Duplicator + 30x Gold": 10,
-  "1x Tactician's Crown + 1x Jewelled Gauntlet + 1x Infinity Edge + 1x Guardbreaker + 1x Quicksilver + 1x Hand of Justice + 1x Magnetic Remover + 10x Gold": 10,
+  "1x Tactician's Crown + 1x Jeweled Gauntlet + 1x Infinity Edge + 1x Striker's Flail + 1x Quicksilver + 1x Hand of Justice + 1x Magnetic Remover + 10x Gold": 10,
 }
 
 export const spoilsOfWarSilver = {
