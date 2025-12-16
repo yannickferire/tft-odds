@@ -109,12 +109,12 @@ export const encountersTable = {
   },
 };
 export const hallOfNine = {
-  "1x Item Component (not Spatula)": 14,
+  "1x Item Component": 14,
   "1x Spatula": 14,
-  "1x Artifact Item Anvil": 14,
+  "1x Completed Item Anvil + 1x Salvager": 14,
   "1x Champion 2 star `(tier = stage - 1)`": 14,
   "5x Gold `x stage`": 14,
-  "1x Support Item Anvil": 13,
+  "1x Lucky Item Chest": 13,
   "1x Reforger": 13,
   "1x Boot": 3,
   "1x Tactician's Crown": 1

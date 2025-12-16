@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { NextSeo } from 'next-seo';
 import { currentSet, setStage } from '@/constants/set';
-import { encountersTable, hallOfNine } from "@/constants/portals";
+import { encountersTable, hallOfNine } from "@/constants/encounters";
 import { spoilsOfWarSilver, spoilsOfWarSilverGold, spoilsOfWarGold, spoilsOfWarGoldGold, spoilsOfWarPrismatic, spoilsOfWarPrismaticGold } from "@/constants/augments";
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import { FormatChampions } from "@/utils/formatChampions";

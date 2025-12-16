@@ -6,7 +6,7 @@ import NextImage from "next/image";
 import { fetchChampions } from "@/utils/fetchChampions";
 import { Champion, Trait } from "@/types/tft";
 import { FeatureCard } from "@/components/ui/feature-card";
-import { encountersTable } from '@/constants/portals';
+import { encountersTable } from '@/constants/encounters';
 import { EncountersCard } from '@/components/home/EncountersCard';
 import { AugmentsSimulatorCard } from '@/components/home/AugmentsSimulatorCard';
 import { AugmentsDistributionCard } from '@/components/home/AugmentsDistributionCard';
