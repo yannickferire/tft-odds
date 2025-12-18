@@ -24,6 +24,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react"
 import { calculateRowSpans, AugmentScenario } from "@/utils/table-utils";
+import { AugmentsSimulatorCard } from "@/components/home/AugmentsSimulatorCard";
 
 const DataAugments: NextPage = () => {
 
@@ -107,9 +108,9 @@ const DataAugments: NextPage = () => {
         <TableCaption>Encounters that changes augments tier will simply overwrite normal distribution.</TableCaption>
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
-            <TableHead>1st augment</TableHead>
-            <TableHead>2nd augment</TableHead>
-            <TableHead>3rd augment</TableHead>
+            <TableHead>2-1</TableHead>
+            <TableHead>3-2</TableHead>
+            <TableHead>4-2</TableHead>
             <TableHead className="w-[120px] text-center">Probability</TableHead>
           </TableRow>
         </TableHeader>
@@ -157,13 +158,22 @@ const DataAugments: NextPage = () => {
           ))}
         </TableBody>
       </Table>
+
+      <section className="mb-16">
+        <h3 className="text-2xl font-bold mb-6 text-center text-crema">Plan ahead your strategy</h3>
+        <div className="max-w-2xl mx-auto h-[340px]">
+          <AugmentsSimulatorCard />
+        </div>
+      </section>
+
+      <h3 className="text-2xl font-bold mb-6 text-center text-crema">Tiers probabilities</h3>
       <Table className="mb-24">
         <TableHeader>
           <TableRow className="!border-b !border-crema !border-opacity-20">
             <TableHead>Augments tier</TableHead>
-            <TableHead>1st choice</TableHead>
-            <TableHead>2nd choice</TableHead>
-            <TableHead>3rd choice</TableHead>
+            <TableHead>2-1</TableHead>
+            <TableHead>3-2</TableHead>
+            <TableHead>4-2</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -177,6 +187,7 @@ const DataAugments: NextPage = () => {
           ))}
         </TableBody>
       </Table>
+
     </>
   )
 }

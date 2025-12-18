@@ -21,6 +21,7 @@ const POPULAR_PAGES: RelatedLink[] = [
 
 const MANUAL_OVERRIDES: Record<string, string[]> = {
   '/rolling-odds': ['/data/shops-odds', '/data/champion-bags', '/encounters'],
+  '/augments/augments-distribution': ['/augments/the-golden-egg', '/rolling-odds', '/data/shops-odds'],
 };
 
 // --- Helper Functions ---

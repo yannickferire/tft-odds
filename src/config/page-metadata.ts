@@ -49,5 +49,9 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
   '/augments/warpath': {
     title: 'Warpath Augment',
     description: 'Detailed stats and information about the Warpath augment.',
+  },
+  '/augments/the-golden-egg': {
+    title: 'Augments Tables',
+    description: 'Explore detailed loot tables, rewards, and drop probabilities for Augments.',
   }
 };
