@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
 
 import { useRouter } from 'next/router';
@@ -63,6 +64,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Layout>
             <Component {...pageProps} />
             <Analytics />
+            <SpeedInsights />
             <ReactQueryDevtools />
           </Layout>
           <CookieConsent />
