@@ -73,7 +73,7 @@ export const AugmentPageLayout: React.FC<AugmentPageLayoutProps> = ({
                   <div className="space-y-2">
                     <h3 className="font-bold text-lg text-morning flex items-center gap-2">
                       <Image src="/images/augments/PandorasBench.avif" alt="Pandora" width={24} height={24} className="rounded" />
-                      Pandora's Bench
+                      Pandora&apos;s Bench
                     </h3>
                     <p>Transforms the 3 rightmost bench units into random units of the same cost at the start of every round. Great for 3-starring high-cost units.</p>
                   </div>
