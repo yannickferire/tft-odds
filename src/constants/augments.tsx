@@ -170,3 +170,7 @@ export const marchOfProgress = {
   "Level 9": "6-3",
   "Level 10": "7-7"
 }
+
+export const warpath = {
+  "3x 5 Cost + 1x 4 Cost 2* + 2x Completed Item Anvil": 100,
+}

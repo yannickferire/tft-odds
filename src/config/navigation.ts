@@ -27,7 +27,7 @@ export const navigationConfig: NavigationItem[] = [
       },
       {
         label: 'Augments Tables',
-        href: '/augments/augments-tables'
+        href: '/augments/the-golden-egg'
       }
     ]
   },

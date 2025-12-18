@@ -43,21 +43,48 @@ const getUrlMetadata = (url: string): { priority: string; changefreq: string } =
 
 // Flatten navigation config to get all URLs
 const getAllUrls = (): string[] => {
-  const urls: string[] = [];
+  const urls: Set<string> = new Set(); // Use Set for deduplication
 
+  // Pages corresponding to parent structure that do NOT exist
+  const excludedParents = ['/augments', '/traits', '/data'];
+
+  // Manually excluded pages (redirects, etc.)
+  const excludedPages = ['augments-tables'];
+
+  // 1. Get URLs from Navigation Config
   navigationConfig.forEach(item => {
-    // Add parent URL if it's a real page (not just a dropdown container)
-    urls.push(item.href);
+    // Add parent URL if it's a real page
+    if (!excludedParents.includes(item.href)) {
+      urls.add(item.href);
+    }
 
     // Add children URLs
     if (item.children && item.children.length > 0) {
       item.children.forEach(child => {
-        urls.push(child.href);
+        urls.add(child.href);
       });
     }
   });
 
-  return urls;
+  // 2. Auto-discover Augment Pages
+  try {
+    const augmentsDir = path.join(__dirname, '../src/pages/augments');
+    const files = fs.readdirSync(augmentsDir);
+
+    files.forEach(file => {
+      if (file.endsWith('.tsx') && !excludedPages.includes(file.replace('.tsx', ''))) {
+        const pageName = file.replace('.tsx', '');
+        urls.add(`/augments/${pageName}`);
+      }
+    });
+  } catch (error) {
+    console.warn('⚠️ Could not read augments directory:', error);
+  }
+
+  // Remove the specific redirect page if it was added via navigation
+  urls.delete('/augments/augments-tables');
+
+  return Array.from(urls);
 };
 
 // Generate sitemap XML

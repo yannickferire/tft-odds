@@ -48,10 +48,16 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isHomePage = router.pathname === '/';
 
+  // Calculate canonical URL
+  const canonicalUrl = `https://tftodds.com${router.asPath === '/' ? '' : router.asPath.split('?')[0]}`;
+
   return (
     <QueryClientProvider client={queryClient}>
       <CookieConsentProvider>
-        <DefaultSeo {...defaultSeoConfig} />
+        <DefaultSeo
+          {...defaultSeoConfig}
+          canonical={canonicalUrl}
+        />
         <GoogleAds />
         <AuroraBackground opacity={(isHomePage ? 40 : 10)}>
           <Layout>

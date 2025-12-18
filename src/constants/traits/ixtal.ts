@@ -381,7 +381,7 @@ export const ixtalCashouts: Record<string, IxtalCashout> = {
         "optionNumber": 2,
         "probability": 0.5,
         "probabilityPercent": "50%",
-        "rewards": ["30x Gold", "1x Tactician's Crown", "1x 5 Cost 2 star", "1x Artifact Item Anvil", "1x Radiant Item"]
+        "rewards": ["30x Gold", "1x Tactician's Crown", "1x 5 Cost 2*", "1x Artifact Item Anvil", "1x Radiant Item"]
       }
     ]
   },
@@ -444,7 +444,7 @@ export const ixtalCashouts: Record<string, IxtalCashout> = {
         "optionNumber": 1,
         "probability": 1.0,
         "probabilityPercent": "100%",
-        "rewards": ["1x 5 Cost 3 star", "1x Golden Item Remover"]
+        "rewards": ["1x 5 Cost 3*", "1x Golden Item Remover"]
       }
     ]
   },
@@ -457,7 +457,7 @@ export const ixtalCashouts: Record<string, IxtalCashout> = {
         "optionNumber": 1,
         "probability": 1.0,
         "probabilityPercent": "100%",
-        "rewards": ["2x 5 Cost 3 star", "1x Golden Item Remover"]
+        "rewards": ["2x 5 Cost 3*", "1x Golden Item Remover"]
       }
     ]
   }

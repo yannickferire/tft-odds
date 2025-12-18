@@ -45,5 +45,9 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
   '/data/champion-bags': {
     title: 'Champion Bags',
     description: 'Number of copies of each champion in the pool.',
+  },
+  '/augments/warpath': {
+    title: 'Warpath Augment',
+    description: 'Detailed stats and information about the Warpath augment.',
   }
 };
