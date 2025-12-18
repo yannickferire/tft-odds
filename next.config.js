@@ -9,17 +9,6 @@ const nextConfig = {
 	async redirects() {
 		return [
 			{
-				source: "/:path*",
-				has: [
-					{
-						type: "host",
-						value: "www.tftodds.com",
-					},
-				],
-				destination: "https://tftodds.com/:path*",
-				permanent: true,
-			},
-			{
 				source: "/augments-tier",
 				destination: "/augments/augments-tier",
 				permanent: true,
