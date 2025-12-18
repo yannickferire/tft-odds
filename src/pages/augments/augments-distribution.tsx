@@ -23,8 +23,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react"
+import { calculateRowSpans, AugmentScenario } from "@/utils/table-utils";
 
 const DataAugments: NextPage = () => {
+
+  const dataWithSpans = calculateRowSpans(augmentsDistributionDetailed as unknown as AugmentScenario[]);
 
   return (
     <>
@@ -107,16 +110,49 @@ const DataAugments: NextPage = () => {
             <TableHead>1st augment</TableHead>
             <TableHead>2nd augment</TableHead>
             <TableHead>3rd augment</TableHead>
-            <TableHead className="w-[100px]">Percent<span className="hidden md:inline">age</span></TableHead>
+            <TableHead className="w-[120px] text-center">Probability</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {augmentsDistributionDetailed.map((scenario, id) => (
-            <TableRow key={id} className="border-0">
-              <TableCell className={`py-1 bg-${scenario[1].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[1]}</TableCell>
-              <TableCell className={`py-1 bg-${scenario[2].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[2]}</TableCell>
-              <TableCell className={`py-1 bg-${scenario[3].toLowerCase()} font-semibold text-midnight/[.8] border-2 border-crema border-opacity-20`}>{scenario[3]}</TableCell>
-              <TableCell className="py-1 font-semibold text-center text-base md:text-lg border-b border-r border-crema border-opacity-20">{scenario["percent"]}%</TableCell>
+          {dataWithSpans.map((scenario, id) => (
+            <TableRow key={id} className={`border-0 ${id % 2 === 0 ? '' : ''}`}>
+              {scenario.span1 > 0 && (
+                <TableCell
+                  rowSpan={scenario.span1}
+                  className={`py-1 align-middle text-center bg-${scenario[1].toLowerCase()} font-bold text-lg text-midnight/[.8] border-2 border-crema border-opacity-20`}
+                >
+                  {scenario[1]}
+                  {scenario.percent1 !== undefined && (
+                    <span className="block text-sm font-normal opacity-70">
+                      ({scenario.percent1.toFixed(2).replace(/[.,]00$/, "")}%)
+                    </span>
+                  )}
+                </TableCell>
+              )}
+              {scenario.span2 > 0 && (
+                <TableCell
+                  rowSpan={scenario.span2}
+                  className={`py-1 align-middle text-center bg-${scenario[2].toLowerCase()} font-semibold text-lg text-midnight/[.8] border-2 border-crema border-opacity-20`}
+                >
+                  {scenario[2]}
+                  {scenario.percent2 !== undefined && (
+                    <span className="ml-2 text-xs md:text-sm font-normal opacity-70">
+                      ({scenario.percent2.toFixed(2).replace(/[.,]00$/, "")}%)
+                    </span>
+                  )}
+                </TableCell>
+              )}
+              <TableCell className={`py-1 align-middle text-center bg-${scenario[3].toLowerCase()} font-semibold text-lg text-midnight/[.8] border-2 border-crema border-opacity-20`}>
+                {scenario[3]}
+                {scenario.percent3 !== undefined && (
+                  <span className="ml-2 text-xs md:text-sm font-normal opacity-70">
+                    ({scenario.percent3.toFixed(2).replace(/[.,]00$/, "")}%)
+                  </span>
+                )}
+              </TableCell>
+              <TableCell className="py-2 font-bold text-center text-xl border-b border-r border-crema border-opacity-20">
+                {scenario["percent"]}%
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
