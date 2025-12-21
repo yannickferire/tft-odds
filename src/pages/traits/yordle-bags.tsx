@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Image from 'next/image';
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { currentSet, setStage } from '@/constants/set';
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import { yordleGrabBag } from "@/constants/traits/yordle";
@@ -29,7 +29,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
-const Ixtal: NextPage = () => {
+const YordleBags: NextPage = () => {
   const [champs, setChamps] = useState<any[]>([]);
 
   const { data } = useQuery('champions', fetchChampions);
@@ -44,19 +44,38 @@ const Ixtal: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Yordle Bags - Set ${currentSet} Drop Rates`}
-        description={`Discover the Yordle grab bag in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards!`}
+        title={`TFT Yordle Grab Bags - Set ${currentSet} Reward Drops`}
+        description={`Detailed loot table for Yordle Grab Bags in TFT Set ${currentSet}. See drop rates for items, champions, and gold available at 8 Yordles.`}
         canonical="https://tftodds.com/traits/yordle-bags"
         openGraph={{
-          title: `TFT Yordle Bags - Set ${currentSet} Drop Rates`,
-          description: `Discover the Yordle grab bag in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards!`,
+          title: `TFT Yordle Grab Bags - Set ${currentSet} Reward Drops`,
+          description: `Detailed loot table for Yordle Grab Bags in TFT Set ${currentSet}. See drop rates for items, champions, and gold available at 8 Yordles.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'TFT Yordle Grab Bags',
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Traits',
+            item: 'https://tftodds.com/traits',
+          },
+          {
+            position: 3,
+            name: 'Yordle Bags',
+            item: 'https://tftodds.com/traits/yordle-bags',
+          },
+        ]}
       />
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center tracking-wide">
         <Image className="inline-block -mt-2 mr-2" src="/images/traits/set16/yordle.svg" alt="Yordle Trait Image" width="30" height="30" />
@@ -182,4 +201,4 @@ const Ixtal: NextPage = () => {
   )
 }
 
-export default Ixtal;
+export default YordleBags;

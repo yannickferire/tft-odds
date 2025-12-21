@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { useQuery } from "react-query";
 import { fetchChampions } from "@/utils/fetchChampions";
 import { numberOfChampionsByCost, numberOfCopiesByCost, numberOfUnlockableChampionsByCost } from "@/constants/champions";
@@ -70,14 +70,40 @@ const ChampionBags: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Champion Pool Sizes & Bag Data - Set ${currentSet}`}
-        description={`Champion bag sizes, pool counts and unlockable champion details for TFT Set ${currentSet}. Understand the rolling pool mechanics.`}
+        title={`TFT Champion Pool Sizes & Bag Counts - Set ${currentSet} Stats`}
+        description={`Current champion pool sizes (bag sizes) for TFT Set ${currentSet}. Check how many copies of each 1, 2, 3, 4, and 5-cost unit exist in the game.`}
+        canonical="https://tftodds.com/data/champion-bags"
         openGraph={{
-          title: `TFT Champion Pool Sizes & Bag Data - Set ${currentSet}`,
-          description: `Champion bag sizes, pool counts and unlockable champion details for TFT Set ${currentSet}. Understand the rolling pool mechanics.`,
+          url: 'https://tftodds.com/data/champion-bags',
+          title: `TFT Champion Pool Sizes & Bag Counts - Set ${currentSet} Stats`,
+          description: `Current champion pool sizes (bag sizes) for TFT Set ${currentSet}. Check how many copies of each 1, 2, 3, 4, and 5-cost unit exist in the game.`,
+          images: [
+            {
+              url: 'https://tftodds.com/share.jpg',
+              alt: 'TFT Champion Pool Sizes',
+            },
+          ],
         }}
       />
-
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Data',
+            item: 'https://tftodds.com/data',
+          },
+          {
+            position: 3,
+            name: 'Champion Bags',
+            item: 'https://tftodds.com/data/champion-bags',
+          },
+        ]}
+      />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide">
         <strong className="text-morning">Champion Bags</strong> Data
       </h1>

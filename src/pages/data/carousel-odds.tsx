@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { currentSet } from '@/constants/set';
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import { carouselOdds } from "@/constants/carousel";
@@ -32,12 +32,12 @@ const CarouselOdds: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Carousel Odds - Set ${currentSet}`}
-        description={meta.description}
+        title={`TFT Carousel Odds - Set ${currentSet} Item Spawns & Rates`}
+        description={`Complete TFT Set ${currentSet} Carousel probability guide. Find out the odds of finding Spatulas, Components, or Full Items on each carousel stage.`}
         canonical="https://tftodds.com/data/carousel-odds"
         openGraph={{
-          title: `TFT Carousel Odds - Set ${currentSet}`,
-          description: meta.description,
+          title: `TFT Carousel Odds - Set ${currentSet} Item Spawns & Rates`,
+          description: `Complete TFT Set ${currentSet} Carousel probability guide. Find out the odds of finding Spatulas, Components, or Full Items on each carousel stage.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
@@ -45,6 +45,25 @@ const CarouselOdds: NextPage = () => {
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Data',
+            item: 'https://tftodds.com/data',
+          },
+          {
+            position: 3,
+            name: 'Carousel Odds',
+            item: 'https://tftodds.com/data/carousel-odds',
+          },
+        ]}
       />
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center tracking-wide">
         <strong className="text-morning">Carousel</strong> Odds

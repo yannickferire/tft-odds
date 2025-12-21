@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Image from "next/image";
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { currentSet } from '@/constants/set';
 import { goldenEgg } from "@/constants/augments";
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
@@ -18,19 +18,38 @@ const TheGoldenEgg: NextPage = () => {
   return (
     <AugmentPageLayout>
       <NextSeo
-        title={`The Golden Egg - TFT Set ${currentSet} Augment Odds & Rewards`}
-        description={`Detailed reward tables for The Golden Egg augment in TFT Set ${currentSet}. Discover loot drop rates and potential prizes.`}
+        title={`The Golden Egg Loot Table form Set ${currentSet} - Rewards & Drop Rates`}
+        description={`Full rewards list for "The Golden Egg" augment in TFT Set ${currentSet}. See every possible potential drop and their exact probabilities.`}
         canonical="https://tftodds.com/augments/the-golden-egg"
         openGraph={{
-          title: `The Golden Egg - TFT Set ${currentSet} Augment Odds & Rewards`,
-          description: `Detailed reward tables for The Golden Egg augment in TFT Set ${currentSet}. Discover loot drop rates and potential prizes.`,
+          title: `The Golden Egg Loot Table - TFT Set ${currentSet} Rewards`,
+          description: `Full rewards list for "The Golden Egg" augment in TFT Set ${currentSet}.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'The Golden Egg Rewards Table',
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Augments',
+            item: 'https://tftodds.com/augments',
+          },
+          {
+            position: 3,
+            name: 'The Golden Egg',
+            item: 'https://tftodds.com/augments/the-golden-egg',
+          },
+        ]}
       />
 
       <h2 id="golden-egg" className="text-3xl mt-4 mb-2 font-bold px-4 text-center">

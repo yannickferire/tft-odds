@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { rollingChancesByLevel } from "@/constants/game";
 import { possibleCost } from "@/constants/cost";
 import {
@@ -47,14 +47,40 @@ const ShopsOdds: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Shop Odds & Level Rolling Chances - Set ${currentSet}`}
-        description={`Detailed shop probabilities for TFT Set ${currentSet}. Find out the exact chance of finding 1, 2, 3, 4, and 5 cost champions at every level.`}
+        title={`TFT Shop Odds & Level Rolling Chances - Set ${currentSet} Probabilities`}
+        description={`Exact shop probabilities for TFT Set ${currentSet}. Know the best level to roll for 1, 2, 3, 4, and 5-cost champions to maximize your economy.`}
+        canonical="https://tftodds.com/data/shops-odds"
         openGraph={{
-          title: `TFT Shop Odds & Level Rolling Chances - Set ${currentSet}`,
-          description: `Detailed shop probabilities for TFT Set ${currentSet}. Find out the exact chance of finding 1, 2, 3, 4, and 5 cost champions at every level.`
+          url: 'https://tftodds.com/data/shops-odds',
+          title: `TFT Shop Odds & Level Rolling Chances - Set ${currentSet} Probabilities`,
+          description: `Exact shop probabilities for TFT Set ${currentSet}. Know the best level to roll for 1, 2, 3, 4, and 5-cost champions to maximize your economy.`,
+          images: [
+            {
+              url: 'https://tftodds.com/share.jpg',
+              alt: 'TFT Shop Odds Table',
+            },
+          ],
         }}
       />
-
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Data',
+            item: 'https://tftodds.com/data',
+          },
+          {
+            position: 3,
+            name: 'Shops Odds',
+            item: 'https://tftodds.com/data/shops-odds',
+          },
+        ]}
+      />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide">
         <strong className="text-morning">Shop Odds</strong> Data
       </h1>

@@ -2,9 +2,9 @@ import { DefaultSeoProps } from 'next-seo';
 import { currentSet } from '@/constants/set';
 
 export const defaultSeoConfig: DefaultSeoProps = {
-  title: `Teamfight Tactics Odds – TFT Set ${currentSet} probabilities tools`,
+  title: `TFT Odds - Set ${currentSet} Statistics, Probabilities & Rolling Calculator`,
   titleTemplate: "%s | TFT Odds",
-  description: "Know your chances of hitting champions in any scenario. Mastering the odds will help you managing your golds and climb the ranks in the ladder.",
+  description: `Master Teamfight Tactics Set ${currentSet} with our advanced probability tools. Calculate rolling odds, analyze augment statistics, and discover drop rates to climb the ladder faster.`,
   openGraph: {
     type: 'website',
     locale: 'en_US',

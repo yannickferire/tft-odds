@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Image from 'next/image';
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { currentSet, setStage } from '@/constants/set';
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
 import { ixtalCashouts, bonusIxtalCashouts } from "@/constants/traits/ixtal";
@@ -45,18 +45,37 @@ const Ixtal: NextPage = () => {
     <>
       <NextSeo
         title={`TFT Ixtal Cashout Table - Set ${currentSet} Rewards & Odds`}
-        description={`Discover the Ixtal cashout rewards in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards for all 20 cashout levels!`}
+        description={`Complete Ixtal Cashout Guide for TFT Set ${currentSet}. View all 20 cashout levels, drop rates, and potential rewards for your strategy.`}
         canonical="https://tftodds.com/traits/ixtal-cashout"
         openGraph={{
           title: `TFT Ixtal Cashout Table - Set ${currentSet} Rewards & Odds`,
-          description: `Discover the Ixtal cashout rewards in Teamfight Tactics Set ${currentSet}. View complete odds, costs, and rewards for all 20 cashout levels!`,
+          description: `Complete Ixtal Cashout Guide for TFT Set ${currentSet}. View all 20 cashout levels, drop rates, and potential rewards for your strategy.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'TFT Ixtal Cashout Table',
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Traits',
+            item: 'https://tftodds.com/traits',
+          },
+          {
+            position: 3,
+            name: 'Ixtal Cashout',
+            item: 'https://tftodds.com/traits/ixtal-cashout',
+          },
+        ]}
       />
       <h1 className="text-3xl mt-4 mb-4 font-bold px-4 text-center tracking-wide">
         <Image className="inline-block -mt-2 mr-2" src="/images/traits/set16/ixtal.svg" alt="Ixtal Trait Image" width="30" height="30" />

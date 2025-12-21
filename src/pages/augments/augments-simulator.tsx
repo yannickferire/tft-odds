@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, SoftwareAppJsonLd } from 'next-seo';
 import { currentSet, setStage } from '@/constants/set';
 import { augmentsDistribution } from "@/constants/augments";
 import Slot from "@/components/augments-tier/slot";
@@ -29,19 +29,28 @@ const AugmentsTier: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Augment Simulator - Set ${currentSet} Rolling Practice`}
-        description={`Predict your next augment tier in TFT Set ${currentSet}. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections.`}
+        title={`TFT Augment Simulator - Predict Next Augment Tier for Set ${currentSet}`}
+        description={`Interactive TFT Set ${currentSet} Augment Simulator. Predict your next Prismatic, Gold, or Silver augment based on current game patterns.`}
         canonical="https://tftodds.com/augments/augments-tier"
         openGraph={{
-          title: `TFT Augment Simulator - Set ${currentSet} Rolling Practice`,
-          description: `Predict your next augment tier in TFT Set ${currentSet}. Calculate probabilities for Silver, Gold, and Prismatic augments based on your previous selections.`,
+          title: `TFT Augment Simulator - Predict Next Augment Tier for Set ${currentSet}`,
+          description: `Interactive TFT Set ${currentSet} Augment Simulator. Predict your next Prismatic, Gold, or Silver augment based on current game patterns.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'TFT Augment Simulator Interface',
             },
           ],
         }}
+      />
+      <SoftwareAppJsonLd
+        name={`TFT Set ${currentSet} Augment Simulator`}
+        price="0"
+        priceCurrency="USD"
+        applicationCategory="GameApplication"
+        operatingSystem="Browser"
+        ratingValue="4.9"
+        reviewCount={32}
       />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide"><strong className="text-morning">Augments tier</strong> possibilities</h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">

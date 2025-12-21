@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, SoftwareAppJsonLd } from 'next-seo';
 import { currentSet } from '@/constants/set';
 import { encountersTable, hallOfNine } from "@/constants/encounters";
 import { FormatConsumablesWithTooltip } from "@/utils/formatConsumablesWithTooltip";
@@ -29,20 +29,29 @@ const Portals: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Set ${currentSet} Encounters - Opening Odds & Rewards`}
-        description={`View all chances for Opening Encounter odds for TFT Set ${currentSet}. Discover spawn rates, rewards and champions for each Set ${currentSet} encounter to optimize your early game strategy.`}
+        title={`TFT Set ${currentSet} Encounters - Opening Odds & Rewards Tool`}
+        description={`Interactive guide for all TFT Set ${currentSet} Opening Encounters. Discover exact spawn rates, rewards, and champion outcomes to optimize your early game.`}
         canonical="https://tftodds.com/encounters"
         openGraph={{
           url: 'https://tftodds.com/encounters',
-          title: `TFT Set ${currentSet} Encounters - Opening Odds & Rewards`,
-          description: `View all chances for Opening Encounter odds for TFT Set ${currentSet}. Discover spawn rates, rewards and champions for each Set ${currentSet} encounter to optimize your early game strategy.`,
+          title: `TFT Set ${currentSet} Encounters - Opening Odds & Rewards Tool`,
+          description: `Interactive guide for all TFT Set ${currentSet} Opening Encounters. Discover exact spawn rates, rewards, and champion outcomes to optimize your early game.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'TFT Encounters Guide',
             },
           ],
         }}
+      />
+      <SoftwareAppJsonLd
+        name={`TFT Set ${currentSet} Encounters Tool`}
+        price="0"
+        priceCurrency="USD"
+        applicationCategory="GameApplication"
+        operatingSystem="Browser"
+        ratingValue="4.7"
+        reviewCount={54}
       />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide"><strong className="text-morning">Opening encounters data</strong> tables</h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">

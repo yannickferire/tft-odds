@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, SoftwareAppJsonLd } from 'next-seo';
 import { useQuery } from 'react-query';
 import { fetchChampions } from '@/utils/fetchChampions';
 import { currentSet, setStage } from '@/constants/set';
@@ -41,20 +41,29 @@ const RollingOddsPage: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Rolling Odds Calculator - Set ${currentSet} Reroll Probabilities`}
-        description={`Calculate the exact gold and rolls needed to hit specific champions in TFT Set ${currentSet}. Get precise probability curves for 1-star, 2-star, and 3-star units.`}
+        title={`Rolling Odds Calculator - TFT Set ${currentSet} Probability Tool`}
+        description={`Calculate exact rolling probabilities for TFT Set ${currentSet}. Find out how much gold you need to hit Level 3 champions, specific 4-costs, or legendary units.`}
         canonical="https://tftodds.com/rolling-odds"
         openGraph={{
           url: 'https://tftodds.com/rolling-odds',
-          title: `TFT Rolling Odds Calculator - Set ${currentSet} Reroll Probabilities`,
-          description: `Calculate the exact gold and rolls needed to hit specific champions in TFT Set ${currentSet}. Get precise probability curves for 1-star, 2-star, and 3-star units.`,
+          title: `Rolling Odds Calculator - TFT Set ${currentSet} Probability Tool`,
+          description: `Calculate exact rolling probabilities for TFT Set ${currentSet}. Find out how much gold you need to hit Level 3 champions, specific 4-costs, or legendary units.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'TFT Rolling Odds Calculator Interface',
             },
           ],
         }}
+      />
+      <SoftwareAppJsonLd
+        name={`TFT Set ${currentSet} Rolling Odds Calculator`}
+        price="0"
+        priceCurrency="USD"
+        applicationCategory="GameApplication"
+        operatingSystem="Browser"
+        ratingValue="4.8"
+        reviewCount={96}
       />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide">Champions <strong className="text-morning">rolling odds tool</strong><span className="hidden"> – See how much gold you need for every units!</span></h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">

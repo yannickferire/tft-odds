@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { currentSet, setStage } from '@/constants/set';
 import { augmentsDistribution, augmentsDistributionDetailed } from "@/constants/augments";
 import {
@@ -33,19 +33,38 @@ const DataAugments: NextPage = () => {
   return (
     <>
       <NextSeo
-        title={`TFT Augment Distribution Stats - Set ${currentSet} Probability Tables`}
-        description={`Complete augment distribution guide for TFT Set ${currentSet}. View all possible augment tier scenarios (Silver, Gold, Prismatic) and their probabilities.`}
+        title={`TFT Augment Distribution Rules - Set ${currentSet} Probability Tables`}
+        description={`Complete guide to Augment Distribution in TFT Set ${currentSet}. See the exact probabilities for Silver, Gold, and Prismatic augment sequences.`}
         canonical="https://tftodds.com/augments/augments-distribution"
         openGraph={{
-          title: `TFT Augment Distribution Stats - Set ${currentSet} Probability Tables`,
-          description: `Complete augment distribution guide for TFT Set ${currentSet}. View all possible augment tier scenarios (Silver, Gold, Prismatic) and their probabilities.`,
+          title: `TFT Augment Distribution Rules - Set ${currentSet} Probability Tables`,
+          description: `Complete guide to Augment Distribution in TFT Set ${currentSet}. See the exact probabilities for Silver, Gold, and Prismatic augment sequences.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
-              alt: 'TFT Odds Share Image',
+              alt: 'augments distribution tft',
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://tftodds.com',
+          },
+          {
+            position: 2,
+            name: 'Augments',
+            item: 'https://tftodds.com/augments',
+          },
+          {
+            position: 3,
+            name: 'Augments Distribution',
+            item: 'https://tftodds.com/augments/augments-distribution',
+          },
+        ]}
       />
       <h1 className="text-3xl mt-4 mb-6 font-bold px-4 text-center tracking-wide"><strong className="text-morning">Augments distribution</strong> rules</h1>
       <article className="flex flex-col text-sm max-w-2xl mx-auto mb-12 px-4 gap-2">

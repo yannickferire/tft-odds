@@ -1,5 +1,6 @@
 import { GetStaticProps, type NextPage } from "next";
-import { NextSeo } from 'next-seo';
+import { NextSeo, OrganizationJsonLd } from 'next-seo';
+import Head from 'next/head';
 
 import Link from "next/link";
 import NextImage from "next/image";
@@ -36,6 +37,29 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
         title={`TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities`}
         description={`Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Check our Rolling odds, Augment odds and Encounters tools.`}
         titleTemplate="%s"
+      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://tftodds.com",
+              "id": "https://tftodds.com/#website"
+            })
+          }}
+        />
+      </Head>
+      <OrganizationJsonLd
+        type="Organization"
+        id="https://tftodds.com/#organization"
+        name="TFT Odds"
+        url="https://tftodds.com"
+        logo="https://tftodds.com/logo.png"
+        sameAs={[
+          'https://twitter.com/tftodds',
+        ]}
       />
       {/* Hero Section - Breakout Layout */}
       <section className="relative mt-12 mb-24">
