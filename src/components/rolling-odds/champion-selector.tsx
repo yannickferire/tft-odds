@@ -85,11 +85,13 @@ export default function ChampionSelector({ champions, selectedChampion, setSelec
   }, [selectedChampion, randomChampionsByCost]);
 
   const genericOptions = useMemo(() =>
-    Object.keys(possibleCost).map(cost => ({
-      name: `Any ${cost} cost`,
-      cost: Number(cost),
-      image: '',
-    })),
+    Object.keys(possibleCost)
+      .filter((cost) => Number(cost) <= 5)
+      .map((cost) => ({
+        name: `Any ${cost} cost`,
+        cost: Number(cost),
+        image: '',
+      })),
     []
   );
 
