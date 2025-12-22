@@ -12,6 +12,7 @@ import { EncountersCard } from '@/components/home/EncountersCard';
 import { AugmentsSimulatorCard } from '@/components/home/AugmentsSimulatorCard';
 import { AugmentsDistributionCard } from '@/components/home/AugmentsDistributionCard';
 import { AugmentsTablesCard } from '@/components/home/AugmentsTablesCard';
+import { Hero } from "@/components/home/Hero";
 
 import { currentSet, setStage } from '@/constants/set';
 
@@ -61,47 +62,8 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
           'https://twitter.com/tftodds',
         ]}
       />
-      {/* Hero Section - Breakout Layout */}
-      <section className="relative mt-12 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Project Description */}
-          <div className="text-left px-4 lg:px-0 py-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide mb-4">
-              <span className="text-gradient glow-hover-subtle">Teamfight Tactics odds</span> & probabilities
-            </h1>
-            <h2 className="block w-full text-lg md:text-xl tracking-normal opacity-90 mb-6 text-balance">
-              Master the odds, climb the ranks with data-driven decisions with our tools and tables. Leverage precise rolling probabilities and advanced analytics to dominate the meta.
-            </h2>
-
-            {/* CTA Button */}
-            <Link href="/rolling-odds">
-              <button className="group relative flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-morning to-[#E07B4A] text-midnight font-bold rounded-lg shadow-[0_2px_10px_rgba(236,179,101,0.25)] hover:shadow-[0_4px_20px_rgba(236,179,101,0.4)] hover:brightness-105 transition-all duration-300">
-
-                <span>Try Rolling Odds Calculator</span>
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-            </Link>
-          </div>
-
-          {/* Right Column - Breakout Image */}
-          <div className="relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[50vw] lg:max-w-[600px]">
-            <Link href="/rolling-odds">
-              <div className="hero-glow-permanent rounded-lg overflow-hidden border-2 border-crema/20 cursor-pointer group">
-                <NextImage
-                  src="/rolling-odds-preview.jpg"
-                  alt="Rolling Odds Calculator Interface"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Hero />
 
       {/* Encounters & Augments Section */}
       <div className="mb-24">
