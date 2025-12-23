@@ -1,7 +1,7 @@
 import Link from "next/link";
 import NextImage from "next/image";
 import { HexChampionCard } from "./HexChampionCard";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, animate } from "framer-motion";
 import { useRef } from "react";
 
 export const Hero = () => {
@@ -30,6 +30,7 @@ export const Hero = () => {
   }) => {
     // Scroll Transform
     const yScroll = useTransform(scrollY, [0, 1000], [0, -150 * speed]);
+    const opacityScroll = useTransform(scrollY, [0, 600], [1, 0.2]);
 
     // Entrance Logic:
     // 1. Far elements (low speed) drop slightly. Near elements (high speed) drop more.
@@ -39,7 +40,7 @@ export const Hero = () => {
     return (
       <motion.div
         className={`absolute ${className}`}
-        style={{ y: yScroll }}
+        style={{ y: yScroll, opacity: opacityScroll }}
       >
         {/* Entrance Animation Wrapper */}
         <motion.div
@@ -54,28 +55,39 @@ export const Hero = () => {
     );
   };
 
+  const scrollToTools = () => {
+    const element = document.getElementById('tools');
+    if (element) {
+      const offset = 96;
+      const targetY = element.getBoundingClientRect().top + window.scrollY - offset;
+      const startY = window.scrollY;
+
+      animate(startY, targetY, {
+        duration: 0.8,
+        ease: [0.45, 0, 0.55, 1], // easeInOutSine for smoother feel
+        onUpdate: (latest) => window.scrollTo(0, latest)
+      });
+    }
+  };
+
   return (
     <section
       ref={containerRef}
-      className="relative mt-4 mb-24 md:mt-12 md:mb-32 overflow-hidden min-h-[600px] flex flex-col justify-center"
+      className="relative -mt-32 overflow-hidden min-h-screen flex flex-col justify-center"
     >
-      {/* Background Ambience - Static or very subtle */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[150%] max-w-[1200px] pointer-events-none z-[-1]">
-        <div className="absolute inset-0 bg-radial-gradient from-morning/10 to-transparent opacity-60 blur-3xl" />
-      </div>
 
       {/* Main Content Payload (Title, Text, Buttons) - Subtle Parallax (Depth 0.2) */}
       <motion.div
         className="flex flex-col items-center text-center max-w-5xl mx-auto px-4 relative z-20"
         style={{
-          y: useTransform(scrollY, [0, 1000], [0, 50]), // Moves slightly DOWN or stays put while bg moves UP
+          y: useTransform(scrollY, [0, 800], [0, 190]),
         }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 md:mb-8 text-balance drop-shadow-sm">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tighter tracking-tight mb-2 md:mb-4 text-balance text-shadow-lg">
           <span className="text-crema">The </span>
           <span className="text-gradient">Teamfight Tactics Odds</span>
           <span className="text-crema"> & </span>
@@ -84,7 +96,7 @@ export const Hero = () => {
         </h1>
 
         {/* Subheadline */}
-        <h2 className="text-lg md:text-xl text-crema/80 max-w-2xl mx-auto mb-12 text-balance leading-relaxed">
+        <h2 className="text-lg md:text-xl text-crema/80 max-w-2xl mx-auto mb-8 text-balance leading-relaxed">
           Stop guessing and start climbing. Master the game with our data-driven tools dedicated to <strong>odds and probabilities</strong>.
         </h2>
 
@@ -98,13 +110,34 @@ export const Hero = () => {
               </svg>
             </button>
           </Link>
-          <Link href="/data/shops-odds">
-            <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-crema border border-white/10 hover:border-white/20 font-semibold text-lg rounded-xl backdrop-blur-sm transition-all duration-300 w-full sm:w-auto">
-              View Shop Odds
-            </button>
-          </Link>
+          <button
+            onClick={scrollToTools}
+            className="group flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-crema border border-white/10 hover:border-white/20 font-semibold text-lg rounded-xl backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
+          >
+            <span>Other tools and data</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19V5m0 14l-7-7m7 7l7-7" />
+            </svg>
+          </button>
         </div>
       </motion.div>
+
+      {/* 3D Roll Icon - Centered, entering from below with its own Parallax Layer */}
+      <ParallaxLayer
+        speed={0.75}
+        delay={0.4}
+        className="left-0 bottom-0 w-full flex justify-center z-10 pointer-events-none"
+      >
+        <div className="relative w-80 h-80 md:w-[520px] md:h-[520px] mx-auto opacity-70">
+          <NextImage
+            src="/roll-icon.png"
+            alt="3D Roll Icon"
+            fill
+            className="object-contain drop-shadow-[0_0_50px_rgba(66,153,225,0.5)]"
+            priority
+          />
+        </div>
+      </ParallaxLayer>
 
       {/* Parallax / Floating Assets Scene */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 overflow-visible">
@@ -114,7 +147,7 @@ export const Hero = () => {
 
         {/* 1. Main Left (Large, Near) -> Fast */}
         <ParallaxLayer speed={1.8} delay={0.1} className="left-[5%] md:left-[8%] top-[25%] w-24 h-24 md:w-32 md:h-32">
-          <div className="w-full h-full animate-float-medium" style={{ animationDelay: '0s' }}>
+          <div className="opacity-20 md:opacity-100 w-full h-full animate-float-medium" style={{ animationDelay: '0s' }}>
             <NextImage src="/hero-coin-spatula-transparent.png" alt="Gold Spatula Coin" fill className="object-contain opacity-90 blur-[0.5px]" priority />
           </div>
         </ParallaxLayer>
@@ -165,7 +198,7 @@ export const Hero = () => {
         {/* --- FLOATING CARDS (Midground = Standard Speed) --- */}
 
         <ParallaxLayer speed={0.8} delay={0.2} className="right-[5%] md:right-[10%] top-[20%] w-32 h-36 md:w-48 md:h-52">
-          <div className="w-full h-full animate-float-slow" style={{ animationDelay: '1s' }}>
+          <div className="opacity-30 md:opacity-100 w-full h-full animate-float-slow" style={{ animationDelay: '1s' }}>
             <HexChampionCard name="Bard" cost={2} status="unlocked" className="w-full h-full rotate-6" />
           </div>
         </ParallaxLayer>

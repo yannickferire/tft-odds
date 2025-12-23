@@ -66,7 +66,7 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
       <Hero />
 
       {/* Encounters & Augments Section */}
-      <div className="mb-24">
+      <div id="tools" className="mb-24 scroll-mt-24">
         <h3 className="text-4xl font-bold mb-3 text-center tracking-wide">
           <span className="text-gradient">Encounters & Augments</span>
         </h3>
