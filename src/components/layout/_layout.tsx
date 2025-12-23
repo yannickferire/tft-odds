@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <div className="w-full xl:max-w-screen-xl mx-auto px-4 pt-6 sm:pt-10 pb-6 sm:pb-8 flex flex-col min-h-screen relative z-10">
+      <div className="w-full xl:max-w-[1360px] mx-auto px-4 pt-6 sm:pt-10 pb-6 sm:pb-8 flex flex-col min-h-screen relative z-10">
         <Header />
         {children}
         <RelatedContent />
