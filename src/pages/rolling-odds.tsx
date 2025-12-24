@@ -54,6 +54,12 @@ const RollingOddsPage: NextPage = () => {
               alt: 'TFT Rolling Odds Calculator Interface',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <SoftwareAppJsonLd

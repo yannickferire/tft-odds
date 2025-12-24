@@ -37,6 +37,7 @@ const DataAugments: NextPage = () => {
         description={`Complete guide to Augment Distribution in TFT Set ${currentSet}. See the exact probabilities for Silver, Gold, and Prismatic augment sequences.`}
         canonical="https://tftodds.com/augments/augments-distribution"
         openGraph={{
+          url: 'https://tftodds.com/augments/augments-distribution',
           title: `TFT Augment Distribution Rules - Set ${currentSet} Probability Tables`,
           description: `Complete guide to Augment Distribution in TFT Set ${currentSet}. See the exact probabilities for Silver, Gold, and Prismatic augment sequences.`,
           images: [
@@ -45,6 +46,12 @@ const DataAugments: NextPage = () => {
               alt: 'augments distribution tft',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <BreadcrumbJsonLd

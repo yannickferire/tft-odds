@@ -83,6 +83,12 @@ const ChampionBags: NextPage = () => {
               alt: 'TFT Champion Pool Sizes',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <BreadcrumbJsonLd

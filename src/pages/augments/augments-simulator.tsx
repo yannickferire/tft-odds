@@ -33,6 +33,7 @@ const AugmentsTier: NextPage = () => {
         description={`Interactive TFT Set ${currentSet} Augment Simulator. Predict your next Prismatic, Gold, or Silver augment based on current game patterns.`}
         canonical="https://tftodds.com/augments/augments-tier"
         openGraph={{
+          url: 'https://tftodds.com/augments/augments-tier',
           title: `TFT Augment Simulator - Predict Next Augment Tier for Set ${currentSet}`,
           description: `Interactive TFT Set ${currentSet} Augment Simulator. Predict your next Prismatic, Gold, or Silver augment based on current game patterns.`,
           images: [
@@ -41,6 +42,12 @@ const AugmentsTier: NextPage = () => {
               alt: 'TFT Augment Simulator Interface',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <SoftwareAppJsonLd

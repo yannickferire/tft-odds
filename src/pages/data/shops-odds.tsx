@@ -60,6 +60,12 @@ const ShopsOdds: NextPage = () => {
               alt: 'TFT Shop Odds Table',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <BreadcrumbJsonLd

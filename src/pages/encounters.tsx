@@ -42,6 +42,12 @@ const Portals: NextPage = () => {
               alt: 'TFT Encounters Guide',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <SoftwareAppJsonLd

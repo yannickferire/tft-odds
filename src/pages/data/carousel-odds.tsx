@@ -36,6 +36,7 @@ const CarouselOdds: NextPage = () => {
         description={`Complete TFT Set ${currentSet} Carousel probability guide. Find out the odds of finding Spatulas, Components, or Full Items on each carousel stage.`}
         canonical="https://tftodds.com/data/carousel-odds"
         openGraph={{
+          url: 'https://tftodds.com/data/carousel-odds',
           title: `TFT Carousel Odds - Set ${currentSet} Item Spawns & Rates`,
           description: `Complete TFT Set ${currentSet} Carousel probability guide. Find out the odds of finding Spatulas, Components, or Full Items on each carousel stage.`,
           images: [
@@ -44,6 +45,12 @@ const CarouselOdds: NextPage = () => {
               alt: 'TFT Odds Share Image',
             },
           ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
         }}
       />
       <BreadcrumbJsonLd
