@@ -38,6 +38,25 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
         title={`TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities`}
         description={`Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Check our Rolling odds, Augment odds and Encounters tools.`}
         titleTemplate="%s"
+        openGraph={{
+          url: 'https://tftodds.com',
+          title: 'TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities',
+          description: `Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder.`,
+          images: [
+            {
+              url: 'https://tftodds.com/share.jpg',
+              width: 1200,
+              height: 630,
+              alt: 'TFT Odds - Rolling Chances & Augment Stats',
+            },
+          ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
       />
       <Head>
         <script
@@ -57,7 +76,7 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
         id="https://tftodds.com/#organization"
         name="TFT Odds"
         url="https://tftodds.com"
-        logo="https://tftodds.com/logo.png"
+        logo="https://tftodds.com/tft-odds-logo.svg"
         sameAs={[
           'https://twitter.com/tftodds',
         ]}
