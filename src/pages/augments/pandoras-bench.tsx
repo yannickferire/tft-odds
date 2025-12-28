@@ -21,6 +21,7 @@ const PandorasBench: NextPage = () => {
         description={`Detailed odds and mechanics for Pandora's Bench augment in TFT Set ${currentSet}. Understand transformation probabilities.`}
         canonical="https://tftodds.com/augments/pandoras-bench"
         openGraph={{
+          url: 'https://tftodds.com/augments/pandoras-bench',
           title: `Pandora's Bench - TFT Set ${currentSet} Augment Odds & Mechanics`,
           description: `Detailed odds and mechanics for Pandora's Bench augment in TFT Set ${currentSet}. Understand transformation probabilities.`,
           images: [
@@ -29,7 +30,18 @@ const PandorasBench: NextPage = () => {
               alt: 'TFT Odds Share Image',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `Pandora's Bench - TFT Set ${currentSet} Odds` },
+          { name: 'twitter:description', content: `Detailed odds for Pandora's Bench augment in TFT Set ${currentSet}. Transformation probabilities.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
 
       <h2 id="pandoras-bench" className="text-3xl mt-4 mb-2 font-bold px-4 text-center">

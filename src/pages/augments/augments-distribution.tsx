@@ -53,6 +53,11 @@ const DataAugments: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Augment Distribution - Set ${currentSet} Probabilities` },
+          { name: 'twitter:description', content: `Complete guide to Augment Distribution in TFT Set ${currentSet}. Silver, Gold, and Prismatic sequences.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

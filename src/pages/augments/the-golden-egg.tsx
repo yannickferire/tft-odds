@@ -22,6 +22,7 @@ const TheGoldenEgg: NextPage = () => {
         description={`Full rewards list for "The Golden Egg" augment in TFT Set ${currentSet}. See every possible potential drop and their exact probabilities.`}
         canonical="https://tftodds.com/augments/the-golden-egg"
         openGraph={{
+          url: 'https://tftodds.com/augments/the-golden-egg',
           title: `The Golden Egg Loot Table - TFT Set ${currentSet} Rewards`,
           description: `Full rewards list for "The Golden Egg" augment in TFT Set ${currentSet}.`,
           images: [
@@ -30,7 +31,18 @@ const TheGoldenEgg: NextPage = () => {
               alt: 'The Golden Egg Rewards Table',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `The Golden Egg - TFT Set ${currentSet} Rewards` },
+          { name: 'twitter:description', content: `Full rewards list for "The Golden Egg" augment in TFT Set ${currentSet}. All drop probabilities.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

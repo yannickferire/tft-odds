@@ -49,6 +49,11 @@ const AugmentsTier: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Augment Simulator - Set ${currentSet} Tier Predictor` },
+          { name: 'twitter:description', content: `Predict your next Prismatic, Gold, or Silver augment in TFT Set ${currentSet}.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <SoftwareAppJsonLd
         name={`TFT Set ${currentSet} Augment Simulator`}

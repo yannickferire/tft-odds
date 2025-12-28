@@ -7,8 +7,30 @@ const PrivacyPolicy: NextPage = () => {
     <>
       <NextSeo
         title="Privacy Policy – TFT Odds"
-        description="Discover how you can have the best chance to get the emblem your team needs! Find out the probability to hit every trait. Optimize your gameplay to climb."
+        description="Privacy policy for TFT Odds. Learn how we protect your data while using our TFT probability tools."
         canonical="https://tftodds.com/privacy-policy"
+        openGraph={{
+          url: 'https://tftodds.com/privacy-policy',
+          title: 'Privacy Policy – TFT Odds',
+          description: 'Privacy policy for TFT Odds. Learn how we protect your data.',
+          images: [
+            {
+              url: 'https://tftodds.com/share.jpg',
+              alt: 'TFT Odds',
+            },
+          ],
+          site_name: 'TFT Odds',
+        }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: 'Privacy Policy – TFT Odds' },
+          { name: 'twitter:description', content: 'Privacy policy for TFT Odds. Learn how we protect your data.' },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <h1 className="text-3xl mt-4 mb-12 font-bold px-4 text-center tracking-wide"><strong className="text-morning">Privacy Policy</strong> probabilities<small className="block font-normal text-lg mt-2">Updated at December 2nd, 2025</small></h1>
       <section className="flex items-center flex-col flex-1">

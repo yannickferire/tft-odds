@@ -35,13 +35,14 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
   return (
     <>
       <NextSeo
-        title={`TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities`}
-        description={`Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder. Check our Rolling odds, Augment odds and Encounters tools.`}
+        title={`TFT Odds - Rolling Chances & Augment Stats for Set ${currentSet}`}
+        description={`Master TFT Set ${currentSet} with precise rolling odds, augment probabilities, and encounter data. Optimize your strategy and climb ranked.`}
         titleTemplate="%s"
+        canonical="https://tftodds.com"
         openGraph={{
           url: 'https://tftodds.com',
-          title: 'TFT Odds - Teamfight Tactics Rolling Chances, Augment Stats & Probabilities',
-          description: `Know your chances of hitting champions in any scenario for Set ${currentSet}. Mastering the odds will help you managing your golds and climb the ranks in the ladder.`,
+          title: `TFT Odds - Rolling Chances & Augment Stats for Set ${currentSet}`,
+          description: `Master TFT Set ${currentSet} with precise rolling odds, augment probabilities, and encounter data. Optimize your strategy and climb ranked.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
@@ -57,6 +58,11 @@ const Home: NextPage<HomeProps> = ({ championsData }) => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Odds - Rolling Chances & Augment Stats for Set ${currentSet}` },
+          { name: 'twitter:description', content: `Master TFT Set ${currentSet} with precise rolling odds, augment probabilities, and encounter data.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <Head>
         <script

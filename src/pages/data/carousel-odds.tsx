@@ -52,6 +52,11 @@ const CarouselOdds: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Carousel Odds - Set ${currentSet} Item Rates` },
+          { name: 'twitter:description', content: `Complete TFT Set ${currentSet} Carousel probability guide. Find odds for Spatulas, Components, or Full Items.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

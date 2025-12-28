@@ -22,6 +22,7 @@ const SpoilsOfWar: NextPage = () => {
         description={`Detailed reward tables for Spoils of War augment in TFT Set ${currentSet}. Discover loot drop rates for Silver, Gold, and Prismatic tiers.`}
         canonical="https://tftodds.com/augments/spoils-of-war"
         openGraph={{
+          url: 'https://tftodds.com/augments/spoils-of-war',
           title: `Spoils of War - TFT Set ${currentSet} Augment Odds & Rewards`,
           description: `Detailed reward tables for Spoils of War augment in TFT Set ${currentSet}. Discover loot drop rates for Silver, Gold, and Prismatic tiers.`,
           images: [
@@ -30,7 +31,18 @@ const SpoilsOfWar: NextPage = () => {
               alt: 'TFT Odds Share Image',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `Spoils of War - TFT Set ${currentSet} Rewards` },
+          { name: 'twitter:description', content: `Reward tables for Spoils of War augment in TFT Set ${currentSet}. Silver, Gold, Prismatic tiers.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
 
       <h2 id="spoils-of-war" className="text-3xl mt-4 mb-2 font-bold px-4 text-center">

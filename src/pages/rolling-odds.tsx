@@ -61,6 +61,11 @@ const RollingOddsPage: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `Rolling Odds Calculator - TFT Set ${currentSet}` },
+          { name: 'twitter:description', content: `Calculate exact rolling probabilities for TFT Set ${currentSet}. Find out how much gold to hit champions.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <SoftwareAppJsonLd
         name={`TFT Set ${currentSet} Rolling Odds Calculator`}

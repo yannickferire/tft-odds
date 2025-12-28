@@ -48,6 +48,7 @@ const Ixtal: NextPage = () => {
         description={`Complete Ixtal Cashout Guide for TFT Set ${currentSet}. View all 20 cashout levels, drop rates, and potential rewards for your strategy.`}
         canonical="https://tftodds.com/traits/ixtal-cashout"
         openGraph={{
+          url: 'https://tftodds.com/traits/ixtal-cashout',
           title: `TFT Ixtal Cashout Table - Set ${currentSet} Rewards & Odds`,
           description: `Complete Ixtal Cashout Guide for TFT Set ${currentSet}. View all 20 cashout levels, drop rates, and potential rewards for your strategy.`,
           images: [
@@ -56,7 +57,18 @@ const Ixtal: NextPage = () => {
               alt: 'TFT Ixtal Cashout Table',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Ixtal Cashout - Set ${currentSet} Rewards & Odds` },
+          { name: 'twitter:description', content: `Complete Ixtal Cashout Guide for TFT Set ${currentSet}. All 20 cashout levels and rewards.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

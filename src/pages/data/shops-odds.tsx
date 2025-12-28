@@ -67,6 +67,11 @@ const ShopsOdds: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Shop Odds - Set ${currentSet} Rolling Chances` },
+          { name: 'twitter:description', content: `Exact shop probabilities for TFT Set ${currentSet}. Know the best level to roll for champion costs.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

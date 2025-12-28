@@ -90,6 +90,11 @@ const ChampionBags: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Champion Pool Sizes - Set ${currentSet} Bag Counts` },
+          { name: 'twitter:description', content: `Champion pool sizes for TFT Set ${currentSet}. Check copies of each cost unit in the game.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[

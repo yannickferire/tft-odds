@@ -49,6 +49,11 @@ const Portals: NextPage = () => {
           site: '@tftodds',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Set ${currentSet} Encounters - Opening Odds & Rewards` },
+          { name: 'twitter:description', content: `Interactive guide for all TFT Set ${currentSet} Opening Encounters. Discover spawn rates and rewards.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <SoftwareAppJsonLd
         name={`TFT Set ${currentSet} Encounters Tool`}

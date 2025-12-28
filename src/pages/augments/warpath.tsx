@@ -19,18 +19,30 @@ const WarpathPage: NextPage = () => {
     <AugmentPageLayout>
       <NextSeo
         title={`Warpath - TFT Set ${currentSet} Augment Odds & Rewards`}
-        description={`Details about Warpath augment in Set ${currentSet}.`}
+        description={`Details about Warpath augment in Set ${currentSet}. View the rewards chest for dealing 80 player damage.`}
         canonical="https://tftodds.com/augments/warpath"
         openGraph={{
+          url: 'https://tftodds.com/augments/warpath',
           title: `Warpath - TFT Set ${currentSet} Augment Odds & Rewards`,
-          description: `Details about Warpath augment in Set ${currentSet}.`,
+          description: `Details about Warpath augment in Set ${currentSet}. View the rewards chest for dealing 80 player damage.`,
           images: [
             {
               url: 'https://tftodds.com/share.jpg',
               alt: 'TFT Odds Share Image',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `Warpath - TFT Set ${currentSet} Augment Rewards` },
+          { name: 'twitter:description', content: `Warpath augment rewards in TFT Set ${currentSet}. High cost champions and items chest.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
 
       <h2 id="warpath" className="text-3xl mt-4 mb-2 font-bold px-4 text-center">

@@ -48,6 +48,7 @@ const YordleBags: NextPage = () => {
         description={`Detailed loot table for Yordle Grab Bags in TFT Set ${currentSet}. See drop rates for items, champions, and gold available at 8 Yordles.`}
         canonical="https://tftodds.com/traits/yordle-bags"
         openGraph={{
+          url: 'https://tftodds.com/traits/yordle-bags',
           title: `TFT Yordle Grab Bags - Set ${currentSet} Reward Drops`,
           description: `Detailed loot table for Yordle Grab Bags in TFT Set ${currentSet}. See drop rates for items, champions, and gold available at 8 Yordles.`,
           images: [
@@ -56,7 +57,18 @@ const YordleBags: NextPage = () => {
               alt: 'TFT Yordle Grab Bags',
             },
           ],
+          site_name: 'TFT Odds',
         }}
+        twitter={{
+          handle: '@tftodds',
+          site: '@tftodds',
+          cardType: 'summary_large_image',
+        }}
+        additionalMetaTags={[
+          { name: 'twitter:title', content: `TFT Yordle Grab Bags - Set ${currentSet} Rewards` },
+          { name: 'twitter:description', content: `Loot table for Yordle Grab Bags in TFT Set ${currentSet}. Drop rates for items and gold at 8 Yordles.` },
+          { name: 'twitter:image', content: 'https://tftodds.com/share.jpg' },
+        ]}
       />
       <BreadcrumbJsonLd
         itemListElements={[
