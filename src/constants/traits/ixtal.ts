@@ -331,7 +331,7 @@ export const ixtalCashouts: Record<string, IxtalCashout> = {
         "optionNumber": 1,
         "probability": 0.5,
         "probabilityPercent": "50%",
-        "rewards": ["7x Lesser Champion Duplicator", "1x Tactician's Crown", "2x Champion Duplicator"]
+        "rewards": ["7x Lesser Champion Duplicator", "1x Tactician's Crown", "1x Completed Item Anvil"]
       },
       {
         "optionNumber": 2,
